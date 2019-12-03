@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="?attr/listPreferredItemHeight"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="8dp">
+
+    <TextView
+        android:id="@+id/tvSpecificMeasureName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:textAppearance="?attr/textAppearanceListItem"
+        tools:text="Estatura:" />
+
+    <TextView
+        android:id="@+id/tvSpecificMeasure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tvSpecificMeasureName"
+        android:layout_marginLeft="8dp"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:alpha="0.7"
+        tools:text="167cm" />
+
+    <TextView
+        android:id="@+id/tvSpecificMeasureDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvSpecificMeasureName"
+        android:layout_below="@+id/tvSpecificMeasure"
+        android:paddingTop="8dp"
+        style="@style/BodyRegular"
+        android:textSize="10sp"
+        tools:text="2017-04-11 07:00" />
+
+</RelativeLayout>

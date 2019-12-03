@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:paddingTop="24dp">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:fitsSystemWindows="false">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarNewFoods"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fafafa"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:orientation="vertical"
+            android:paddingTop="24dp">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_margin">
+
+                <LinearLayout
+                    style="@style/Widget.CardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--Etiqueta Info general -->
+                    <TextView
+                        android:id="@+id/tvNewFoodsInfoGeneralTitulo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/foods_title_info_general"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:paddingBottom="16dp"/>
+
+                    <TextView
+                        android:id="@+id/tvNewFoodsInfoGeneralCodigo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/foods_info_general_codigo"/>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tvNewFoodsInfoGeneralNombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etNewFoodsInfoGeneralTitulo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/foods_info_general_nombre"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            style="@style/BodyRegular"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tvNewFoodsInfoGeneralProducto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etNewFoodsInfoGeneralProducto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/foods_info_general_producto"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            style="@style/BodyRegular"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tvNewFoodsInfoGeneralMarca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etNewFoodsInfoGeneralMarca"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/foods_info_general_marca"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            style="@style/BodyRegular"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tvNewFoodsInfoGeneralNeto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etNewFoodsInfoGeneralNeto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/foods_info_general_neto"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            style="@style/BodyRegular"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_margin">
+
+                <LinearLayout
+                    style="@style/Widget.CardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--Etiqueta Info nutricional -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/new_foods_title_info_nutricional"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:paddingBottom="16dp"/>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tvNewFoodsInfoNutricionalPorcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etNewFoodsInfoNutricionalPorcion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/foods_info_nutricional_porcion"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            style="@style/BodyRegular"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tvNewFoodsInfoNutricionalPorcionUnit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etNewFoodsInfoNutricionalPorcionUnit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/foods_info_nutricional_porcion_unit"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            style="@style/BodyRegular"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tvNewFoodsInfoNutricionalEnergia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etNewFoodsInfoNutricionalEnergia"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/foods_info_nutricional_energia"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            style="@style/BodyRegular"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tvNewFoodsInfoNutricionalProteinas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etNewFoodsInfoNutricionalProteinas"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/foods_info_nutricional_proteinas"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            style="@style/BodyRegular"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tvNewFoodsInfoNutricionalGrasaTotal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etNewFoodsInfoNutricionalGrasaTotal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/foods_info_nutricional_grasa_total"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            style="@style/BodyRegular"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tvNewFoodsInfoNutricionalGrasaSat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etNewFoodsInfoNutricionalGrasaSat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/foods_info_nutricional_grasa_sat"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            style="@style/BodyRegular"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tvNewFoodsInfoNutricionalGrasaMono"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etNewFoodsInfoNutricionalGrasaMono"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/foods_info_nutricional_grasa_mono"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            style="@style/BodyRegular"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tvNewFoodsInfoNutricionalGrasaPoli"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etNewFoodsInfoNutricionalGrasaPoli"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/foods_info_nutricional_grasa_poli"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            style="@style/BodyRegular"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tvNewFoodsInfoNutricionalGrasaTrans"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etNewFoodsInfoNutricionalGrasaTrans"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/foods_info_nutricional_grasa_trans"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            style="@style/BodyRegular"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tvNewFoodsInfoNutricionalColesterol"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etNewFoodsInfoNutricionalColesterol"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/foods_info_nutricional_colesterol"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            style="@style/BodyRegular"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tvNewFoodsInfoNutricionalHidratos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etNewFoodsInfoNutricionalHidratos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/new_foods_info_nutricional_hidratos"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            style="@style/BodyRegular"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tvNewFoodsInfoNutricionalAzucares"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etNewFoodsInfoNutricionalAzucares"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/foods_info_nutricional_azucares"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            style="@style/BodyRegular"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tvNewFoodsInfoNutricionalFibra"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etNewFoodsInfoNutricionalFibra"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/foods_info_nutricional_fibra"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            style="@style/BodyRegular"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tvNewFoodsInfoNutricionalSodio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etNewFoodsInfoNutricionalSodio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/foods_info_nutricional_sodio"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            style="@style/BodyRegular"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/tvNoInfo"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:paddingTop="8dp"
+                        android:textStyle="bold"
+                        android:text="@string/foods_info_nutricional_nota" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_margin">
+
+                <LinearLayout
+                    style="@style/Widget.CardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <!--Etiqueta ingredientes -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ingredientes"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:paddingBottom="16dp"/>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/tvNewFoodsIngredients"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etNewFoodsIngredients"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/new_foods_ingredients"
+                            style="@style/BodyRegular"
+                            android:inputType="textMultiLine" />
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

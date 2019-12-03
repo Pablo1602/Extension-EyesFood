@@ -1,0 +1,3 @@
+# Referenced at /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/build/intermediates/manifests/full/debug/AndroidManifest.xml:49
+-keep class com.example.jonsmauricio.eyesfood.EyesFoodApp { <init>(...); }
+

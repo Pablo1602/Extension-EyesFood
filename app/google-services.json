@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "997015551075",
+    "firebase_url": "https://extension-eyesfood-scalderon.firebaseio.com",
+    "project_id": "extension-eyesfood-scalderon",
+    "storage_bucket": "extension-eyesfood-scalderon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997015551075:android:16540920b2e3c799",
+        "android_client_info": {
+          "package_name": "com.example.jonsmauricio.eyesfood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997015551075-nhuiepkaq811ot72p961qftsjsa6eute.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jonsmauricio.eyesfood",
+            "certificate_hash": "b1b228e46d1cdd689e6172ac7c24aea68c104b56"
+          }
+        },
+        {
+          "client_id": "997015551075-04tftqie0bhtralfsurne1a9vm9jbr1m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBybVS-OtGbbVLAZkzgsqRdS5HpLrl0TuQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997015551075-04tftqie0bhtralfsurne1a9vm9jbr1m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

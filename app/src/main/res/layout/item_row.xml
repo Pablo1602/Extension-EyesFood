@@ -1,0 +1,99 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="263dp"
+    card_view:cardCornerRadius="2dp"
+    card_view:cardElevation="2dp"
+    card_view:cardUseCompatPadding="true"
+    android:layout_marginBottom="8dp">
+
+    <!-- wrap_content = 378dp-->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_history_image"
+            android:layout_width="match_parent"
+            android:layout_height="213dp"
+            android:scaleType="centerInside" />
+
+        <!--alpha es para la opacidad, va de 0 a 1 decimales donde 0 es transparente y 1 es opaco
+        También se puede dar opacidad con este formato de color AARRGGBB, donde AA va de 00 a ff-->
+        <View
+            android:id="@+id/fondo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_history_image"
+            android:background="#aafafafa"
+            android:layout_alignTop="@+id/tv_history_name"></View>
+
+        <TextView
+            android:id="@+id/tv_history_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:paddingTop="24dp"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:text="Large Text"
+            android:layout_above="@+id/rbHistoryRating"
+            android:maxLines="1"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            style="@style/CardTitle"/>
+
+        <RatingBar
+            android:id="@+id/rbHistoryRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_marginLeft="16dp"
+            android:numStars="5"
+            android:stepSize="0.1"
+            android:isIndicator="true"
+            android:layout_above="@+id/tv_history_date"/>
+
+        <TextView
+            android:id="@+id/tv_history_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="14sp"
+            android:paddingBottom="16dp"
+            android:paddingLeft="16dp"
+            android:text="Small Text"
+            android:maxLines="1"
+            android:layout_alignBottom="@+id/iv_history_image"
+            style="@style/CardSubheading"/>
+
+        <View
+            android:id="@+id/linea"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/iv_history_image"
+            android:background="#f5f5f5"></View><![CDATA[
+
+
+
+
+
+
+        style="@style/ActiveIcon"/>
+
+
+
+        ]]>
+
+        <ProgressBar
+            android:id="@+id/pbCardProgress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:indeterminate="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:max="100"
+            android:indeterminateTint="@color/colorAccent"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

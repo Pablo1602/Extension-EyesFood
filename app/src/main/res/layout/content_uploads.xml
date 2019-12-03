@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="8dp"
+    tools:context="com.example.jonsmauricio.eyesfood.ui.SearchActivity"
+    tools:showIn="@layout/activity_search"
+    android:layout_below="@+id/toolbarSearch">
+
+    <TextView
+        android:id="@+id/tvPendientesHeader"
+        style="@style/Base.TextAppearance.AppCompat.Widget.PopupMenu.Header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="8dp"
+        android:text="@string/pendientes_header" />
+
+    <ListView
+        android:id="@+id/lvResultPendientes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPendientesHeader">
+    </ListView>
+
+    <ListView
+        android:id="@+id/lvResultEdits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPendientesHeader">
+    </ListView>
+
+    <TextView
+        android:id="@+id/tvAceptadosHeader"
+        style="@style/Base.TextAppearance.AppCompat.Widget.PopupMenu.Header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvResultPendientes"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="8dp"
+        android:text="@string/aceptados_header" />
+
+    <ListView
+        android:id="@+id/lvResultAceptados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAceptadosHeader"></ListView>
+
+    <TextView
+        android:id="@+id/tvRechazadosHeader"
+        style="@style/Base.TextAppearance.AppCompat.Widget.PopupMenu.Header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvResultAceptados"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="8dp"
+        android:text="@string/rechazados_header" />
+
+    <ListView
+        android:id="@+id/lvResultRechazados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvRechazadosHeader"></ListView>
+
+    <TextView
+        android:id="@+id/tvSearchProgressText"
+        style="@style/SubheadingBlack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_progress_text"
+        android:textAlignment="center"
+        android:paddingTop="16dp"
+        android:visibility="gone"/>
+
+    <ProgressBar
+        android:id="@+id/pbSearchProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:indeterminate="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:paddingTop="32dp"
+        android:indeterminateTint="@color/colorAccent"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tvSearchEmptyState"
+        style="@style/SubheadingBlack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_empty_state"
+        android:textAlignment="center"
+        android:layout_centerInParent="true"
+        android:paddingTop="16dp"
+        android:visibility="gone"/>
+
+</RelativeLayout>

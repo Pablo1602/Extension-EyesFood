@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ESTA NO HAY QUE EDITARLA -->
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="2dp"
+    card_view:cardElevation="2dp"
+    card_view:cardUseCompatPadding="true"
+    android:layout_marginTop="16dp">
+
+    <RelativeLayout
+        style="@style/Widget.CardContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Etiqueta Info general -->
+        <TextView
+            android:id="@+id/tvRecommendationsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:paddingBottom="16dp"
+            android:text="@string/recommendations_title"/>
+
+        <TextView
+            android:id="@+id/tvRecommendationsContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvRecommendationsTitle"
+            android:layout_marginBottom="8dp"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

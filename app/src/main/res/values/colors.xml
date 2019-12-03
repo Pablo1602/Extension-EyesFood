@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        verde claro = #c5e1a5; #94af76
+
+    -->
+    <color name="colorPrimary">#8BC34A</color>
+    <color name="colorPrimaryDark">#689F38</color>
+    <color name="colorPrimaryLight">#bef67a</color>
+    <color name="colorAccent">#3D5AFE</color>
+    <color name="colorAccentDark">#0031ca</color>
+
+    <color name="colorBackground">#FAFAFA</color>
+    <color name="LightGreenBackground">#F1F8E9</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="background_footer">#90000000</color>
+
+    <color name="button_not_pressed">#BDBDBD</color>
+</resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/bt_nav_history"
+            android:icon="@mipmap/ic_list_black_18dp"
+            android:title="@string/nav_history"
+            android:checked="true"/>
+        <item
+            android:id="@+id/bt_nav_upload"
+            android:icon="@mipmap/ic_file_upload_black_18dp"
+            android:title="@string/nav_uploads" />
+        <item
+            android:id="@+id/bt_nav_modified"
+            android:icon="@drawable/ic_edit_black"
+            android:title="@string/nav_modified" />
+        <item
+            android:id="@+id/bt_nav_favorite"
+            android:icon="@mipmap/ic_thumb_up_black_18dp"
+            android:title="@string/nav_favorites" />
+        <item
+            android:id="@+id/bt_nav_rejected"
+            android:icon="@mipmap/ic_thumb_down_black_18dp"
+            android:title="@string/nav_rejected" />
+        <item
+            android:id="@+id/bt_nav_profile"
+            android:icon="@mipmap/ic_account_circle_black_18dp"
+            android:title="@string/nav_profile" />
+    </group>
+
+    <item android:title="@string/nav_more">
+        <menu>
+            <item
+                android:id="@+id/bt_nav_experts"
+                android:icon="@mipmap/ic_supervisor_account_black_18dp"
+                android:title="@string/nav_experts" />
+            <item
+                android:id="@+id/bt_nav_stores"
+                android:icon="@drawable/ic_store_black"
+                android:title="@string/nav_stores" />
+            <item
+                android:id="@+id/bt_nav_settings"
+                android:icon="@mipmap/ic_settings_black_18dp"
+                android:title="@string/nav_settings" />
+            <item
+                android:id="@+id/bt_nav_help"
+                android:icon="@mipmap/ic_help_black_18dp"
+                android:title="@string/nav_help" />
+        </menu>
+    </item>
+
+</menu>

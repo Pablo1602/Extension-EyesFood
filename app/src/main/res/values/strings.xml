@@ -1,0 +1,241 @@
+<resources>
+    <string name="app_name">EyesFood</string>
+    <string name="app_history">Historial</string>
+
+    <string name="navigation_drawer_open">Abrir menú</string>
+    <string name="navigation_drawer_close">Cerrar menú</string>
+
+    <!--TODO: Cuando hice el activity foods me salió que este string ya está hecho-->
+    <string name="action_settings">Opciones</string>
+    <string name="action_complaint">Editar alimento</string>
+    <string name="action_add_photos">Agregar fotos</string>
+
+    <string name="title_activity_login">Iniciar sesión</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Correo</string>
+    <string name="prompt_name">Nombre</string>
+    <string name="prompt_adress">Dirección</string>
+    <string name="prompt_gender">Género</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">Iniciar sesión</string>
+    <string name="action_sign_in_facebook">Iniciar sesión con Facebook</string>
+    <string name="action_sign_up">Registrar</string>
+    <string name="action_sign_in_short">Iniciar sesión</string>
+    <string name="error_invalid_email">El correo ingresado no es válido</string>
+    <string name="error_invalid_password">La contraseña es muy corta</string>
+    <string name="error_incorrect_password">La contraseña es incorrecta</string>
+    <string name="error_field_required">Campo obligatorio</string>
+    <string name="permission_rationale">"Se requiere permiso de contactos"</string>
+    <string name="error_network">"No hay conexión a Internet"</string>
+    <string name="error_server">"Error de servidor"</string>
+    <string name="title_activity_register">Registro</string>
+    <string name="no_account">¿No tienes cuenta? Registrate</string>
+
+    <!-- Strings related to signup -->
+    <string name="title_activity_fullscreen">Registro</string>
+    <string name="str_signup_name">Nombre</string>
+    <string name="str_signup_surname">Apellido</string>
+    <string name="str_signup_email">Correo electrónico</string>
+    <string name="str_signup_password">Contraseña</string>
+    <string name="str_signup_password_confirm">Confirmar contraseña</string>
+    <string name="str_signup_signup">Registrar</string>
+    <string name="str_signup_login">¿Ya eres parte? Inicia sesión</string>
+
+    <!-- Facebook -->
+    <string name="facebook_app_id">1858275051152501</string>
+    <string name="fb_login_protocol_scheme">fb1858275051152501</string>
+    <string name="title_activity_foods">Alimentos</string>
+    <string name="title_activity_foods_ap">Alimentos Aprobados</string>
+
+    <string name="roboto_thin">sans-serif-thin</string>
+    <string name="roboto_light">sans-serif-light</string>
+    <string name="roboto_regular">sans-serif</string>
+    <string name="roboto_medium">sans-serif-medium</string>
+    <string name="roboto_black">sans-serif-black</string>
+
+    <string name="roboto_condensed">sans-serif-condensed</string>
+
+    <string name="tv_login_progress_text">Iniciando sesión...</string>
+
+    <string name="action_search">Buscar</string>
+
+    <string name="foods_title_info_general">Información general</string>
+    <string name="foods_info_general_nombre">Nombre: </string>
+    <string name="foods_info_general_producto">Tipo de producto: </string>
+    <string name="foods_info_general_codigo">Código de barras: </string>
+    <string name="foods_info_general_marca">Marca: </string>
+    <string name="foods_info_general_neto">Contenido neto: </string>
+    <string name="foods_info_general_fecha">Última actualización: </string>
+
+    <string name="foods_title_info_nutricional">Información nutricional</string>
+    <string name="foods_info_nutricional_porcion">Porción: </string>
+    <string name="foods_info_nutricional_porcion_envase">Porciones por envase: </string>
+    <string name="foods_info_nutricional_porcion_unit">Porción (g o ml): </string>
+    <string name="foods_info_nutricional_por_100">100g</string>
+    <string name="foods_info_nutricional_por_porcion">1 porción</string>
+    <string name="foods_info_nutricional_energia">Energía (kj)</string>
+    <string name="foods_info_nutricional_proteinas">Proteínas (g)</string>
+    <string name="foods_info_nutricional_grasa_total">Grasa total (g)</string>
+    <string name="foods_info_nutricional_grasa_sat">- Grasa saturada (g)</string>
+    <string name="foods_info_nutricional_grasa_mono">- Grasa monoinsat (g)</string>
+    <string name="foods_info_nutricional_grasa_poli">- Grasa poliinsat (g)</string>
+    <string name="foods_info_nutricional_grasa_trans">- Grasa trans (g)</string>
+    <string name="foods_info_nutricional_colesterol">- Colesterol (mg)</string>
+    <string name="foods_info_nutricional_hidratos">Hidratos de carbono \ndisponibles (g)</string>
+    <string name="foods_info_nutricional_azucares">- Azúcares totales (g)</string>
+    <string name="foods_info_nutricional_fibra">Fibra (g)</string>
+    <string name="foods_info_nutricional_sodio">Sodio (mg)</string>
+    <string name="foods_info_nutricional_nota">* Contenido no informado</string>
+
+    <!-- Additives activity -->
+    <string name="additives_description">Descripcion: </string>
+    <string name="additives_usage">Uso: </string>
+    <string name="additives_secondary_effects">Efectos secundarios: </string>
+
+    <string name="search_hint">Buscar alimentos</string>
+    <string name="title_activity_additives">Aditivos</string>
+
+    <string name="dialog_no_edits">El alimento no tiene modificaciones registradas</string>
+    <string name="dialog_no_additives">El alimento está libre de aditivos químicos</string>
+    <string name="dialog_no_recommendations">El alimento no tiene recomendaciones de consumo</string>
+    <string name="dialog_no_images">El alimento no tiene imágenes</string>
+
+    <string name="recommendations_title">Recomendación #</string>
+    <string name="title_activity_recommendations">Recomendaciones</string>
+    <string name="title_activity_search">Buscar</string>
+
+    <string name="log_out">Salir</string>
+
+    <string name="search_foods_title">Alimentos</string>
+    <string name="search_additives_title">Aditivos</string>
+
+    <string name="search_progress_text">Buscando...</string>
+    <string name="search_empty_state">Lo sentimos, no se encontraron resultados</string>
+    <string name="search_foods_header">Alimentos</string>
+    <string name="search_additives_header">Aditivos</string>
+    <string name="title_activity_additive">Aditivo</string>
+
+    <string name="send_food">Enviar</string>
+
+    <string name="new_foods_title_info_nutricional">Información nutricional por 100g</string>
+    <string name="new_foods_info_nutricional_hidratos">Hidratos de carbono disponibles (g)</string>
+    <string name="new_foods_ingredients">Ingredientes: </string>
+
+    <string name="title_new_foods_question">El producto aún no está agregado</string>
+    <string name="title_new_consult_question">Nueva consulta</string>
+    <string name="message_new_foods_question">¿Deseas agregarlo?</string>
+    <string name="message_new_consult_question">¿Desea solicitar una consulta con el experto?</string>
+
+    <string name="title_new_foods">Subir alimento</string>
+    <string name="title_success_solitude_new_foods">Solicitud enviada</string>
+    <string name="message_success_solitude_new_foods">Gracias por tu contribución, tu solicitud será revisada y te informaremos por correo</string>
+    <string name="title_failed_solitude_new_foods">Solicitud incorrecta</string>
+    <string name="message_failed_solitude_new_foods">Parece que no has ingresado ningún campo, por favor ingresa al menos uno</string>
+
+    <string name="ok_dialog">OK</string>
+    <string name="possitive_dialog">Sí</string>
+    <string name="negative_dialog">No</string>
+
+    <string name="title_complaint_foods">Editar alimento</string>
+
+    <string name="upload_images_camera">Desde cámara</string>
+    <string name="upload_images_gallery">Desde galería</string>
+    <string name="title_upload_images">Subir foto</string>
+
+    <string name="title_notification_upload_images">Imagen subida</string>
+    <string name="body_notification_upload_images">Tu imagen se ha subido correctamente</string>
+
+    <string name="message_failed_solitude_upload">Parece que no has seleccionado ninguna foto, por favor selecciona una</string>
+    <string name="message_failed_solitude_upload_rb">Parece que no has seleccionado ningun tipo de foto, por favor selecciona uno</string>
+
+    <string name="title_foods_permission_rationale_storage">Almacenamiento</string>
+    <string name="message_foods_permission_rationale_storage">Es necesario dar permiso de almacenamiento para agregar fotos. Si seleccionaste no volver a preguntar, debes dar manualmente el permiso en Ajustes -> Aplicaciones -> Administrador de aplicaciones -> EyesFood -> Accesos</string>
+    <string name="title_foods_permission_rationale_camera">Cámara</string>
+    <string name="message_foods_permission_rationale_camera">Es necesario dar permiso de acceso a la cámara para agregar fotos. Si seleccionaste no volver a preguntar, debes dar manualmente el permiso en Ajustes -> Aplicaciones -> Administrador de aplicaciones -> EyesFood -> Accesos</string>
+    <string name="success_permission_add_photos">Ahora puedes agregar fotos</string>
+
+    <string name="message_history_permission_rationale_camera">Es necesario dar permiso de acceso a la cámara para consultar alimentos. Si seleccionaste no volver a preguntar, debes dar manualmente el permiso en Ajustes -> Aplicaciones -> Administrador de aplicaciones -> EyesFood -> Accesos</string>
+    <string name="title_activity_images">ImagesActivity</string>
+
+    <string name="image_transition_name">imagen_compartida</string>
+
+    <string name="foods_button_additives">Aditivos</string>
+    <string name="foods_button_edits">Ediciones</string>
+    <string name="foods_button_stores">Tiendas</string>
+    <string name="foods_button_recommendations">Recomendaciones</string>
+    <string name="foods_button_images">Imágenes</string>
+    <string name="title_activity_images_detail">ImagesDetailActivity</string>
+    <string name="title_activity_comments">CommentsActivity</string>
+
+    <string name="hint_comments">Escribe un comentario...</string>
+    <string name="comments_empty_state">El alimento no tiene comentarios ¡Se el primero!</string>
+    <string name="login_gmail_failed">No se pudo iniciar sesión</string>
+    <string name="nav_history">Historial</string>
+    <string name="nav_uploads">Subidos</string>
+    <string name="nav_favorites">Destacados</string>
+    <string name="nav_rejected">Rechazados</string>
+
+    <string name="nav_profile">Mi perfil</string>
+    <string name="nav_experts">Expertos</string>
+    <string name="nav_stores">Tiendas</string>
+    <string name="nav_settings">Configuración</string>
+    <string name="nav_help">Ayuda</string>
+
+    <string name="history_empty_state">Tu historial está vacío</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nav_more">Más</string>
+
+    <string-array name="dummy_data">
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+        <item>Five</item>
+        <item>Six</item>
+        <item>Seven</item>
+        <item>Eight</item>
+        <item>Nine</item>
+        <item>Ten</item>
+    </string-array>
+
+    <string-array name="dummy_data_profile">
+        <item>Estatura: 167cm</item>
+        <item>Último peso: 70,4kg</item>
+        <item>Último IMC: 25,24 (Sobrepeso)</item>
+        <item>Último % de grasa corporal: 10,35%</item>
+        <item>Último perímetro de cintura: 70cm</item>
+    </string-array>
+    <string name="title_activity_expert_detail">ExpertDetailActivity</string>
+    <string name="title_activity_prueba">PruebaActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="new_measure_general_title">Medidas generales</string>
+    <string name="new_measure_weight">Peso (kg):</string>
+    <string name="new_measure_fat">% grasa corporal:</string>
+    <string name="new_measure_title">Agregar medidas</string>
+    <string name="new_measure_specific_title">Medidas específicas</string>
+    <string name="new_measure_A1C">Hemoglobina glicolisada (A1C):</string>
+    <string name="new_measure_glucosa_pre">Glucosa preprandial:</string>
+    <string name="new_measure_glucosa_post">Glucosa postprandial:</string>
+    <string name="new_measure_presion_arterial">Presión arterial:</string>
+    <string name="edit_measure_title">Editar medidas</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="profile_emtpy_nota">* No has introducido este dato</string>
+    <string name="new_measure_waist">Medida de cintura (cm):</string>
+    <string name="message_wrong_solitude_new_measure">Por favor revisa que ningún valor es 0</string>
+    <string name="title_success_new_measures">Datos enviados</string>
+    <string name="message_success_new_measures">Tus nuevas medidas se han registrado con éxito</string>
+    <string name="str_signup_date">Fecha de Nacimiento</string>
+    <string name="pendientes_header">Pendientes</string>
+    <string name="aceptados_header">Aceptados</string>
+    <string name="title_activity_upload">Subidos</string>
+    <string name="nav_modified">Editados</string>
+    <string name="rechazados_header">Rechazados</string>
+    <string name="image_front">Frontal</string>
+    <string name="image_ingredients">Ingredientes</string>
+    <string name="image_nutrients">Nutrientes</string>
+    <string name="consulta">Consulta</string>
+
+</resources>
