@@ -35,6 +35,10 @@ public class Product implements Serializable {
     private String ingredients_text;
     //Aditivos
     private List<String> additives_tags;
+    //Alergenos
+    private String allergens_from_user;
+    //Trazas
+    private String traces_from_user;
 
     public String getProduct_name() {
         return product_name;
@@ -154,5 +158,21 @@ public class Product implements Serializable {
 
     public void setAdditives_tags(List<String> additives_tags) {
         this.additives_tags = additives_tags;
+    }
+
+    public String getAllergens() {
+        return allergens_from_user;
+    }
+
+    public void setAllergens_from_user(String allergens_from_user) {
+        this.allergens_from_user = allergens_from_user;
+    }
+
+    public String getTraces() {
+        return traces_from_user;
+    }
+
+    public void setTraces_from_user(String traces_from_user) {
+        this.traces_from_user = traces_from_user;
     }
 }

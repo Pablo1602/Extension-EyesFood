@@ -54,11 +54,16 @@ public class NewFoodBody implements Serializable {
     private String date;
     @SerializedName("estadoAlimento")
     private String estado;
+    @SerializedName("alergenos")
+    private String allergy;
+    @SerializedName("trazas")
+    private String trace;
 
     public NewFoodBody(String userId, String barcode, String name, String product, String brand, String content,
                        String portion, String portionUnit, String energy, String protein, String totalFat,
                        String saturatedFat, String monoFat, String poliFat, String transFat, String cholesterol,
-                       String carbo, String totalSugar, String fyber, String sodium, String ingredients, String date, String estadoAlimento) {
+                       String carbo, String totalSugar, String fyber, String sodium, String ingredients, String date,
+                       String estadoAlimento, String allergy, String trace) {
         this.userId = userId;
         this.barcode = barcode;
         this.name = name;
@@ -82,6 +87,8 @@ public class NewFoodBody implements Serializable {
         this.ingredients = ingredients;
         this.date = date;
         this.estado = estadoAlimento;
+        this.allergy = allergy;
+        this.trace = trace;
     }
 
     public NewFoodBody(String codigo) {
@@ -270,6 +277,22 @@ public class NewFoodBody implements Serializable {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public String getAllergens() {
+        return allergy;
+    }
+
+    public void setAllergens(String allergy) {
+        this.allergy = allergy;
+    }
+
+    public String getTraces() {
+        return trace;
+    }
+
+    public void setTraces(String trace) {
+        this.trace = trace;
     }
 
     @Override

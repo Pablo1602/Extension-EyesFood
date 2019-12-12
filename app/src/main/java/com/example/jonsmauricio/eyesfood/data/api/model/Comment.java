@@ -23,9 +23,11 @@ public class Comment implements Serializable {
     private String borrar;
     @SerializedName("referencia")
     private String referencia;
+    @SerializedName("idRespuesta")
+    private String idRespuesta;
 
 
-    public Comment(String id, String idColaborador, String colaborador, String comment, String date, String borrar, String referencia) {
+    public Comment(String id, String idColaborador, String colaborador, String comment, String date, String borrar, String referencia, String idRespuesta) {
         this.id = id;
         this.idColaborador = idColaborador;
         this.colaborador = colaborador;
@@ -33,6 +35,7 @@ public class Comment implements Serializable {
         this.date = date;
         this.borrar = borrar;
         this.referencia = referencia;
+        this.idRespuesta = idRespuesta;
     }
 
     public String getId() {
@@ -60,6 +63,8 @@ public class Comment implements Serializable {
     }
 
     public String getReferencia() {
-        return borrar;
+        return referencia;
     }
+
+    public String getidRespuesta() {return idRespuesta;}
 }

@@ -1,8 +1,10 @@
 package com.example.jonsmauricio.eyesfood.ui;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -10,6 +12,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -142,6 +145,15 @@ public class ResponseActivity extends AppCompatActivity {
             setTitle(comentario.getComment());
         }
 
+        listaRespuestas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Comment currentResponse = adaptadorComments.getItem(i);
+                if(currentResponse.getColaborador().equals(userIdFinal)){
+                    showDialog(Integer.parseInt(userIdFinal), currentResponse);
+                }
+            }
+        });
 
         enviarRespuesta.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,6 +170,75 @@ public class ResponseActivity extends AppCompatActivity {
             }
 
         });
+    }
+
+    private void showDialog(final int id, final Comment comment) {
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        final EditText edittext = new EditText(this);
+
+        alert.setTitle("Comentario");
+        edittext.setText(comment.getComment());
+        alert.setView(edittext);
+
+        alert.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                String newComment = edittext.getText().toString();
+                editResponse(idComentario, comment, newComment);
+            }
+        });
+        alert.setNegativeButton("Borrar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                deleteResponse(idComentario, comment);
+            }
+        });
+
+        alert.setNeutralButton("Cancelar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                // what ever you want to do with No option.
+            }
+        });
+
+        alert.show();
+    }
+
+    public void deleteResponse(final int idComentario, final Comment currentComment){
+        Call<Comment> call = mCommentsApi.deleteComment(Integer.parseInt(currentComment.getId()));
+        call.enqueue((new Callback<Comment>() {
+            @Override
+            public void onResponse(Call<Comment> call, Response<Comment> response) {
+                if(!response.isSuccessful()){
+                }
+                Toast.makeText(getApplicationContext(), "Se borro el comentario", Toast.LENGTH_LONG).show();
+                loadResponses(idComentario);
+
+            }
+
+            @Override
+            public void onFailure(Call<Comment> call, Throwable t) {
+
+            }
+        }));
+    }
+
+    public void editResponse(final int idComentario, final Comment currentComment, String newComment){
+        CommentBody body = new CommentBody(currentComment.getColaborador(), currentComment.getIdColaborador(), newComment);
+        Call<Comment> call = mCommentsApi.modifyResponse(body, Integer.parseInt(currentComment.getidRespuesta()));
+        call.enqueue((new Callback<Comment>() {
+            @Override
+            public void onResponse(Call<Comment> call, Response<Comment> response) {
+                if(!response.isSuccessful()){
+                    Log.d("myTag","Fallo en la API "+response.message());
+                }
+                Toast.makeText(getApplicationContext(), "Se edito el comentario", Toast.LENGTH_LONG).show();
+                loadResponses(idComentario);
+
+            }
+
+            @Override
+            public void onFailure(Call<Comment> call, Throwable t) {
+                Log.d("Falla", t.getMessage());
+            }
+        }));
     }
 
     public void showListResponses(List<Comment> lista){
@@ -235,9 +316,9 @@ public class ResponseActivity extends AppCompatActivity {
         return true;
     }*/
 
-    public void loadComments(String barcode) {
+    public void loadResponses(String barcode) {
         // idContexto = 1 -> alimento
-        Call<List<Comment>> call = mCommentsApi.getComments(1, barcode);
+        Call<List<Comment>> call = mCommentsApi.getResponses(Integer.parseInt(barcode));
         call.enqueue(new Callback<List<Comment>>() {
             @Override
             public void onResponse(Call<List<Comment>> call,

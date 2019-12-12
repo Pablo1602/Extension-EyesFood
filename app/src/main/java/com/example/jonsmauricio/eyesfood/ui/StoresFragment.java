@@ -85,7 +85,7 @@ public class StoresFragment extends DialogFragment {
             menu = bundle.getInt("Menu");
             Log.d("myTag2","Menu = "+menu);
             if (menu==1){
-                retrieveStores();
+                retrieveStoresN();
             //Si es 2, se accede solo a los stores que tengan el barcode
             }else{
                 barcode = bundle.getString("barcode");
@@ -116,7 +116,7 @@ public class StoresFragment extends DialogFragment {
         });
     }
 
-    private void retrieveStores() {
+    private void retrieveStoresN() {
         Call<List<Store>> call = mEyesFoodApi.getStores();
         call.enqueue(new Callback<List<Store>>() {
             @Override

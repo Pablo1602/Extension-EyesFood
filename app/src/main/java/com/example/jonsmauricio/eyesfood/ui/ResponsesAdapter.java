@@ -41,7 +41,6 @@ public class ResponsesAdapter extends ArrayAdapter<Comment> {
     private EyesFoodApi mEyesFoodApi;
     private CommentsApi mCommentsApi;
     private String userIdFinal;
-    int mostrarBoton;
 
     public ResponsesAdapter(Context context, List<Comment> objects, int mostrarBoton)  {
         super(context, 0, objects);
@@ -83,12 +82,7 @@ public class ResponsesAdapter extends ArrayAdapter<Comment> {
         final TextView comment = convertView.findViewById(R.id.tvCommentsComment);
         final TextView date = convertView.findViewById(R.id.tvCommentsDate);
         final RatingBar ratingBar = convertView.findViewById(R.id.rbCommentsRating);
-        final Button boton = convertView.findViewById(R.id.btResponse);
-        final Button delete = convertView.findViewById(R.id.btDelete);
 
-        if(mostrarBoton == 0){
-            boton.setVisibility(convertView.GONE);
-        }
 
         // Comentario actual.
         final Comment currentComment = getItem(position);
@@ -121,34 +115,6 @@ public class ResponsesAdapter extends ArrayAdapter<Comment> {
 
                          }
                      });
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                deleteResponse(currentComment);
-            }
-        });
-
-        if(currentComment.getId() != userIdFinal){
-            delete.setVisibility(convertView.GONE);
-        }
         return convertView;
-    }
-
-    public void deleteResponse(final Comment currentComment){
-        Call<Comment> call = mCommentsApi.deleteResponse(Integer.parseInt(currentComment.getId()));
-        call.enqueue((new Callback<Comment>() {
-            @Override
-            public void onResponse(Call<Comment> call, Response<Comment> response) {
-                if(!response.isSuccessful()){
-                    Toast.makeText(getContext(), "Se borro el comentario", Toast.LENGTH_LONG).show();
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<Comment> call, Throwable t) {
-
-            }
-        }));
     }
 }

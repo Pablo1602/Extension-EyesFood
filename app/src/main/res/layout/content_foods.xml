@@ -350,6 +350,39 @@ android:paddingTop="24dp">
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/card_margin">
+
+    <LinearLayout
+        style="@style/Widget.CardContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!--Etiqueta ingredientes -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alergenos"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:paddingBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/tvFoodsInfoGeneralAllergy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/foods_info_general_allergy"/>
+
+        <TextView
+            android:id="@+id/tvFoodsInfoGeneralTrace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvFoodsInfoGeneralAllergy"
+            android:text="@string/foods_info_general_trace" />
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btFoodsStores"
         android:layout_width="match_parent"

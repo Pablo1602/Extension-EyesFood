@@ -52,14 +52,14 @@ public class ComplaintDialogFragment extends DialogFragment {
 
     EditText etNombre, etProducto, etMarca, etNeto, etPorcion, etEnergia, etProteinas, etGrasaTotal,
             etGrasaSat, etGrasaMono, etGrasaPoli, etGrasaTrans, etColesterol, etHidratos, etAzucares, etFibra, etSodio,
-            etIngredientes;
+            etIngredientes, etAlergenos, etTrazas;
 
     TextInputLayout tilNombre, tilProducto, tilMarca, tilNeto, tilPorcion, tilEnergia, tilProteinas,
             tilGrasaTotal, tilGrasaSat, tilGrasaMono, tilGrasaPoli, tilGrasaTrans, tilColesterol, tilHidratos, tilAzucares,
             tilFibra, tilSodio;
 
     String Nombre, Producto, Marca, Porcion, Ingredientes, Neto, Energia, Proteinas, GrasaTotal, GrasaSat,
-            GrasaMono, GrasaPoli, GrasaTrans, Colesterol, Hidratos, Azucares, Fibra, Sodio;
+            GrasaMono, GrasaPoli, GrasaTrans, Colesterol, Hidratos, Azucares, Fibra, Sodio, Alergenos, Trazas;
 
     String Date = "";
 
@@ -206,7 +206,11 @@ public class ComplaintDialogFragment extends DialogFragment {
         //tilSodio.setHint(tilSodio.getHint() + " " + setFactsFloat(Alimento.getSodium()));
 
         etIngredientes = getView().findViewById(R.id.etNewFoodsIngredients);
+        etAlergenos = getView().findViewById(R.id.etNewFoodsAllergens);
+        etTrazas = getView().findViewById(R.id.etNewFoodsTraces);
         etIngredientes.setText(product.getIngredients_text());
+        etAlergenos.setText(product.getAllergens());
+        etTrazas.setText(product.getTraces());
         userIdFinal = SessionPrefs.get(getContext()).getUserId();
     }
 
@@ -226,6 +230,9 @@ public class ComplaintDialogFragment extends DialogFragment {
     }
 
     public String setFactsString(String contenido){
+        if(contenido == null){
+            return "*";
+        }
         if(contenido.equals("-1")){
             return "*";
         }
@@ -286,13 +293,15 @@ public class ComplaintDialogFragment extends DialogFragment {
             Sodio = etSodio.getText().toString();
 
             Ingredientes = etIngredientes.getText().toString();
+            Alergenos = etAlergenos.getText().toString();
+            Trazas = etTrazas.getText().toString();
 
             //Esta comprobación es la adecuada
             if(Nombre.equals("") && Producto.equals("") && Marca.equals("") && Neto.equals("") && Porcion.equals("") &&
                     Energia.equals("") && Proteinas.equals("") && GrasaTotal.equals("") &&
                     GrasaSat.equals("") && GrasaMono.equals("") && GrasaPoli.equals("") && GrasaTrans.equals("") &&
                     Colesterol.equals("") && Hidratos.equals("") && Azucares.equals("") && Fibra.equals("") && Sodio.equals("")
-                    && Ingredientes.equals("")){
+                    && Ingredientes.equals("") && Alergenos.equals("") && Trazas.equals("")){
                 showEmptyComplaintDialog();
             }
             else{
@@ -310,7 +319,7 @@ public class ComplaintDialogFragment extends DialogFragment {
     public void sendComplaint(){
         Call<Food> call = mEyesFoodApi.newFoodComplaint(new NewFoodBody(userIdFinal, barCode, Nombre, Producto, Marca,
                 Neto, Porcion, "", Energia, Proteinas, GrasaTotal, GrasaSat, GrasaMono, GrasaPoli, GrasaTrans,
-                Colesterol, Hidratos, Azucares, Fibra, Sodio, Ingredientes, Date, "2"));
+                Colesterol, Hidratos, Azucares, Fibra, Sodio, Ingredientes, Date, "2", Alergenos, Trazas));
         call.enqueue(new Callback<Food>() {
             @Override
             public void onResponse(Call<Food> call, Response<Food> response) {

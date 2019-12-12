@@ -43,17 +43,22 @@ public class SearchActivity extends AppCompatActivity {
     EyesFoodApi mEyesFoodApi;
     OpenFoodFactsApi mOpenFoodApi;
     private List<Food> resultadoAlimentos;
+    private List<Food> resultadoAlergenos;
     private List<Additive> resultadoAditivos;
     private ListView resultFoods;
+    private ListView resultAllergy;
     private ListView resultAdditives;
     private ArrayAdapter<Food> adaptadorFoods;
+    private ArrayAdapter<Food> adaptadorAllergy;
     private ArrayAdapter<Additive> adaptadorAdditives;
     private View searchProgress;
     TextView searchProgressText;
     TextView searchEmptyState;
     TextView searchFoodsHeader;
+    TextView searchAllergyHeader;
     TextView searchAdditivesHeader;
     boolean noFoods;
+    boolean noAllergy;
     boolean noAdditives;
     private ShortFood shortFood;
     private String userIdFinal;
@@ -69,11 +74,13 @@ public class SearchActivity extends AppCompatActivity {
 
         searchView = (MaterialSearchView) findViewById(R.id.search_view_search);
         resultFoods = (ListView) findViewById(R.id.lvResultPendientes);
+        resultAllergy = (ListView) findViewById(R.id.lvResultAllergy);
         resultAdditives = (ListView) findViewById(R.id.lvResultAdditives);
         searchProgress = findViewById(R.id.pbSearchProgress);
         searchProgressText = (TextView) findViewById(R.id.tvSearchProgressText);
         searchEmptyState = (TextView) findViewById(R.id.tvSearchEmptyState);
         searchFoodsHeader = (TextView) findViewById(R.id.tvPendientesHeader);
+        searchAllergyHeader = (TextView) findViewById(R.id.tvAllergyHeader);
         searchAdditivesHeader = (TextView) findViewById(R.id.tvAceptadosHeader);
 
         userIdFinal = SessionPrefs.get(this).getUserId();
@@ -104,6 +111,14 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
+        resultAllergy.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Food currentSearch = adaptadorAllergy.getItem(position);
+                isFoodInHistory(userIdFinal, currentSearch.getBarCode(), currentSearch);
+            }
+        });
+
         resultAdditives.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
@@ -122,6 +137,7 @@ public class SearchActivity extends AppCompatActivity {
             showProgress(true);
             query = (String) b.get("query");
             makeQueryFoods(query);
+            makeQueryAllergy(query);
             makeQueryAdditives(query);
         }
     }
@@ -138,6 +154,34 @@ public class SearchActivity extends AppCompatActivity {
                 }
                 resultadoAlimentos = response.body();
                 showListFoods(resultadoAlimentos);
+            }
+
+            @Override
+            public void onFailure(Call<List<Food>> call, Throwable t) {
+                Log.d("myTag", "Falla en la llamada de aditivos: loadAdditives");
+            }
+        });
+    }
+
+    public void makeQueryAllergy(String query){
+        String alergeno = query.toLowerCase();
+        if (alergeno.indexOf("leche") > 0 || alergeno.indexOf("lactosa") > 0){
+            alergeno = "leche";
+        }
+        if (alergeno.indexOf("gluten") > 0 || alergeno.indexOf("celiaca") > 0){
+            alergeno = "gluten";
+        }
+        Call<List<Food>> call = mEyesFoodApi.getAllergyQuery(alergeno);
+        call.enqueue(new Callback<List<Food>>() {
+            @Override
+            public void onResponse(Call<List<Food>> call,
+                                   Response<List<Food>> response) {
+                if (!response.isSuccessful()) {
+                    Log.d("myTag", "Falla en la llamada de Foods: makeQueryFoods" + response.message());
+                    return;
+                }
+                resultadoAlergenos = response.body();
+                showListFoodsAllergy(resultadoAlergenos);
             }
 
             @Override
@@ -170,6 +214,8 @@ public class SearchActivity extends AppCompatActivity {
         });*/
     }
 
+
+
     public void showListFoods(List<Food> lista){
         int tamanoLista = lista.size();
         //Log.d("myTag", "tamano Lista" + lista.size());
@@ -183,6 +229,22 @@ public class SearchActivity extends AppCompatActivity {
         }
         else{
             noFoods = true;
+        }
+    }
+
+    public void showListFoodsAllergy(List<Food> lista){
+        int tamanoLista = lista.size();
+        //Log.d("myTag", "tamano Lista" + lista.size());
+        if(tamanoLista > 0) {
+            noAllergy = false;
+            adaptadorAllergy = new ArrayAdapter<>(
+                    this,
+                    android.R.layout.simple_list_item_1,
+                    lista);
+            resultAllergy.setAdapter(adaptadorAllergy);
+        }
+        else{
+            noAllergy = true;
         }
     }
 
@@ -218,8 +280,8 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 //Vacío la lista anterior seteo el empty state y el progress antes de hacer la query
-                resultadoAlimentos.clear();
-                resultadoAditivos.clear();
+                //resultadoAlimentos.clear();
+                //resultadoAditivos.clear();
                 showProgress(true);
                 makeQueryFoods(query);
                 makeQueryAdditives(query);

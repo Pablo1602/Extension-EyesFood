@@ -1,5 +1,6 @@
 package com.example.jonsmauricio.eyesfood.data.api;
 
+import com.example.jonsmauricio.eyesfood.data.api.model.Allergy;
 import com.example.jonsmauricio.eyesfood.data.api.model.EditMeasureBody;
 import com.example.jonsmauricio.eyesfood.data.api.model.InsertMeasureBody;
 import com.example.jonsmauricio.eyesfood.data.api.model.Measure;
@@ -106,4 +107,12 @@ public interface UserDataApi {
 
     @POST("measures/pressure")
     Call<Measure> insertPressure(@Body InsertMeasureBody insertMeasureBody);
+
+    //Devolver alergias
+    @GET("allergy/{userId}")
+    Call<Allergy> getAllergy(@Path("userId") String userId);
+
+    //Actualizar alergias
+    @POST("allergy")
+    Call<Allergy> modifyAllergy(@Body Allergy allergy);
 }

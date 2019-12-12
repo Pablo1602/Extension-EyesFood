@@ -181,6 +181,9 @@ public class ProfileFragment extends Fragment {
                 case 1:
                     TabSpecific tabSpecific = new TabSpecific();
                     return tabSpecific;
+                case 2:
+                    TabAllergy tabAllergy = new TabAllergy();
+                    return tabAllergy;
             }
             return null;
         }
@@ -188,7 +191,7 @@ public class ProfileFragment extends Fragment {
         @Override
         public int getCount() {
             // Show 2 total pages.
-            return 2;
+            return 3;
         }
 
         @Override
@@ -198,6 +201,8 @@ public class ProfileFragment extends Fragment {
                     return "GENERAL";
                 case 1:
                     return "ESPECÍFICO";
+                case 2:
+                    return "ALERGIAS";
             }
             return null;
         }

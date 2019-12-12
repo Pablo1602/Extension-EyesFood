@@ -147,6 +147,10 @@ public interface EyesFoodApi {
     @GET("search/foods/{query}")
     Call<List<Food>> getFoodsQuery(@Path("query") String query);
 
+    //Petición que retorna alimentos desde una búsqueda
+    @GET("search/noallergy/{query}")
+    Call<List<Food>> getAllergyQuery(@Path("query") String query);
+
     //Petición que retorna aditivos desde una búsqueda
     @GET("search/additives/{query}")
     Call<List<Additive>> getAdditivesQuery(@Path("query") String query);

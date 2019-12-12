@@ -66,6 +66,8 @@
     <string name="foods_info_general_codigo">Código de barras: </string>
     <string name="foods_info_general_marca">Marca: </string>
     <string name="foods_info_general_neto">Contenido neto: </string>
+    <string name="foods_info_general_allergy">Alergenos: </string>
+    <string name="foods_info_general_trace">Trazas: </string>
     <string name="foods_info_general_fecha">Última actualización: </string>
 
     <string name="foods_title_info_nutricional">Información nutricional</string>
@@ -113,6 +115,7 @@
     <string name="search_progress_text">Buscando...</string>
     <string name="search_empty_state">Lo sentimos, no se encontraron resultados</string>
     <string name="search_foods_header">Alimentos</string>
+    <string name="search_allergy_header">Alergenos</string>
     <string name="search_additives_header">Aditivos</string>
     <string name="title_activity_additive">Aditivo</string>
 
@@ -121,6 +124,9 @@
     <string name="new_foods_title_info_nutricional">Información nutricional por 100g</string>
     <string name="new_foods_info_nutricional_hidratos">Hidratos de carbono disponibles (g)</string>
     <string name="new_foods_ingredients">Ingredientes: </string>
+    <string name="new_foods_allergens">Alergenos: </string>
+    <string name="new_foods_traces">Trazas: </string>
+
 
     <string name="title_new_foods_question">El producto aún no está agregado</string>
     <string name="title_new_consult_question">Nueva consulta</string>

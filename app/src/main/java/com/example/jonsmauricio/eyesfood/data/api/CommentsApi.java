@@ -9,6 +9,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 
@@ -43,4 +44,14 @@ public interface CommentsApi {
     //Peticion que cuenta los alimentos en el historial
     @GET("comments/countHistory/{codigo}")
     Call<Counter> getCommentsCount(@Path("codigo") String codigo);
+
+    //Actualiza comentario
+    @Headers("Content-Type: application/json")
+    @POST("comments/editar/{idComentario}")
+    Call<Comment> modifyComment(@Body CommentBody commentBody, @Path("idComentario") int idComentario);
+
+    //Actualiza respuesta
+    @Headers("Content-Type: application/json")
+    @POST("comments/editar/respuesta/{idRespuesta}")
+    Call<Comment> modifyResponse(@Body CommentBody commentBody, @Path("idRespuesta") int idRespuesta);
 }

@@ -54,11 +54,6 @@ public class CommentsAdapter extends ArrayAdapter<Comment>{
     //private Comment Comentario;
 
 
-    private ItemClickListener clickListener;
-    public void setClickListener(ItemClickListener itemClickListener) {
-        this.clickListener = itemClickListener;
-    }
-
     public CommentsAdapter(CommentsActivity context, List<Comment> objects) {
         super(context, 0, objects);
     }
@@ -102,7 +97,6 @@ public class CommentsAdapter extends ArrayAdapter<Comment>{
         final TextView date = convertView.findViewById(R.id.tvCommentsDate);
         final RatingBar ratingBar = convertView.findViewById(R.id.rbCommentsRating);
         final Button response = convertView.findViewById(R.id.btResponse);
-        final Button delete = convertView.findViewById(R.id.btDelete);
 
         // Comentario actual.
         final Comment currentComment = getItem(position);
@@ -128,6 +122,7 @@ public class CommentsAdapter extends ArrayAdapter<Comment>{
                              ratingBar.setRating(Float.parseFloat(user.getReputation()));
                              comment.setText(currentComment.getComment());
                              date.setText(currentComment.getDate());
+
                          }
 
                          @Override
@@ -136,6 +131,7 @@ public class CommentsAdapter extends ArrayAdapter<Comment>{
                          }
                      });
 
+
         response.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -143,37 +139,9 @@ public class CommentsAdapter extends ArrayAdapter<Comment>{
             }
         });
 
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                deleteComment(currentComment);
-            }
-        });
-
-        if(currentComment.getId() != userIdFinal){
-            delete.setVisibility(convertView.GONE);
-        }
-
-
         return convertView;
     }
-    public void deleteComment(final Comment currentComment){
-        Call<Comment> call = mCommentsApi.deleteComment(Integer.parseInt(currentComment.getId()));
-        call.enqueue((new Callback<Comment>() {
-            @Override
-            public void onResponse(Call<Comment> call, Response<Comment> response) {
-                if(!response.isSuccessful()){
-                    Toast.makeText(getContext(), "Se borro el comentario", Toast.LENGTH_LONG).show();
-                }
 
-            }
-
-            @Override
-            public void onFailure(Call<Comment> call, Throwable t) {
-
-            }
-        }));
-    }
 
     //Carga los comentarios del alimento
     public void loadResponses(final Comment currentComment) {

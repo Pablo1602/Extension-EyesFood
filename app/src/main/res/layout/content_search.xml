@@ -28,6 +28,25 @@
         android:layout_below="@+id/tvPendientesHeader">
     </ListView>
 
+    <TextView
+        android:id="@+id/tvAllergyHeader"
+        style="@style/Base.TextAppearance.AppCompat.Widget.PopupMenu.Header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_allergy_header"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_below="@id/lvResultPendientes"/>
+
+    <ListView
+        android:id="@+id/lvResultAllergy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAllergyHeader">
+    </ListView>
+
    <TextView
         android:id="@+id/tvAceptadosHeader"
         style="@style/Base.TextAppearance.AppCompat.Widget.PopupMenu.Header"
@@ -38,7 +57,7 @@
         android:paddingRight="16dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
-       android:layout_below="@id/lvResultPendientes"/>
+        android:layout_below="@id/lvResultAllergy"/>
 
     <ListView
         android:id="@+id/lvResultAdditives"

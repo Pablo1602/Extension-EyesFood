@@ -67,19 +67,12 @@
         android:layout_below="@+id/tvCommentsComment"
         android:layout_alignParentRight="true"
         android:orientation="horizontal">
-    <Button
-        android:id="@+id/btDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvCommentsComment"
-        android:layout_alignParentRight="true"
-        android:layout_toStartOf="@+id/btResponse"
-        android:text="Borrar"
-        android:textAppearance="?attr/textAppearanceListItem"
-        tools:textSize="12dp" />
 
-    <Button
+
+    <android.support.v7.widget.AppCompatButton
         android:id="@+id/btResponse"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvCommentsComment"
@@ -87,6 +80,9 @@
         android:layout_marginLeft="0dp"
         android:textAppearance="?attr/textAppearanceListItem"
         android:text="Responder"
-        tools:textSize="12dp" />
+        tools:textSize="12dp"
+        style="@style/RaisedButton"/>
+
+
     </android.support.v7.widget.LinearLayoutCompat>
 </RelativeLayout>

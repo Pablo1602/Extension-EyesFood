@@ -50,10 +50,10 @@ public class NewFoodsDialogFragment extends DialogFragment {
 
     EditText etNombre, etProducto, etMarca, etNeto, etPorcion, etPorcionUnit, etEnergia, etProteinas, etGrasaTotal,
             etGrasaSat, etGrasaMono, etGrasaPoli, etGrasaTrans, etColesterol, etHidratos, etAzucares, etFibra, etSodio,
-            etIngredientes;
+            etIngredientes, etAlergenos, etTrazas;
 
     String Nombre, Producto, Marca, Porcion, PorcionUnit, Ingredientes, Neto, Energia, Proteinas, GrasaTotal, GrasaSat,
-            GrasaMono, GrasaPoli, GrasaTrans, Colesterol, Hidratos, Azucares, Fibra, Sodio;
+            GrasaMono, GrasaPoli, GrasaTrans, Colesterol, Hidratos, Azucares, Fibra, Sodio, Alergenos, Trazas;
 
     String Date = "";
 
@@ -128,6 +128,8 @@ public class NewFoodsDialogFragment extends DialogFragment {
         etSodio = getView().findViewById(R.id.etNewFoodsInfoNutricionalSodio);
 
         etIngredientes = getView().findViewById(R.id.etNewFoodsIngredients);
+        etAlergenos = getView().findViewById(R.id.etNewFoodsAllergens);
+        etTrazas = getView().findViewById(R.id.etNewFoodsTraces);
 
         userIdFinal = SessionPrefs.get(getContext()).getUserId();
 
@@ -188,13 +190,15 @@ public class NewFoodsDialogFragment extends DialogFragment {
             Sodio = etSodio.getText().toString();
 
             Ingredientes = etIngredientes.getText().toString();
+            Alergenos = etAlergenos.getText().toString();
+            Trazas = etTrazas.getText().toString();
 
             //Esta comprobación es la adecuada
             if(Nombre.equals("") && Producto.equals("") && Marca.equals("") && Neto.equals("") && Porcion.equals("") &&
                     PorcionUnit.equals("") && Energia.equals("") && Proteinas.equals("") && GrasaTotal.equals("") &&
                     GrasaSat.equals("") && GrasaMono.equals("") && GrasaPoli.equals("") && GrasaTrans.equals("") &&
                     Colesterol.equals("") && Hidratos.equals("") && Azucares.equals("") && Fibra.equals("") && Sodio.equals("")
-                    && Ingredientes.equals("")){
+                    && Ingredientes.equals("")  && Alergenos.equals("") && Trazas.equals("")){
                 showEmptySolitudeDialog();
             }
             else{
@@ -212,7 +216,7 @@ public class NewFoodsDialogFragment extends DialogFragment {
     public void sendSolitude(){
         Call<Food> call = mEyesFoodApi.newFoodSolitude(new NewFoodBody(userIdFinal, barCode, Nombre, Producto, Marca,
                 Neto, Porcion, PorcionUnit, Energia, Proteinas, GrasaTotal, GrasaSat, GrasaMono, GrasaPoli, GrasaTrans,
-                Colesterol, Hidratos, Azucares, Fibra, Sodio, Ingredientes, Date, "2"));
+                Colesterol, Hidratos, Azucares, Fibra, Sodio, Ingredientes, Date, "2", Alergenos, Trazas));
         call.enqueue(new Callback<Food>() {
             @Override
             public void onResponse(Call<Food> call, Response<Food> response) {

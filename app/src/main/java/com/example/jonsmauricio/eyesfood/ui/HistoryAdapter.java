@@ -473,7 +473,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
 
-                // Crear conexión a la API de EyesFood
+                // Crear conexión a la API de OpenFoodFacts
                 mOpenFoodFacts = mRestAdapter2.create(OpenFoodFactsApi.class);
                 final Food resultado = response.body();
                 //Muestro el alimento
@@ -531,7 +531,6 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
 
     public void showComments(Food alimento, List<Comment> lista, int like, Product product){
         Intent intent = new Intent(context, CommentsActivity.class);
-        Log.d("myTag", "Desde HistoryAdapter Contexto:"+String.valueOf(Contexto));
         Bundle args = new Bundle();
         args.putSerializable("Comentarios",(Serializable) lista);
         intent.putExtra("BUNDLE",args);

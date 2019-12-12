@@ -345,6 +345,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
                         showProgress(false);
                         String error = "Ha ocurrido un error. Contacte al administrador";
                         //errorBody: El contenido plano de una respuesta con error
+                        Log.d("LoginActivity", "Error:"+response.message());
                         if (response.errorBody()
                                 .contentType()
                                 .subtype()

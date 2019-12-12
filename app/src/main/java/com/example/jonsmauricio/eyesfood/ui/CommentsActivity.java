@@ -1,6 +1,7 @@
 package com.example.jonsmauricio.eyesfood.ui;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.service.textservice.SpellCheckerService;
@@ -9,6 +10,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.NavUtils;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -82,7 +84,7 @@ public class CommentsActivity extends AppCompatActivity {
     CommentsApi mCommentsApi;
 
 
-    final String baseFotoUsuario = EyesFoodApi.BASE_URL+"img/users/";
+    final String baseFotoUsuario = EyesFoodApi.BASE_URL + "img/users/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,22 +104,19 @@ public class CommentsActivity extends AppCompatActivity {
         enviarComentario = (ImageButton) findViewById(R.id.btCommentsSend);
         userAvatar = (ImageView) findViewById(R.id.ivCommentsActivityAvatar);
         emptyState = (TextView) findViewById(R.id.tvCommentsEmptyState);
-        //contestar = (Button) findViewById(R.id.btResponse);
 
         Intent i = getIntent();
         Bundle b = i.getExtras();
 
         //Cargo avatar de usuario actual
-        if(session.equals("EyesFood")) {
+        if (session.equals("EyesFood")) {
             Picasso.with(this).load(baseFotoUsuario + userPhoto).resize(800, 800).into(userAvatar);
-        }
-        else{
+        } else {
             Picasso.with(this).load(userPhoto).resize(800, 800).into(userAvatar);
         }
 
         Bundle args = i.getBundleExtra("BUNDLE");
         comentarios = (List<Comment>) args.getSerializable("Comentarios");
-        showListComments(comentarios);
 
         // Crear conexión al servicio REST
         mRestAdapter = new Retrofit.Builder()
@@ -139,10 +138,9 @@ public class CommentsActivity extends AppCompatActivity {
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
-                if(!response.isSuccessful()){
+                if (!response.isSuccessful()) {
 
-                }
-                else{
+                } else {
                     Usuario = response.body();
                     userRolFinal = Usuario.getRol();
                 }
@@ -154,46 +152,118 @@ public class CommentsActivity extends AppCompatActivity {
             }
         });
 
-        if(b != null){
+        if (b != null) {
             Alimento = (Food) b.get("Alimento");
             Experto = (Expert) b.get("Experto");
-            if(Alimento != null){
+            if (Alimento != null) {
                 product = (Product) b.get("Product");
                 MeGusta = (int) b.get("MeGusta");
                 setTitle(Alimento.getFoodName());
                 Referencia = Alimento.getBarCode();
                 Contexto = 1;
-            }
-            else if(Experto != null){
+            } else if (Experto != null) {
                 setTitle(Experto.getName());
                 Referencia = Integer.toString(Experto.getExpertId());
                 Contexto = 2;
             }
         }
 
-
-        /*contestar.setOnClickListener(new View.OnClickListener() {
+        listaComentarios.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Row was clicked!" + view.getId(), Toast.LENGTH_SHORT).show();
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Comment currentComment = adaptadorComments.getItem(i);
+                if(currentComment.getColaborador().equals(userIdFinal)){
+                    showDialog(Integer.parseInt(userIdFinal), currentComment);
+                }
             }
-        });*/
+        });
 
         enviarComentario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!comentario.getText().toString().equals("")){
+                if (!comentario.getText().toString().equals("")) {
                     sendComment(Contexto, Referencia, comentario.getText().toString());
                     comentario.setText("");
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.toggleSoftInput (InputMethodManager.SHOW_FORCED, 0);
-                }
-                else{
+                    imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+                } else {
                     Toast.makeText(getApplicationContext(), "Parece que no has ingresado ningún comentario", Toast.LENGTH_LONG).show();
                 }
             }
 
         });
+        showListComments(comentarios);
+    }
+
+    private void showDialog(final int id, final Comment comment) {
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        final EditText edittext = new EditText(this);
+        //final EditText edittext = new EditText(getActivity());
+        //edittext.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+
+        alert.setTitle("Comentario");
+        edittext.setText(comment.getComment());
+        alert.setView(edittext);
+
+        alert.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                String newComment = edittext.getText().toString();
+                editComment(comment, newComment);
+            }
+        });
+        alert.setNegativeButton("Borrar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                deleteComment(comment);
+            }
+        });
+        alert.setNeutralButton("Cancelar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                // what ever you want to do with No option.
+            }
+        });
+
+        alert.show();
+    }
+
+    public void deleteComment(final Comment currentComment){
+        Call<Comment> call = mCommentsApi.deleteComment(Integer.parseInt(currentComment.getId()));
+        call.enqueue((new Callback<Comment>() {
+            @Override
+            public void onResponse(Call<Comment> call, Response<Comment> response) {
+                if(!response.isSuccessful()){
+                }
+                Toast.makeText(getApplicationContext(), "Se borro el comentario", Toast.LENGTH_LONG).show();
+                loadComments(Referencia);
+
+            }
+
+            @Override
+            public void onFailure(Call<Comment> call, Throwable t) {
+
+            }
+        }));
+    }
+
+    public void editComment(final Comment currentComment, String newComment){
+        CommentBody body = new CommentBody(currentComment.getColaborador(), currentComment.getIdColaborador(), newComment);
+        Call<Comment> call = mCommentsApi.modifyComment(body, Integer.parseInt(currentComment.getId()));
+        call.enqueue((new Callback<Comment>() {
+            @Override
+            public void onResponse(Call<Comment> call, Response<Comment> response) {
+                if(!response.isSuccessful()){
+                    Log.d("myTag","Fallo en la API "+response.message());
+                }
+                Toast.makeText(getApplicationContext(), "Se edito el comentario", Toast.LENGTH_LONG).show();
+                Log.d("myTag","currentComment referencia: "+currentComment.getReferencia());
+                loadComments(Referencia);
+
+            }
+
+            @Override
+            public void onFailure(Call<Comment> call, Throwable t) {
+                Log.d("Falla", t.getMessage());
+            }
+        }));
     }
 
     public void showListComments(List<Comment> lista){
@@ -219,16 +289,15 @@ public class CommentsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Comment> call, Response<Comment> response) {
                 if (!response.isSuccessful()) {
-
+                    Log.d("myTag","Fallo en la API "+response.message());
                     return;
                 }
-                Log.d("myTag","Comentario exitoso");
+                Log.d("myTag","Comentario enviado con exito");
                 loadComments(Referencia);
             }
 
             @Override
             public void onFailure(Call<Comment> call, Throwable t) {
-                Log.d("Falla Retrofit", "Falla en new food solitude con "+t.getMessage());
                 Log.d("Falla", t.getMessage());
             }
         });
@@ -242,6 +311,7 @@ public class CommentsActivity extends AppCompatActivity {
             public void onResponse(Call<List<Comment>> call,
                                    Response<List<Comment>> response) {
                 if (!response.isSuccessful()) {
+                    Log.d("myTag","Fallo en la API "+response.message());
                     return;
                 }
                 comentarios = response.body();
@@ -250,6 +320,7 @@ public class CommentsActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Comment>> call, Throwable t) {
+                Log.d("Falla", t.getMessage());
             }
         });
     }

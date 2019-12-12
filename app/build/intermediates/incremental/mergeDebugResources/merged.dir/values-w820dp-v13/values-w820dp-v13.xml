@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="activity_horizontal_margin">64dp</dimen>
-    <string name="str_signup_date">Fecha de Nacimiento</string>
-</resources>

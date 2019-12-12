@@ -81,7 +81,7 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
 
     //Para la info general
     TextView infoGeneralNombre, infoGeneralProducto, infoGeneralCodigo, infoGeneralMarca, infoGeneralNeto,
-            infoGeneralFecha, tvIngredientes;
+            infoGeneralFecha, tvIngredientes, infoGeneralAlergenos, infoGeneralTrazas;
 
     //Para la info nutricional
     TextView porcion, porcionEnvase, energia100, energiaPorcion, proteinas100, proteinasPorcion, grasaTotal100,
@@ -115,6 +115,8 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
     private Counter dislikesCounter;
     private int dislikesCount;
     private String tipo;
+    private String alergeno;
+    private String traza;
 
     //Permissions
     private static final int PERMISSION_CODE = 123;
@@ -147,6 +149,8 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
         infoGeneralNeto = (TextView) findViewById(R.id.tvFoodsInfoGeneralNeto);
         infoGeneralFecha = (TextView) findViewById(R.id.tvFoodsInfoGeneralFecha);
         infoGeneralRating = (RatingBar) findViewById(R.id.rbFoodsRating);
+        infoGeneralAlergenos = (TextView) findViewById(R.id.tvFoodsInfoGeneralAllergy);
+        infoGeneralTrazas = (TextView) findViewById(R.id.tvFoodsInfoGeneralTrace);
 
         //Para la info nutricional
         porcion = (TextView) findViewById(R.id.tvFoodsInfoNutricionalPorcion);
@@ -274,6 +278,18 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
             infoGeneralCodigo.append(" "+pendiente.getBarcode());
             infoGeneralMarca.append(" "+pendiente.getBrand());
             infoGeneralNeto.append(" "+pendiente.getContent());
+            if (pendiente.getAllergens() == null){
+                infoGeneralAlergenos.append(" ");
+            }
+            else{
+                infoGeneralAlergenos.append(" "+pendiente.getAllergens().replace("(es)",""));
+            }
+            if (pendiente.getTraces() == null){
+                infoGeneralAlergenos.append(" ");
+            }
+            else{
+                infoGeneralAlergenos.append(" "+pendiente.getTraces().replace("(es)",""));
+            }
             //SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             //Date d = new Date(pendiente.getDate()*1000);
             infoGeneralFecha.setText("Fecha Solicitud: "+pendiente.getDate());
@@ -288,6 +304,18 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
             infoGeneralCodigo.append(" "+product.getCodigo());
             infoGeneralMarca.append(" "+product.getBrands());
             infoGeneralNeto.append(" "+product.getQuantity());
+            if (product.getAllergens() == null){
+                infoGeneralAlergenos.append(" ");
+            }
+            else{
+                infoGeneralAlergenos.append(" "+product.getAllergens().replace("(es)",""));
+            }
+            if (product.getTraces() == null){
+                infoGeneralAlergenos.append(" ");
+            }
+            else{
+                infoGeneralAlergenos.append(" "+product.getTraces().replace("(es)",""));
+            }
             SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Date d = new Date(product.getLast_modified_t()*1000);
             infoGeneralFecha.append(" "+f.format(d));

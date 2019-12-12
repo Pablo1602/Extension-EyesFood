@@ -105,7 +105,6 @@ public class ExpertsFragment extends DialogFragment {
         for (Expert expert : lista) {
             productResponseCalls.add(mEyesFoodApi.getFoodsExpert(String.valueOf(expert.getExpertId())));
         }
-        Log.d("myTag", "En show Experts ");
         for (final Call<List<Food>> call2 : productResponseCalls){
             call2.enqueue(new Callback<List<Food>>() {
                 @Override

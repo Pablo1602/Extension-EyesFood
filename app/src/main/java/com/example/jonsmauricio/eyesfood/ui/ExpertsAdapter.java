@@ -108,7 +108,6 @@ public class ExpertsAdapter extends ArrayAdapter<Expert> {
                 else {
                     commentsCounter = response.body();
                     comments = commentsCounter.getCount();
-                    Log.d("myTag", "idExperto: "+referencia+" comments: "+comments);
                     commentsCount.setText(String.valueOf(comments));
                 }
             }
