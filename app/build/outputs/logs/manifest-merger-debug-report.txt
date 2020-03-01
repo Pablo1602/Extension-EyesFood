@@ -1,821 +1,833 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:2:1-149:12
-INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:2:1-149:12
-INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:2:1-149:12
-INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:2:1-149:12
-MERGED from [com.facebook.android:facebook-android-sdk:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.42.0.aar/ca4e1a30044931613aba03843c9a3c06/AndroidManifest.xml:21:1-31:12
-MERGED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:17:1-183:12
-MERGED from [com.google.firebase:firebase-core:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-core-9.8.0.aar/b7e1a3c5bb9aa93ef2eb89cbd5e85fd1/AndroidManifest.xml:2:1-6:12
-MERGED from [com.android.support:multidex:1.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/d508955e15cdcc6378b646e2a8329d80/AndroidManifest.xml:17:1-22:12
-MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/b58760533e8fbe2d87c98b06e8a33548/AndroidManifest.xml:2:1-13:12
-MERGED from [net.gotev:uploadservice:2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/uploadservice-2.1.aar/779395c09654ffda1ad17908f29deec9/AndroidManifest.xml:2:1-23:12
-MERGED from [com.rapidapi:rapidconnect-android:0.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/rapidconnect-android-0.1.aar/6a939e67d9a15d0ffdbf8433e75e3f91/AndroidManifest.xml:2:1-17:12
-MERGED from [com.facebook.android:facebook-login:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-login-4.42.0.aar/f1c7ad1d428d11e23e1bff5d07d0bd85/AndroidManifest.xml:21:1-31:12
-MERGED from [com.facebook.android:facebook-share:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-share-4.42.0.aar/41c09db07c4d1d6ffa5a8dd8e2e54c66/AndroidManifest.xml:21:1-31:12
-MERGED from [com.facebook.android:facebook-common:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-common-4.42.0.aar/9913aafe2db572c0a618e2e8224ea3e6/AndroidManifest.xml:21:1-37:12
-MERGED from [com.android.support:design:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/7af2b27a1334c76e83f235685d2ab05b/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:appcompat-v7:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f23d904491347cab378013a8fa2742a8/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:cardview-v7:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/b7162f2e74dfa33557b3da413e661c78/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:customtabs:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/customtabs-27.0.2.aar/6f0476ee3ccd82016df8f9bc424d10e8/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/96f26928cdd2a84348e36e294b8955bf/AndroidManifest.xml:2:1-11:12
-MERGED from [com.jjoe64:graphview:4.2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/graphview-4.2.1.aar/8faa884dd7c03131d2bda066c6b765dd/AndroidManifest.xml:2:1-14:12
-MERGED from [com.google.android.gms:play-services-auth:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.8.0.aar/962de30b693d1d057d2493108e2f1326/AndroidManifest.xml:16:1-26:12
-MERGED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:16:1-34:12
-MERGED from [com.google.android.gms:play-services-auth-base:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-9.8.0.aar/471235349427a83e53ad3611a3a3e069/AndroidManifest.xml:2:1-5:12
-MERGED from [com.google.android.gms:play-services-base:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-base-9.8.0.aar/51fa21ec4ffdf224daf5deb6336ec596/AndroidManifest.xml:16:1-21:12
-MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.8.0.aar/3a154c87122463e7a628450992d4f511/AndroidManifest.xml:16:1-29:12
-MERGED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:16:1-51:12
-MERGED from [com.google.firebase:firebase-common:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-common-9.8.0.aar/41e379204425692569345ca56d512449/AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.android.gms:play-services-tasks:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-tasks-9.8.0.aar/9def67eb6ab669cd63bc895b3a368001/AndroidManifest.xml:2:1-5:12
-MERGED from [com.google.android.gms:play-services-basement:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.8.0.aar/ea311e3435db30b9f830971298fb4868/AndroidManifest.xml:16:1-23:12
-MERGED from [com.android.support:transition:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/c2614154259274a95acefd3a167a7a3e/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/5627fac012da3cbc7702fbd8d8624095/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/9a495043e6374845f160250a7858f948/AndroidManifest.xml:17:1-28:12
-MERGED from [de.hdodenhof:circleimageview:2.2.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/circleimageview-2.2.0.aar/9837a972c191723df283de3072625b70/AndroidManifest.xml:2:1-11:12
-MERGED from [com.getbase:floatingactionbutton:1.10.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/floatingactionbutton-1.10.1.aar/4a3ed0a6d3b0c1cee161fbcc7b7e6fe4/AndroidManifest.xml:2:1-14:12
-MERGED from [com.facebook.android:facebook-places:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-places-4.42.0.aar/061d5ddc5c885787939f05506bb10c11/AndroidManifest.xml:21:1-31:12
-MERGED from [com.facebook.android:facebook-applinks:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-applinks-4.42.0.aar/0533562356f57c3ae3dd9698ece0e465/AndroidManifest.xml:21:1-31:12
-MERGED from [com.facebook.android:facebook-messenger:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-messenger-4.42.0.aar/d2ea5a037bd13926d91340ee77e2407c/AndroidManifest.xml:21:1-31:12
-MERGED from [com.facebook.android:facebook-core:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-core-4.42.0.aar/a960d6c31bb4cdb70366be752cfd2d40/AndroidManifest.xml:21:1-53:12
-MERGED from [com.android.support:support-media-compat:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/b96fb6ea8fb29f4d69fa0f3225c80655/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/c1ca8403925d3863a68a219e82088013/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/5e9e90cf04af6dfc8636e9e2e5d8403a/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/6fba900a047dbd5926c309ef6cdd2888/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/ac147745cf34bc94ba6207bb5470c4d3/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/e23424193006910cec4eb24aa3e6f7bb/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/d1057b19baac4ac678cb33657580d6a0/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/pablov/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/2d94d7c815efd31611c8b6da71b0cec5/AndroidManifest.xml:17:1-24:12
-INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:2:1-149:12
-INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:2:1-149:12
-INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:2:1-149:12
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:2:1-152:12
+INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:2:1-152:12
+INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:2:1-152:12
+INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:2:1-152:12
+MERGED from [com.facebook.android:facebook-android-sdk:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.42.0.aar\73739f8f830001f374b0e57f1447017e\AndroidManifest.xml:21:1-31:12
+MERGED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:17:1-183:12
+MERGED from [com.google.firebase:firebase-core:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-core-9.8.0.aar\e41654ca6f6462cc522cdc48d44186df\AndroidManifest.xml:2:1-6:12
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\62878e5429d6d133fcb08aacd540a95c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.miguelcatalan:materialsearchview:1.4.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\materialsearchview-1.4.0.aar\04ad7aa655661e6731387b98924e541b\AndroidManifest.xml:2:1-13:12
+MERGED from [net.gotev:uploadservice:2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\b234070e0ef6eb4224dff5e1fc08ba68\AndroidManifest.xml:2:1-23:12
+MERGED from [com.rapidapi:rapidconnect-android:0.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\rapidconnect-android-0.1.aar\27e931eb34b64651c3d85a5f8c95141b\AndroidManifest.xml:2:1-17:12
+MERGED from [com.facebook.android:facebook-login:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-login-4.42.0.aar\b3ab257690d0362808889612045f95c0\AndroidManifest.xml:21:1-31:12
+MERGED from [com.facebook.android:facebook-share:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-share-4.42.0.aar\94a4c9d6bafcb0b3f3685f701914ca2d\AndroidManifest.xml:21:1-31:12
+MERGED from [com.facebook.android:facebook-common:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-common-4.42.0.aar\b39f1c5e269e7fdb51adb3e3968cf0a4\AndroidManifest.xml:21:1-37:12
+MERGED from [com.android.support:design:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\0e6b554b681797b057e93f44fa5192fb\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\9c1c424923e4fbe2797a5bb200ef8a46\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\84909ccb16a2fdbbb6ee8b5bfbcaaa06\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customtabs:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\customtabs-27.0.2.aar\edd4d50aa0d4fb34661d0d1d792b2874\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\023148ac47aaea011e8a2e3c3edfb25f\AndroidManifest.xml:2:1-11:12
+MERGED from [com.jjoe64:graphview:4.2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\graphview-4.2.1.aar\7bd468948a5b5320a5d3c4b4474d3684\AndroidManifest.xml:2:1-14:12
+MERGED from [com.google.android.gms:play-services-auth:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.8.0.aar\06fbafde1271583f65286f8c34d269b8\AndroidManifest.xml:16:1-26:12
+MERGED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:16:1-34:12
+MERGED from [com.google.android.gms:play-services-auth-base:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-9.8.0.aar\ee81bb1803ba576141e2bf0f21835e2c\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-base:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-base-9.8.0.aar\5b226ce1de3743fb936da5d4a9edb864\AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.8.0.aar\74938b0c877cda3992e60c7de282d335\AndroidManifest.xml:16:1-29:12
+MERGED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:16:1-51:12
+MERGED from [com.google.firebase:firebase-common:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-common-9.8.0.aar\58a1d66477b793490f031a0f01524a47\AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.android.gms:play-services-tasks:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.8.0.aar\4da50c16a47f79b16337b3eda22d225c\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-basement:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.8.0.aar\0502de8933699e49ab0c71c1e71e4d8f\AndroidManifest.xml:16:1-23:12
+MERGED from [com.android.support:transition:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\892ddf3876e01c4bf5bcbe01232d0314\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\96e975d0852e8c66d4cf86a5cbe6913e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\434d8e36bef59af9885c31ccabc6782b\AndroidManifest.xml:17:1-28:12
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\8bca2d98206a3d76f0f99a120c4137ee\AndroidManifest.xml:2:1-11:12
+MERGED from [com.getbase:floatingactionbutton:1.10.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\floatingactionbutton-1.10.1.aar\d08bf78fb35507c768ae13c089419f10\AndroidManifest.xml:2:1-14:12
+MERGED from [com.facebook.android:facebook-places:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-places-4.42.0.aar\e066c719f7c3dc6f234664954aad2e50\AndroidManifest.xml:21:1-31:12
+MERGED from [com.facebook.android:facebook-applinks:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.42.0.aar\2f2c4436a4168ca930dc033063aacb2a\AndroidManifest.xml:21:1-31:12
+MERGED from [com.facebook.android:facebook-messenger:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.42.0.aar\db773dc8b4266a0bf94bc849d35b8b78\AndroidManifest.xml:21:1-31:12
+MERGED from [com.facebook.android:facebook-core:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-core-4.42.0.aar\e0ef0a9ebf1dac291a12cc0f31ad140c\AndroidManifest.xml:21:1-53:12
+MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\d3bf91fd3a4a8377e44bd4f11cb24149\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\a1c749264e7eb35c0f5628f2266bd1f6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\54d19e966558f8dced329c673a67f1b0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.2.aar\9652156f3883b1342d9ebbb108596229\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\c6426a22f28934e507240c0db219894e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.2.aar\afc7e25961aa1506e022349b69843d2b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\098c92414ebe554423ade685a03cb6e4\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\97af3d48261edbc62f403e584d3988a8\AndroidManifest.xml:17:1-24:12
+INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:2:1-152:12
+INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:2:1-152:12
+INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:2:1-152:12
 	package
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:3:5-48
-		INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml
-		INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:3:5-48
+		INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:2:1-149:12
-		INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:2:1-152:12
+		INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:2:1-149:12
-		INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:2:1-152:12
+		INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:5:5-67
-MERGED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:28:5-67
-MERGED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:28:5-67
-MERGED from [net.gotev:uploadservice:2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/uploadservice-2.1.aar/779395c09654ffda1ad17908f29deec9/AndroidManifest.xml:11:5-67
-MERGED from [net.gotev:uploadservice:2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/uploadservice-2.1.aar/779395c09654ffda1ad17908f29deec9/AndroidManifest.xml:11:5-67
-MERGED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.8.0.aar/3a154c87122463e7a628450992d4f511/AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.8.0.aar/3a154c87122463e7a628450992d4f511/AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:20:5-66
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:5:5-67
+MERGED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:28:5-67
+MERGED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:28:5-67
+MERGED from [net.gotev:uploadservice:2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\b234070e0ef6eb4224dff5e1fc08ba68\AndroidManifest.xml:11:5-67
+MERGED from [net.gotev:uploadservice:2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\b234070e0ef6eb4224dff5e1fc08ba68\AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.8.0.aar\74938b0c877cda3992e60c7de282d335\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.8.0.aar\74938b0c877cda3992e60c7de282d335\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:20:5-66
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:5:22-64
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:5:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:6:5-79
-MERGED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.8.0.aar/3a154c87122463e7a628450992d4f511/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.8.0.aar/3a154c87122463e7a628450992d4f511/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:19:5-78
-MERGED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:19:5-78
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:6:5-79
+MERGED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.8.0.aar\74938b0c877cda3992e60c7de282d335\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.8.0.aar\74938b0c877cda3992e60c7de282d335\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:19:5-78
+MERGED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:19:5-78
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:6:22-76
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:6:22-76
 uses-permission#android.permission.CAMERA
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:7:5-65
-MERGED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:27:5-65
-MERGED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:27:5-65
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:7:5-65
+MERGED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:27:5-65
+MERGED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:27:5-65
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:7:22-62
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:7:22-62
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:8:5-80
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:8:5-80
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:8:22-77
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:8:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:9:5-81
-MERGED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:34:5-81
-MERGED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:34:5-81
-MERGED from [net.gotev:uploadservice:2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/uploadservice-2.1.aar/779395c09654ffda1ad17908f29deec9/AndroidManifest.xml:12:5-81
-MERGED from [net.gotev:uploadservice:2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/uploadservice-2.1.aar/779395c09654ffda1ad17908f29deec9/AndroidManifest.xml:12:5-81
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:9:5-81
+MERGED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:34:5-81
+MERGED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:34:5-81
+MERGED from [net.gotev:uploadservice:2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\b234070e0ef6eb4224dff5e1fc08ba68\AndroidManifest.xml:12:5-81
+MERGED from [net.gotev:uploadservice:2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\b234070e0ef6eb4224dff5e1fc08ba68\AndroidManifest.xml:12:5-81
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:9:22-78
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:9:22-78
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:10:5-80
+	android:name
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:10:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:11:5-78
+	android:name
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:11:22-76
 uses-feature#android.hardware.camera
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:11:5-13:35
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:13:5-15:35
 	android:required
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:13:9-32
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:15:9-32
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:12:9-47
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:14:9-47
 application
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:15:5-147:19
-MERGED from [com.facebook.android:facebook-android-sdk:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.42.0.aar/ca4e1a30044931613aba03843c9a3c06/AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-android-sdk:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.42.0.aar/ca4e1a30044931613aba03843c9a3c06/AndroidManifest.xml:28:5-29:19
-MERGED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:50:5-181:19
-MERGED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:50:5-181:19
-MERGED from [com.google.firebase:firebase-core:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-core-9.8.0.aar/b7e1a3c5bb9aa93ef2eb89cbd5e85fd1/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-core:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-core-9.8.0.aar/b7e1a3c5bb9aa93ef2eb89cbd5e85fd1/AndroidManifest.xml:5:5-20
-MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/b58760533e8fbe2d87c98b06e8a33548/AndroidManifest.xml:11:5-20
-MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/b58760533e8fbe2d87c98b06e8a33548/AndroidManifest.xml:11:5-20
-MERGED from [net.gotev:uploadservice:2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/uploadservice-2.1.aar/779395c09654ffda1ad17908f29deec9/AndroidManifest.xml:15:5-21:19
-MERGED from [net.gotev:uploadservice:2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/uploadservice-2.1.aar/779395c09654ffda1ad17908f29deec9/AndroidManifest.xml:15:5-21:19
-MERGED from [com.rapidapi:rapidconnect-android:0.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/rapidconnect-android-0.1.aar/6a939e67d9a15d0ffdbf8433e75e3f91/AndroidManifest.xml:11:5-15:19
-MERGED from [com.rapidapi:rapidconnect-android:0.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/rapidconnect-android-0.1.aar/6a939e67d9a15d0ffdbf8433e75e3f91/AndroidManifest.xml:11:5-15:19
-MERGED from [com.facebook.android:facebook-login:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-login-4.42.0.aar/f1c7ad1d428d11e23e1bff5d07d0bd85/AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-login:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-login-4.42.0.aar/f1c7ad1d428d11e23e1bff5d07d0bd85/AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-share:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-share-4.42.0.aar/41c09db07c4d1d6ffa5a8dd8e2e54c66/AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-share:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-share-4.42.0.aar/41c09db07c4d1d6ffa5a8dd8e2e54c66/AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-common:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-common-4.42.0.aar/9913aafe2db572c0a618e2e8224ea3e6/AndroidManifest.xml:28:5-35:19
-MERGED from [com.facebook.android:facebook-common:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-common-4.42.0.aar/9913aafe2db572c0a618e2e8224ea3e6/AndroidManifest.xml:28:5-35:19
-MERGED from [com.android.support:design:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/7af2b27a1334c76e83f235685d2ab05b/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:design:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/7af2b27a1334c76e83f235685d2ab05b/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/96f26928cdd2a84348e36e294b8955bf/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/96f26928cdd2a84348e36e294b8955bf/AndroidManifest.xml:9:5-20
-MERGED from [com.jjoe64:graphview:4.2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/graphview-4.2.1.aar/8faa884dd7c03131d2bda066c6b765dd/AndroidManifest.xml:11:5-12:19
-MERGED from [com.jjoe64:graphview:4.2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/graphview-4.2.1.aar/8faa884dd7c03131d2bda066c6b765dd/AndroidManifest.xml:11:5-12:19
-MERGED from [com.google.android.gms:play-services-auth:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.8.0.aar/962de30b693d1d057d2493108e2f1326/AndroidManifest.xml:19:5-25:19
-MERGED from [com.google.android.gms:play-services-auth:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.8.0.aar/962de30b693d1d057d2493108e2f1326/AndroidManifest.xml:19:5-25:19
-MERGED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:24:5-33:19
-MERGED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:24:5-33:19
-MERGED from [com.google.android.gms:play-services-base:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-base-9.8.0.aar/51fa21ec4ffdf224daf5deb6336ec596/AndroidManifest.xml:18:5-20:19
-MERGED from [com.google.android.gms:play-services-base:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-base-9.8.0.aar/51fa21ec4ffdf224daf5deb6336ec596/AndroidManifest.xml:18:5-20:19
-MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.8.0.aar/3a154c87122463e7a628450992d4f511/AndroidManifest.xml:24:5-28:19
-MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.8.0.aar/3a154c87122463e7a628450992d4f511/AndroidManifest.xml:24:5-28:19
-MERGED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:28:5-50:19
-MERGED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:28:5-50:19
-MERGED from [com.google.firebase:firebase-common:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-common-9.8.0.aar/41e379204425692569345ca56d512449/AndroidManifest.xml:4:5-7:19
-MERGED from [com.google.firebase:firebase-common:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-common-9.8.0.aar/41e379204425692569345ca56d512449/AndroidManifest.xml:4:5-7:19
-MERGED from [com.google.android.gms:play-services-tasks:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-tasks-9.8.0.aar/9def67eb6ab669cd63bc895b3a368001/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-tasks:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-tasks-9.8.0.aar/9def67eb6ab669cd63bc895b3a368001/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-basement:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.8.0.aar/ea311e3435db30b9f830971298fb4868/AndroidManifest.xml:19:5-21:19
-MERGED from [com.google.android.gms:play-services-basement:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.8.0.aar/ea311e3435db30b9f830971298fb4868/AndroidManifest.xml:19:5-21:19
-MERGED from [com.android.support:transition:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/c2614154259274a95acefd3a167a7a3e/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:transition:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/c2614154259274a95acefd3a167a7a3e/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/9a495043e6374845f160250a7858f948/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/9a495043e6374845f160250a7858f948/AndroidManifest.xml:22:5-26:19
-MERGED from [de.hdodenhof:circleimageview:2.2.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/circleimageview-2.2.0.aar/9837a972c191723df283de3072625b70/AndroidManifest.xml:9:5-20
-MERGED from [de.hdodenhof:circleimageview:2.2.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/circleimageview-2.2.0.aar/9837a972c191723df283de3072625b70/AndroidManifest.xml:9:5-20
-MERGED from [com.getbase:floatingactionbutton:1.10.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/floatingactionbutton-1.10.1.aar/4a3ed0a6d3b0c1cee161fbcc7b7e6fe4/AndroidManifest.xml:12:5-20
-MERGED from [com.getbase:floatingactionbutton:1.10.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/floatingactionbutton-1.10.1.aar/4a3ed0a6d3b0c1cee161fbcc7b7e6fe4/AndroidManifest.xml:12:5-20
-MERGED from [com.facebook.android:facebook-places:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-places-4.42.0.aar/061d5ddc5c885787939f05506bb10c11/AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-places:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-places-4.42.0.aar/061d5ddc5c885787939f05506bb10c11/AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-applinks:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-applinks-4.42.0.aar/0533562356f57c3ae3dd9698ece0e465/AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-applinks:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-applinks-4.42.0.aar/0533562356f57c3ae3dd9698ece0e465/AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-messenger:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-messenger-4.42.0.aar/d2ea5a037bd13926d91340ee77e2407c/AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-messenger:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-messenger-4.42.0.aar/d2ea5a037bd13926d91340ee77e2407c/AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-core:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-core-4.42.0.aar/a960d6c31bb4cdb70366be752cfd2d40/AndroidManifest.xml:28:5-51:19
-MERGED from [com.facebook.android:facebook-core:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-core-4.42.0.aar/a960d6c31bb4cdb70366be752cfd2d40/AndroidManifest.xml:28:5-51:19
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:17:5-150:19
+MERGED from [com.facebook.android:facebook-android-sdk:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.42.0.aar\73739f8f830001f374b0e57f1447017e\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-android-sdk:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.42.0.aar\73739f8f830001f374b0e57f1447017e\AndroidManifest.xml:28:5-29:19
+MERGED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:50:5-181:19
+MERGED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:50:5-181:19
+MERGED from [com.google.firebase:firebase-core:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-core-9.8.0.aar\e41654ca6f6462cc522cdc48d44186df\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-core:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-core-9.8.0.aar\e41654ca6f6462cc522cdc48d44186df\AndroidManifest.xml:5:5-20
+MERGED from [com.miguelcatalan:materialsearchview:1.4.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\materialsearchview-1.4.0.aar\04ad7aa655661e6731387b98924e541b\AndroidManifest.xml:11:5-20
+MERGED from [com.miguelcatalan:materialsearchview:1.4.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\materialsearchview-1.4.0.aar\04ad7aa655661e6731387b98924e541b\AndroidManifest.xml:11:5-20
+MERGED from [net.gotev:uploadservice:2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\b234070e0ef6eb4224dff5e1fc08ba68\AndroidManifest.xml:15:5-21:19
+MERGED from [net.gotev:uploadservice:2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\b234070e0ef6eb4224dff5e1fc08ba68\AndroidManifest.xml:15:5-21:19
+MERGED from [com.rapidapi:rapidconnect-android:0.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\rapidconnect-android-0.1.aar\27e931eb34b64651c3d85a5f8c95141b\AndroidManifest.xml:11:5-15:19
+MERGED from [com.rapidapi:rapidconnect-android:0.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\rapidconnect-android-0.1.aar\27e931eb34b64651c3d85a5f8c95141b\AndroidManifest.xml:11:5-15:19
+MERGED from [com.facebook.android:facebook-login:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-login-4.42.0.aar\b3ab257690d0362808889612045f95c0\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-login:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-login-4.42.0.aar\b3ab257690d0362808889612045f95c0\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-share:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-share-4.42.0.aar\94a4c9d6bafcb0b3f3685f701914ca2d\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-share:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-share-4.42.0.aar\94a4c9d6bafcb0b3f3685f701914ca2d\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-common:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-common-4.42.0.aar\b39f1c5e269e7fdb51adb3e3968cf0a4\AndroidManifest.xml:28:5-35:19
+MERGED from [com.facebook.android:facebook-common:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-common-4.42.0.aar\b39f1c5e269e7fdb51adb3e3968cf0a4\AndroidManifest.xml:28:5-35:19
+MERGED from [com.android.support:design:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\0e6b554b681797b057e93f44fa5192fb\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:design:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\0e6b554b681797b057e93f44fa5192fb\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\023148ac47aaea011e8a2e3c3edfb25f\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\023148ac47aaea011e8a2e3c3edfb25f\AndroidManifest.xml:9:5-20
+MERGED from [com.jjoe64:graphview:4.2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\graphview-4.2.1.aar\7bd468948a5b5320a5d3c4b4474d3684\AndroidManifest.xml:11:5-12:19
+MERGED from [com.jjoe64:graphview:4.2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\graphview-4.2.1.aar\7bd468948a5b5320a5d3c4b4474d3684\AndroidManifest.xml:11:5-12:19
+MERGED from [com.google.android.gms:play-services-auth:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.8.0.aar\06fbafde1271583f65286f8c34d269b8\AndroidManifest.xml:19:5-25:19
+MERGED from [com.google.android.gms:play-services-auth:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.8.0.aar\06fbafde1271583f65286f8c34d269b8\AndroidManifest.xml:19:5-25:19
+MERGED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:24:5-33:19
+MERGED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:24:5-33:19
+MERGED from [com.google.android.gms:play-services-base:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-base-9.8.0.aar\5b226ce1de3743fb936da5d4a9edb864\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-base:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-base-9.8.0.aar\5b226ce1de3743fb936da5d4a9edb864\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.8.0.aar\74938b0c877cda3992e60c7de282d335\AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.8.0.aar\74938b0c877cda3992e60c7de282d335\AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:28:5-50:19
+MERGED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:28:5-50:19
+MERGED from [com.google.firebase:firebase-common:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-common-9.8.0.aar\58a1d66477b793490f031a0f01524a47\AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.firebase:firebase-common:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-common-9.8.0.aar\58a1d66477b793490f031a0f01524a47\AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.android.gms:play-services-tasks:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.8.0.aar\4da50c16a47f79b16337b3eda22d225c\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-tasks:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.8.0.aar\4da50c16a47f79b16337b3eda22d225c\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.8.0.aar\0502de8933699e49ab0c71c1e71e4d8f\AndroidManifest.xml:19:5-21:19
+MERGED from [com.google.android.gms:play-services-basement:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.8.0.aar\0502de8933699e49ab0c71c1e71e4d8f\AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:transition:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\892ddf3876e01c4bf5bcbe01232d0314\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\892ddf3876e01c4bf5bcbe01232d0314\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\434d8e36bef59af9885c31ccabc6782b\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\434d8e36bef59af9885c31ccabc6782b\AndroidManifest.xml:22:5-26:19
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\8bca2d98206a3d76f0f99a120c4137ee\AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\8bca2d98206a3d76f0f99a120c4137ee\AndroidManifest.xml:9:5-20
+MERGED from [com.getbase:floatingactionbutton:1.10.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\floatingactionbutton-1.10.1.aar\d08bf78fb35507c768ae13c089419f10\AndroidManifest.xml:12:5-20
+MERGED from [com.getbase:floatingactionbutton:1.10.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\floatingactionbutton-1.10.1.aar\d08bf78fb35507c768ae13c089419f10\AndroidManifest.xml:12:5-20
+MERGED from [com.facebook.android:facebook-places:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-places-4.42.0.aar\e066c719f7c3dc6f234664954aad2e50\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-places:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-places-4.42.0.aar\e066c719f7c3dc6f234664954aad2e50\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-applinks:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.42.0.aar\2f2c4436a4168ca930dc033063aacb2a\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-applinks:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.42.0.aar\2f2c4436a4168ca930dc033063aacb2a\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-messenger:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.42.0.aar\db773dc8b4266a0bf94bc849d35b8b78\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-messenger:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.42.0.aar\db773dc8b4266a0bf94bc849d35b8b78\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-core:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-core-4.42.0.aar\e0ef0a9ebf1dac291a12cc0f31ad140c\AndroidManifest.xml:28:5-51:19
+MERGED from [com.facebook.android:facebook-core:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-core-4.42.0.aar\e0ef0a9ebf1dac291a12cc0f31ad140c\AndroidManifest.xml:28:5-51:19
 	android:supportsRtl
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:21:9-35
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:23:9-35
 	android:label
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:19:9-41
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:21:9-41
 	android:roundIcon
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:20:9-54
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:22:9-54
 	android:icon
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:18:9-43
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:20:9-43
 	android:allowBackup
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:17:9-35
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:19:9-35
 	android:theme
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:22:9-40
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:24:9-40
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:16:9-36
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:18:9-36
+activity#com.example.jonsmauricio.eyesfood.ui.CalendarActivity
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:25:9-66
+	android:name
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:25:19-54
 activity#com.example.jonsmauricio.eyesfood.ui.ResponseActivity
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:23:9-66
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:26:9-57
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:23:19-54
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:26:19-54
 meta-data#com.facebook.sdk.ApplicationId
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:25:9-27:55
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:28:9-30:55
 	android:value
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:27:13-52
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:30:13-52
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:26:13-58
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:29:13-58
 activity#com.example.jonsmauricio.eyesfood.ui.HistoryActivity
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:29:9-38:20
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:32:9-41:20
 	android:label
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:31:13-45
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:34:13-45
 	android:theme
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:32:13-44
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:35:13-44
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:30:13-47
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:33:13-47
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:33:13-37:29
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:36:13-40:29
 action#android.intent.action.MAIN
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:34:17-69
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:37:17-69
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:34:25-66
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:37:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:36:17-77
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:39:17-77
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:36:27-74
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:39:27-74
 activity#com.example.jonsmauricio.eyesfood.ui.LoginActivity
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:39:9-42:53
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:42:9-45:53
 	android:label
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:41:13-57
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:44:13-57
 	android:theme
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:42:13-50
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:45:13-50
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:40:13-45
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:43:13-45
 activity#com.example.jonsmauricio.eyesfood.ui.SignUpActivity
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:43:9-46:53
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:46:9-49:53
 	android:label
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:45:13-45
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:48:13-45
 	android:theme
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:46:13-50
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:49:13-50
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:44:13-46
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:47:13-46
 activity#com.example.jonsmauricio.eyesfood.ui.FoodsActivity
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:63:9-71:20
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:66:9-74:20
 	android:parentActivityName
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:66:13-61
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:69:13-61
 	android:label
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:65:13-57
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:68:13-57
 	android:theme
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:67:13-44
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:70:13-44
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:64:13-45
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:67:13-45
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:68:13-70:88
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:71:13-73:88
 	android:value
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:70:17-85
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:73:17-85
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:69:17-63
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:72:17-63
 activity#com.example.jonsmauricio.eyesfood.ui.AdditivesActivity
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:72:9-80:20
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:75:9-83:20
 	android:parentActivityName
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:75:13-59
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:78:13-59
 	android:label
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:74:13-61
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:77:13-61
 	android:theme
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:76:13-44
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:79:13-44
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:73:13-49
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:76:13-49
 activity#com.example.jonsmauricio.eyesfood.ui.RecommendationsActivity
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:81:9-89:20
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:84:9-92:20
 	android:parentActivityName
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:84:13-59
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:87:13-59
 	android:label
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:83:13-67
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:86:13-67
 	android:theme
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:85:13-44
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:88:13-44
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:82:13-55
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:85:13-55
 activity#com.example.jonsmauricio.eyesfood.ui.SearchActivity
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:90:9-98:20
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:93:9-101:20
 	android:parentActivityName
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:93:13-61
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:96:13-61
 	android:label
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:92:13-58
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:95:13-58
 	android:theme
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:94:13-44
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:97:13-44
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:91:13-46
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:94:13-46
 activity#com.example.jonsmauricio.eyesfood.ui.AdditiveActivity
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:99:9-107:20
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:102:9-110:20
 	android:parentActivityName
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:102:13-61
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:105:13-61
 	android:label
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:101:13-60
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:104:13-60
 	android:theme
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:103:13-44
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:106:13-44
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:100:13-48
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:103:13-48
 activity#com.example.jonsmauricio.eyesfood.ui.ImagesActivity
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:108:9-116:20
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:111:9-119:20
 	android:parentActivityName
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:111:13-59
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:114:13-59
 	android:label
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:110:13-58
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:113:13-58
 	android:theme
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:112:13-44
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:115:13-44
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:109:13-46
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:112:13-46
 activity#com.example.jonsmauricio.eyesfood.ui.ImagesDetailActivity
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:117:9-125:20
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:120:9-128:20
 	android:parentActivityName
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:120:13-60
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:123:13-60
 	android:label
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:119:13-65
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:122:13-65
 	android:theme
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:121:13-44
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:124:13-44
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:118:13-52
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:121:13-52
 activity#com.example.jonsmauricio.eyesfood.ui.CommentsActivity
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:126:9-134:20
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:129:9-137:20
 	android:parentActivityName
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:129:13-59
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:132:13-59
 	android:label
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:128:13-60
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:131:13-60
 	android:theme
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:130:13-44
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:133:13-44
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:127:13-48
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:130:13-48
 activity#com.google.zxing.client.android.CaptureActivity
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:135:9-137:59
-MERGED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:53:9-113:20
-MERGED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:53:9-113:20
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:138:9-140:59
+MERGED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:53:9-113:20
+MERGED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:53:9-113:20
 	android:clearTaskOnLaunch
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:55:13-45
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:55:13-45
 	android:screenOrientation
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:137:13-56
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:140:13-56
 	android:stateNotNeeded
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:57:13-42
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:57:13-42
 	android:windowSoftInputMode
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:59:13-60
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:59:13-60
 	android:theme
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:58:13-48
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:58:13-48
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:136:13-75
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:139:13-75
 activity#com.example.jonsmauricio.eyesfood.ui.UploadActivity
-ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:138:9-146:20
+ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:141:9-149:20
 	android:parentActivityName
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:141:13-61
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:144:13-61
 	android:label
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:140:13-58
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:143:13-58
 	android:theme
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:142:13-44
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:145:13-44
 	android:name
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml:139:13-46
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml:142:13-46
 uses-sdk
-INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml
-INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml
-MERGED from [com.facebook.android:facebook-android-sdk:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.42.0.aar/ca4e1a30044931613aba03843c9a3c06/AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-android-sdk:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.42.0.aar/ca4e1a30044931613aba03843c9a3c06/AndroidManifest.xml:24:5-26:41
-MERGED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:23:5-25:41
-MERGED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:23:5-25:41
-MERGED from [com.google.firebase:firebase-core:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-core-9.8.0.aar/b7e1a3c5bb9aa93ef2eb89cbd5e85fd1/AndroidManifest.xml:4:5-42
-MERGED from [com.google.firebase:firebase-core:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-core-9.8.0.aar/b7e1a3c5bb9aa93ef2eb89cbd5e85fd1/AndroidManifest.xml:4:5-42
-MERGED from [com.android.support:multidex:1.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/d508955e15cdcc6378b646e2a8329d80/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:multidex:1.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/d508955e15cdcc6378b646e2a8329d80/AndroidManifest.xml:20:5-43
-MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/b58760533e8fbe2d87c98b06e8a33548/AndroidManifest.xml:7:5-9:41
-MERGED from [com.miguelcatalan:materialsearchview:1.4.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/materialsearchview-1.4.0.aar/b58760533e8fbe2d87c98b06e8a33548/AndroidManifest.xml:7:5-9:41
-MERGED from [net.gotev:uploadservice:2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/uploadservice-2.1.aar/779395c09654ffda1ad17908f29deec9/AndroidManifest.xml:7:5-9:41
-MERGED from [net.gotev:uploadservice:2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/uploadservice-2.1.aar/779395c09654ffda1ad17908f29deec9/AndroidManifest.xml:7:5-9:41
-MERGED from [com.rapidapi:rapidconnect-android:0.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/rapidconnect-android-0.1.aar/6a939e67d9a15d0ffdbf8433e75e3f91/AndroidManifest.xml:7:5-9:41
-MERGED from [com.rapidapi:rapidconnect-android:0.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/rapidconnect-android-0.1.aar/6a939e67d9a15d0ffdbf8433e75e3f91/AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.android:facebook-login:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-login-4.42.0.aar/f1c7ad1d428d11e23e1bff5d07d0bd85/AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-login:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-login-4.42.0.aar/f1c7ad1d428d11e23e1bff5d07d0bd85/AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-share:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-share-4.42.0.aar/41c09db07c4d1d6ffa5a8dd8e2e54c66/AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-share:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-share-4.42.0.aar/41c09db07c4d1d6ffa5a8dd8e2e54c66/AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-common:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-common-4.42.0.aar/9913aafe2db572c0a618e2e8224ea3e6/AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-common:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-common-4.42.0.aar/9913aafe2db572c0a618e2e8224ea3e6/AndroidManifest.xml:24:5-26:41
-MERGED from [com.android.support:design:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/7af2b27a1334c76e83f235685d2ab05b/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:design:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/7af2b27a1334c76e83f235685d2ab05b/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f23d904491347cab378013a8fa2742a8/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f23d904491347cab378013a8fa2742a8/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/b7162f2e74dfa33557b3da413e661c78/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/b7162f2e74dfa33557b3da413e661c78/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customtabs:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/customtabs-27.0.2.aar/6f0476ee3ccd82016df8f9bc424d10e8/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customtabs:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/customtabs-27.0.2.aar/6f0476ee3ccd82016df8f9bc424d10e8/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/96f26928cdd2a84348e36e294b8955bf/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/96f26928cdd2a84348e36e294b8955bf/AndroidManifest.xml:5:5-7:41
-MERGED from [com.jjoe64:graphview:4.2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/graphview-4.2.1.aar/8faa884dd7c03131d2bda066c6b765dd/AndroidManifest.xml:7:5-9:41
-MERGED from [com.jjoe64:graphview:4.2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/graphview-4.2.1.aar/8faa884dd7c03131d2bda066c6b765dd/AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.android.gms:play-services-auth:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.8.0.aar/962de30b693d1d057d2493108e2f1326/AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-auth:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.8.0.aar/962de30b693d1d057d2493108e2f1326/AndroidManifest.xml:17:5-42
-MERGED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:17:5-42
-MERGED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-auth-base:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-9.8.0.aar/471235349427a83e53ad3611a3a3e069/AndroidManifest.xml:4:5-42
-MERGED from [com.google.android.gms:play-services-auth-base:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-9.8.0.aar/471235349427a83e53ad3611a3a3e069/AndroidManifest.xml:4:5-42
-MERGED from [com.google.android.gms:play-services-base:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-base-9.8.0.aar/51fa21ec4ffdf224daf5deb6336ec596/AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-base:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-base-9.8.0.aar/51fa21ec4ffdf224daf5deb6336ec596/AndroidManifest.xml:17:5-42
-MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.8.0.aar/3a154c87122463e7a628450992d4f511/AndroidManifest.xml:17:5-42
-MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.8.0.aar/3a154c87122463e7a628450992d4f511/AndroidManifest.xml:17:5-42
-MERGED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:17:5-42
-MERGED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:17:5-42
-MERGED from [com.google.firebase:firebase-common:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-common-9.8.0.aar/41e379204425692569345ca56d512449/AndroidManifest.xml:3:5-42
-MERGED from [com.google.firebase:firebase-common:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-common-9.8.0.aar/41e379204425692569345ca56d512449/AndroidManifest.xml:3:5-42
-MERGED from [com.google.android.gms:play-services-tasks:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-tasks-9.8.0.aar/9def67eb6ab669cd63bc895b3a368001/AndroidManifest.xml:3:5-42
-MERGED from [com.google.android.gms:play-services-tasks:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-tasks-9.8.0.aar/9def67eb6ab669cd63bc895b3a368001/AndroidManifest.xml:3:5-42
-MERGED from [com.google.android.gms:play-services-basement:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.8.0.aar/ea311e3435db30b9f830971298fb4868/AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-basement:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.8.0.aar/ea311e3435db30b9f830971298fb4868/AndroidManifest.xml:17:5-42
-MERGED from [com.android.support:transition:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/c2614154259274a95acefd3a167a7a3e/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/c2614154259274a95acefd3a167a7a3e/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/5627fac012da3cbc7702fbd8d8624095/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/5627fac012da3cbc7702fbd8d8624095/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/9a495043e6374845f160250a7858f948/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/9a495043e6374845f160250a7858f948/AndroidManifest.xml:20:5-44
-MERGED from [de.hdodenhof:circleimageview:2.2.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/circleimageview-2.2.0.aar/9837a972c191723df283de3072625b70/AndroidManifest.xml:5:5-7:41
-MERGED from [de.hdodenhof:circleimageview:2.2.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/circleimageview-2.2.0.aar/9837a972c191723df283de3072625b70/AndroidManifest.xml:5:5-7:41
-MERGED from [com.getbase:floatingactionbutton:1.10.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/floatingactionbutton-1.10.1.aar/4a3ed0a6d3b0c1cee161fbcc7b7e6fe4/AndroidManifest.xml:8:5-10:41
-MERGED from [com.getbase:floatingactionbutton:1.10.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/floatingactionbutton-1.10.1.aar/4a3ed0a6d3b0c1cee161fbcc7b7e6fe4/AndroidManifest.xml:8:5-10:41
-MERGED from [com.facebook.android:facebook-places:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-places-4.42.0.aar/061d5ddc5c885787939f05506bb10c11/AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-places:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-places-4.42.0.aar/061d5ddc5c885787939f05506bb10c11/AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-applinks:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-applinks-4.42.0.aar/0533562356f57c3ae3dd9698ece0e465/AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-applinks:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-applinks-4.42.0.aar/0533562356f57c3ae3dd9698ece0e465/AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-messenger:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-messenger-4.42.0.aar/d2ea5a037bd13926d91340ee77e2407c/AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-messenger:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-messenger-4.42.0.aar/d2ea5a037bd13926d91340ee77e2407c/AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-core:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-core-4.42.0.aar/a960d6c31bb4cdb70366be752cfd2d40/AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-core:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-core-4.42.0.aar/a960d6c31bb4cdb70366be752cfd2d40/AndroidManifest.xml:24:5-26:41
-MERGED from [com.android.support:support-media-compat:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/b96fb6ea8fb29f4d69fa0f3225c80655/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/b96fb6ea8fb29f4d69fa0f3225c80655/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/c1ca8403925d3863a68a219e82088013/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/c1ca8403925d3863a68a219e82088013/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/5e9e90cf04af6dfc8636e9e2e5d8403a/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/5e9e90cf04af6dfc8636e9e2e5d8403a/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/6fba900a047dbd5926c309ef6cdd2888/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/6fba900a047dbd5926c309ef6cdd2888/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/ac147745cf34bc94ba6207bb5470c4d3/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/ac147745cf34bc94ba6207bb5470c4d3/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/e23424193006910cec4eb24aa3e6f7bb/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/e23424193006910cec4eb24aa3e6f7bb/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/d1057b19baac4ac678cb33657580d6a0/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.2] /home/pablov/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/d1057b19baac4ac678cb33657580d6a0/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/pablov/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/2d94d7c815efd31611c8b6da71b0cec5/AndroidManifest.xml:20:5-22:41
-MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/pablov/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/2d94d7c815efd31611c8b6da71b0cec5/AndroidManifest.xml:20:5-22:41
-INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml
-INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml
+INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml
+MERGED from [com.facebook.android:facebook-android-sdk:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.42.0.aar\73739f8f830001f374b0e57f1447017e\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-android-sdk:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.42.0.aar\73739f8f830001f374b0e57f1447017e\AndroidManifest.xml:24:5-26:41
+MERGED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:23:5-25:41
+MERGED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:23:5-25:41
+MERGED from [com.google.firebase:firebase-core:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-core-9.8.0.aar\e41654ca6f6462cc522cdc48d44186df\AndroidManifest.xml:4:5-42
+MERGED from [com.google.firebase:firebase-core:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-core-9.8.0.aar\e41654ca6f6462cc522cdc48d44186df\AndroidManifest.xml:4:5-42
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\62878e5429d6d133fcb08aacd540a95c\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\62878e5429d6d133fcb08aacd540a95c\AndroidManifest.xml:20:5-43
+MERGED from [com.miguelcatalan:materialsearchview:1.4.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\materialsearchview-1.4.0.aar\04ad7aa655661e6731387b98924e541b\AndroidManifest.xml:7:5-9:41
+MERGED from [com.miguelcatalan:materialsearchview:1.4.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\materialsearchview-1.4.0.aar\04ad7aa655661e6731387b98924e541b\AndroidManifest.xml:7:5-9:41
+MERGED from [net.gotev:uploadservice:2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\b234070e0ef6eb4224dff5e1fc08ba68\AndroidManifest.xml:7:5-9:41
+MERGED from [net.gotev:uploadservice:2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\b234070e0ef6eb4224dff5e1fc08ba68\AndroidManifest.xml:7:5-9:41
+MERGED from [com.rapidapi:rapidconnect-android:0.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\rapidconnect-android-0.1.aar\27e931eb34b64651c3d85a5f8c95141b\AndroidManifest.xml:7:5-9:41
+MERGED from [com.rapidapi:rapidconnect-android:0.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\rapidconnect-android-0.1.aar\27e931eb34b64651c3d85a5f8c95141b\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.android:facebook-login:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-login-4.42.0.aar\b3ab257690d0362808889612045f95c0\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-login:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-login-4.42.0.aar\b3ab257690d0362808889612045f95c0\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-share:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-share-4.42.0.aar\94a4c9d6bafcb0b3f3685f701914ca2d\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-share:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-share-4.42.0.aar\94a4c9d6bafcb0b3f3685f701914ca2d\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-common:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-common-4.42.0.aar\b39f1c5e269e7fdb51adb3e3968cf0a4\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-common:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-common-4.42.0.aar\b39f1c5e269e7fdb51adb3e3968cf0a4\AndroidManifest.xml:24:5-26:41
+MERGED from [com.android.support:design:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\0e6b554b681797b057e93f44fa5192fb\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:design:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\0e6b554b681797b057e93f44fa5192fb\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\9c1c424923e4fbe2797a5bb200ef8a46\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\9c1c424923e4fbe2797a5bb200ef8a46\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\84909ccb16a2fdbbb6ee8b5bfbcaaa06\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\84909ccb16a2fdbbb6ee8b5bfbcaaa06\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customtabs:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\customtabs-27.0.2.aar\edd4d50aa0d4fb34661d0d1d792b2874\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customtabs:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\customtabs-27.0.2.aar\edd4d50aa0d4fb34661d0d1d792b2874\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\023148ac47aaea011e8a2e3c3edfb25f\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\023148ac47aaea011e8a2e3c3edfb25f\AndroidManifest.xml:5:5-7:41
+MERGED from [com.jjoe64:graphview:4.2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\graphview-4.2.1.aar\7bd468948a5b5320a5d3c4b4474d3684\AndroidManifest.xml:7:5-9:41
+MERGED from [com.jjoe64:graphview:4.2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\graphview-4.2.1.aar\7bd468948a5b5320a5d3c4b4474d3684\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.gms:play-services-auth:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.8.0.aar\06fbafde1271583f65286f8c34d269b8\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-auth:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.8.0.aar\06fbafde1271583f65286f8c34d269b8\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-auth-base:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-9.8.0.aar\ee81bb1803ba576141e2bf0f21835e2c\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-auth-base:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-9.8.0.aar\ee81bb1803ba576141e2bf0f21835e2c\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-base:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-base-9.8.0.aar\5b226ce1de3743fb936da5d4a9edb864\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-base:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-base-9.8.0.aar\5b226ce1de3743fb936da5d4a9edb864\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.8.0.aar\74938b0c877cda3992e60c7de282d335\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.8.0.aar\74938b0c877cda3992e60c7de282d335\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-common:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-common-9.8.0.aar\58a1d66477b793490f031a0f01524a47\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-common:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-common-9.8.0.aar\58a1d66477b793490f031a0f01524a47\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-tasks:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.8.0.aar\4da50c16a47f79b16337b3eda22d225c\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-tasks:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.8.0.aar\4da50c16a47f79b16337b3eda22d225c\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.8.0.aar\0502de8933699e49ab0c71c1e71e4d8f\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.8.0.aar\0502de8933699e49ab0c71c1e71e4d8f\AndroidManifest.xml:17:5-42
+MERGED from [com.android.support:transition:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\892ddf3876e01c4bf5bcbe01232d0314\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\892ddf3876e01c4bf5bcbe01232d0314\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\96e975d0852e8c66d4cf86a5cbe6913e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\96e975d0852e8c66d4cf86a5cbe6913e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\434d8e36bef59af9885c31ccabc6782b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\434d8e36bef59af9885c31ccabc6782b\AndroidManifest.xml:20:5-44
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\8bca2d98206a3d76f0f99a120c4137ee\AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\8bca2d98206a3d76f0f99a120c4137ee\AndroidManifest.xml:5:5-7:41
+MERGED from [com.getbase:floatingactionbutton:1.10.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\floatingactionbutton-1.10.1.aar\d08bf78fb35507c768ae13c089419f10\AndroidManifest.xml:8:5-10:41
+MERGED from [com.getbase:floatingactionbutton:1.10.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\floatingactionbutton-1.10.1.aar\d08bf78fb35507c768ae13c089419f10\AndroidManifest.xml:8:5-10:41
+MERGED from [com.facebook.android:facebook-places:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-places-4.42.0.aar\e066c719f7c3dc6f234664954aad2e50\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-places:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-places-4.42.0.aar\e066c719f7c3dc6f234664954aad2e50\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-applinks:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.42.0.aar\2f2c4436a4168ca930dc033063aacb2a\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-applinks:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.42.0.aar\2f2c4436a4168ca930dc033063aacb2a\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-messenger:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.42.0.aar\db773dc8b4266a0bf94bc849d35b8b78\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-messenger:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.42.0.aar\db773dc8b4266a0bf94bc849d35b8b78\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-core:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-core-4.42.0.aar\e0ef0a9ebf1dac291a12cc0f31ad140c\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-core:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-core-4.42.0.aar\e0ef0a9ebf1dac291a12cc0f31ad140c\AndroidManifest.xml:24:5-26:41
+MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\d3bf91fd3a4a8377e44bd4f11cb24149\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\d3bf91fd3a4a8377e44bd4f11cb24149\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\a1c749264e7eb35c0f5628f2266bd1f6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\a1c749264e7eb35c0f5628f2266bd1f6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\54d19e966558f8dced329c673a67f1b0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\54d19e966558f8dced329c673a67f1b0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.2.aar\9652156f3883b1342d9ebbb108596229\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.2.aar\9652156f3883b1342d9ebbb108596229\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\c6426a22f28934e507240c0db219894e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\c6426a22f28934e507240c0db219894e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.2.aar\afc7e25961aa1506e022349b69843d2b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.2.aar\afc7e25961aa1506e022349b69843d2b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\098c92414ebe554423ade685a03cb6e4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\098c92414ebe554423ade685a03cb6e4\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\97af3d48261edbc62f403e584d3988a8\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\97af3d48261edbc62f403e584d3988a8\AndroidManifest.xml:20:5-22:41
+INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/7af2b27a1334c76e83f235685d2ab05b/AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\0e6b554b681797b057e93f44fa5192fb\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
-		INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml
-		INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml
-		ADDED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml
-		INJECTED from /home/pablov/Escritorio/Memoria/Extension-EyesFood/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.VIBRATE
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:29:5-66
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:29:5-66
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:29:22-63
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:29:22-63
 uses-permission#android.permission.FLASHLIGHT
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:30:5-69
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:30:5-69
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:30:22-66
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:30:22-66
 uses-permission#android.permission.READ_CONTACTS
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:31:5-72
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:31:5-72
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:31:22-69
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:31:22-69
 uses-permission#com.android.browser.permission.READ_HISTORY_BOOKMARKS
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:33:5-93
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:33:5-93
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:33:22-90
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:33:22-90
 uses-permission#android.permission.CHANGE_WIFI_STATE
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:35:5-76
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:35:5-76
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:35:22-73
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:35:22-73
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:36:5-76
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:36:5-76
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:36:22-73
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:36:22-73
 uses-feature#android.hardware.camera.any
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:38:5-64
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:38:5-64
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:38:19-61
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:38:19-61
 uses-feature#android.hardware.camera.autofocus
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:39:5-41:36
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:39:5-41:36
 	android:required
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:41:9-33
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:41:9-33
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:40:9-57
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:40:9-57
 uses-feature#android.hardware.camera.flash
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:42:5-44:36
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:42:5-44:36
 	android:required
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:44:9-33
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:44:9-33
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:43:9-53
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:43:9-53
 uses-feature#android.hardware.screen.landscape
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:45:5-70
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:45:5-70
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:45:19-67
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:45:19-67
 uses-feature#android.hardware.wifi
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:46:5-48:36
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:46:5-48:36
 	android:required
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:48:9-33
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:48:9-33
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:47:9-45
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:47:9-45
 intent-filter#android.intent.category.DEFAULT+com.google.zxing.client.android.SCAN
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:60:13-64:29
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:60:13-64:29
 action#com.google.zxing.client.android.SCAN
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:61:17-79
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:61:17-79
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:61:25-76
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:61:25-76
 category#android.intent.category.DEFAULT
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:63:17-76
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:63:17-76
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:63:27-73
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:63:27-73
 intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:66:13-76:29
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:66:13-76:29
 action#android.intent.action.VIEW
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:67:17-69
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:67:17-69
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:67:25-66
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:67:25-66
 category#android.intent.category.BROWSABLE
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:70:17-78
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:70:17-78
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:70:27-75
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:70:27-75
 data
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:72:17-75:45
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:72:17-75:45
 	android:path
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:74:21-41
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:74:21-41
 	android:host
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:73:21-53
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:73:21-53
 	android:scheme
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:75:21-42
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:75:21-42
 activity#com.google.zxing.client.android.PreferencesActivity
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:114:9-117:45
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:114:9-117:45
 	android:stateNotNeeded
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:117:13-42
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:117:13-42
 	android:label
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:116:13-53
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:116:13-53
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:115:13-79
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:115:13-79
 activity#com.google.zxing.client.android.encode.EncodeActivity
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:118:9-142:20
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:118:9-142:20
 	android:stateNotNeeded
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:120:13-42
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:120:13-42
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:119:13-81
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:119:13-81
 intent-filter#android.intent.category.DEFAULT+com.google.zxing.client.android.ENCODE
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:121:13-125:29
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:121:13-125:29
 action#com.google.zxing.client.android.ENCODE
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:122:17-81
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:122:17-81
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:122:25-78
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:122:25-78
 intent-filter#android.intent.action.SEND+android.intent.category.DEFAULT
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:127:13-133:29
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:127:13-133:29
 action#android.intent.action.SEND
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:128:17-69
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:128:17-69
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:128:25-66
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:128:25-66
 activity#com.google.zxing.client.android.book.SearchBookContentsActivity
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:143:9-153:20
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:143:9-153:20
 	android:screenOrientation
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:146:13-56
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:146:13-56
 	android:stateNotNeeded
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:147:13-42
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:147:13-42
 	android:label
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:145:13-45
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:145:13-45
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:144:13-91
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:144:13-91
 intent-filter#android.intent.category.DEFAULT+com.google.zxing.client.android.SEARCH_BOOK_CONTENTS
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:148:13-152:29
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:148:13-152:29
 action#com.google.zxing.client.android.SEARCH_BOOK_CONTENTS
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:149:17-95
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:149:17-95
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:149:25-92
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:149:25-92
 activity#com.google.zxing.client.android.share.ShareActivity
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:154:9-163:20
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:154:9-163:20
 	android:screenOrientation
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:156:13-45
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:156:13-45
 	android:stateNotNeeded
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:157:13-42
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:157:13-42
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:155:13-79
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:155:13-79
 intent-filter#android.intent.category.DEFAULT+com.google.zxing.client.android.SHARE
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:158:13-162:29
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:158:13-162:29
 action#com.google.zxing.client.android.SHARE
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:159:17-80
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:159:17-80
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:159:25-77
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:159:25-77
 activity#com.google.zxing.client.android.history.HistoryActivity
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:164:9-167:45
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:164:9-167:45
 	android:stateNotNeeded
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:167:13-42
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:167:13-42
 	android:label
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:166:13-50
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:166:13-50
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:165:13-83
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:165:13-83
 activity#com.google.zxing.client.android.share.BookmarkPickerActivity
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:168:9-171:45
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:168:9-171:45
 	android:stateNotNeeded
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:171:13-42
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:171:13-42
 	android:label
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:170:13-57
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:170:13-57
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:169:13-88
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:169:13-88
 activity#com.google.zxing.client.android.share.AppPickerActivity
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:172:9-175:45
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:172:9-175:45
 	android:stateNotNeeded
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:175:13-42
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:175:13-42
 	android:label
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:174:13-52
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:174:13-52
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:173:13-83
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:173:13-83
 activity#com.google.zxing.client.android.HelpActivity
-ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:176:9-180:45
+ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:176:9-180:45
 	android:screenOrientation
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:179:13-45
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:179:13-45
 	android:stateNotNeeded
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:180:13-42
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:180:13-42
 	android:label
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:178:13-46
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:178:13-46
 	android:name
-		ADDED from [:scanner] /home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/build/intermediates/manifests/full/debug/AndroidManifest.xml:177:13-72
+		ADDED from [:scanner] C:\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\build\intermediates\manifests\full\debug\AndroidManifest.xml:177:13-72
 uses-permission#android.permission.WAKE_LOCK
-ADDED from [net.gotev:uploadservice:2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/uploadservice-2.1.aar/779395c09654ffda1ad17908f29deec9/AndroidManifest.xml:13:5-68
-MERGED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.8.0.aar/3a154c87122463e7a628450992d4f511/AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.8.0.aar/3a154c87122463e7a628450992d4f511/AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:21:5-67
-MERGED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:21:5-67
+ADDED from [net.gotev:uploadservice:2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\b234070e0ef6eb4224dff5e1fc08ba68\AndroidManifest.xml:13:5-68
+MERGED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.8.0.aar\74938b0c877cda3992e60c7de282d335\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.8.0.aar\74938b0c877cda3992e60c7de282d335\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:21:5-67
 	android:name
-		ADDED from [net.gotev:uploadservice:2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/uploadservice-2.1.aar/779395c09654ffda1ad17908f29deec9/AndroidManifest.xml:13:22-65
+		ADDED from [net.gotev:uploadservice:2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\b234070e0ef6eb4224dff5e1fc08ba68\AndroidManifest.xml:13:22-65
 service#net.gotev.uploadservice.UploadService
-ADDED from [net.gotev:uploadservice:2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/uploadservice-2.1.aar/779395c09654ffda1ad17908f29deec9/AndroidManifest.xml:16:9-20:19
+ADDED from [net.gotev:uploadservice:2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\b234070e0ef6eb4224dff5e1fc08ba68\AndroidManifest.xml:16:9-20:19
 	android:enabled
-		ADDED from [net.gotev:uploadservice:2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/uploadservice-2.1.aar/779395c09654ffda1ad17908f29deec9/AndroidManifest.xml:18:13-35
+		ADDED from [net.gotev:uploadservice:2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\b234070e0ef6eb4224dff5e1fc08ba68\AndroidManifest.xml:18:13-35
 	android:exported
-		ADDED from [net.gotev:uploadservice:2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/uploadservice-2.1.aar/779395c09654ffda1ad17908f29deec9/AndroidManifest.xml:19:13-36
+		ADDED from [net.gotev:uploadservice:2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\b234070e0ef6eb4224dff5e1fc08ba68\AndroidManifest.xml:19:13-36
 	android:name
-		ADDED from [net.gotev:uploadservice:2.1] /home/pablov/.gradle/caches/transforms-1/files-1.1/uploadservice-2.1.aar/779395c09654ffda1ad17908f29deec9/AndroidManifest.xml:17:13-65
+		ADDED from [net.gotev:uploadservice:2.1] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\uploadservice-2.1.aar\b234070e0ef6eb4224dff5e1fc08ba68\AndroidManifest.xml:17:13-65
 activity#com.facebook.FacebookActivity
-ADDED from [com.facebook.android:facebook-common:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-common-4.42.0.aar/9913aafe2db572c0a618e2e8224ea3e6/AndroidManifest.xml:29:9-32:66
+ADDED from [com.facebook.android:facebook-common:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-common-4.42.0.aar\b39f1c5e269e7fdb51adb3e3968cf0a4\AndroidManifest.xml:29:9-32:66
 	android:configChanges
-		ADDED from [com.facebook.android:facebook-common:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-common-4.42.0.aar/9913aafe2db572c0a618e2e8224ea3e6/AndroidManifest.xml:31:13-96
+		ADDED from [com.facebook.android:facebook-common:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-common-4.42.0.aar\b39f1c5e269e7fdb51adb3e3968cf0a4\AndroidManifest.xml:31:13-96
 	android:theme
-		ADDED from [com.facebook.android:facebook-common:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-common-4.42.0.aar/9913aafe2db572c0a618e2e8224ea3e6/AndroidManifest.xml:32:13-63
+		ADDED from [com.facebook.android:facebook-common:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-common-4.42.0.aar\b39f1c5e269e7fdb51adb3e3968cf0a4\AndroidManifest.xml:32:13-63
 	android:name
-		ADDED from [com.facebook.android:facebook-common:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-common-4.42.0.aar/9913aafe2db572c0a618e2e8224ea3e6/AndroidManifest.xml:30:13-57
+		ADDED from [com.facebook.android:facebook-common:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-common-4.42.0.aar\b39f1c5e269e7fdb51adb3e3968cf0a4\AndroidManifest.xml:30:13-57
 activity#com.facebook.CustomTabMainActivity
-ADDED from [com.facebook.android:facebook-common:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-common-4.42.0.aar/9913aafe2db572c0a618e2e8224ea3e6/AndroidManifest.xml:33:9-71
+ADDED from [com.facebook.android:facebook-common:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-common-4.42.0.aar\b39f1c5e269e7fdb51adb3e3968cf0a4\AndroidManifest.xml:33:9-71
 	android:name
-		ADDED from [com.facebook.android:facebook-common:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-common-4.42.0.aar/9913aafe2db572c0a618e2e8224ea3e6/AndroidManifest.xml:33:19-68
+		ADDED from [com.facebook.android:facebook-common:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-common-4.42.0.aar\b39f1c5e269e7fdb51adb3e3968cf0a4\AndroidManifest.xml:33:19-68
 activity#com.facebook.CustomTabActivity
-ADDED from [com.facebook.android:facebook-common:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-common-4.42.0.aar/9913aafe2db572c0a618e2e8224ea3e6/AndroidManifest.xml:34:9-67
+ADDED from [com.facebook.android:facebook-common:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-common-4.42.0.aar\b39f1c5e269e7fdb51adb3e3968cf0a4\AndroidManifest.xml:34:9-67
 	android:name
-		ADDED from [com.facebook.android:facebook-common:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-common-4.42.0.aar/9913aafe2db572c0a618e2e8224ea3e6/AndroidManifest.xml:34:19-64
+		ADDED from [com.facebook.android:facebook-common:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-common-4.42.0.aar\b39f1c5e269e7fdb51adb3e3968cf0a4\AndroidManifest.xml:34:19-64
 meta-data#android.support.VERSION
-ADDED from [com.android.support:design:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/7af2b27a1334c76e83f235685d2ab05b/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:transition:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/c2614154259274a95acefd3a167a7a3e/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:transition:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/c2614154259274a95acefd3a167a7a3e/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/9a495043e6374845f160250a7858f948/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/9a495043e6374845f160250a7858f948/AndroidManifest.xml:23:9-25:38
+ADDED from [com.android.support:design:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\0e6b554b681797b057e93f44fa5192fb\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:transition:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\892ddf3876e01c4bf5bcbe01232d0314\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:transition:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\892ddf3876e01c4bf5bcbe01232d0314\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\434d8e36bef59af9885c31ccabc6782b\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\434d8e36bef59af9885c31ccabc6782b\AndroidManifest.xml:23:9-25:38
 	android:value
-		ADDED from [com.android.support:design:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/7af2b27a1334c76e83f235685d2ab05b/AndroidManifest.xml:28:13-35
+		ADDED from [com.android.support:design:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\0e6b554b681797b057e93f44fa5192fb\AndroidManifest.xml:28:13-35
 	android:name
-		ADDED from [com.android.support:design:26.1.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/7af2b27a1334c76e83f235685d2ab05b/AndroidManifest.xml:27:13-51
+		ADDED from [com.android.support:design:26.1.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\0e6b554b681797b057e93f44fa5192fb\AndroidManifest.xml:27:13-51
 activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from [com.google.android.gms:play-services-auth:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.8.0.aar/962de30b693d1d057d2493108e2f1326/AndroidManifest.xml:20:9-189
+ADDED from [com.google.android.gms:play-services-auth:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.8.0.aar\06fbafde1271583f65286f8c34d269b8\AndroidManifest.xml:20:9-189
 	android:excludeFromRecents
-		ADDED from [com.google.android.gms:play-services-auth:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.8.0.aar/962de30b693d1d057d2493108e2f1326/AndroidManifest.xml:20:129-162
+		ADDED from [com.google.android.gms:play-services-auth:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.8.0.aar\06fbafde1271583f65286f8c34d269b8\AndroidManifest.xml:20:129-162
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.8.0.aar/962de30b693d1d057d2493108e2f1326/AndroidManifest.xml:20:163-187
+		ADDED from [com.google.android.gms:play-services-auth:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.8.0.aar\06fbafde1271583f65286f8c34d269b8\AndroidManifest.xml:20:163-187
 	android:theme
-		ADDED from [com.google.android.gms:play-services-auth:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.8.0.aar/962de30b693d1d057d2493108e2f1326/AndroidManifest.xml:20:69-128
+		ADDED from [com.google.android.gms:play-services-auth:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.8.0.aar\06fbafde1271583f65286f8c34d269b8\AndroidManifest.xml:20:69-128
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.8.0.aar/962de30b693d1d057d2493108e2f1326/AndroidManifest.xml:20:19-68
+		ADDED from [com.google.android.gms:play-services-auth:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.8.0.aar\06fbafde1271583f65286f8c34d269b8\AndroidManifest.xml:20:19-68
 service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from [com.google.android.gms:play-services-auth:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.8.0.aar/962de30b693d1d057d2493108e2f1326/AndroidManifest.xml:24:9-184
+ADDED from [com.google.android.gms:play-services-auth:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.8.0.aar\06fbafde1271583f65286f8c34d269b8\AndroidManifest.xml:24:9-184
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.8.0.aar/962de30b693d1d057d2493108e2f1326/AndroidManifest.xml:24:64-87
+		ADDED from [com.google.android.gms:play-services-auth:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.8.0.aar\06fbafde1271583f65286f8c34d269b8\AndroidManifest.xml:24:64-87
 	android:permission
-		ADDED from [com.google.android.gms:play-services-auth:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.8.0.aar/962de30b693d1d057d2493108e2f1326/AndroidManifest.xml:24:88-182
+		ADDED from [com.google.android.gms:play-services-auth:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.8.0.aar\06fbafde1271583f65286f8c34d269b8\AndroidManifest.xml:24:88-182
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.8.0.aar/962de30b693d1d057d2493108e2f1326/AndroidManifest.xml:24:18-63
+		ADDED from [com.google.android.gms:play-services-auth:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.8.0.aar\06fbafde1271583f65286f8c34d269b8\AndroidManifest.xml:24:18-63
 receiver#com.google.android.gms.measurement.AppMeasurementReceiver
-ADDED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:25:7-26:18
-MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.8.0.aar/3a154c87122463e7a628450992d4f511/AndroidManifest.xml:25:7-26:18
-MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.8.0.aar/3a154c87122463e7a628450992d4f511/AndroidManifest.xml:25:7-26:18
+ADDED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.8.0.aar\74938b0c877cda3992e60c7de282d335\AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.8.0.aar\74938b0c877cda3992e60c7de282d335\AndroidManifest.xml:25:7-26:18
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:25:90-112
+		ADDED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:25:90-112
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:25:113-137
+		ADDED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:25:113-137
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:25:17-89
+		ADDED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:25:17-89
 receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
-ADDED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:27:7-31:18
+ADDED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:27:7-31:18
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:27:162-184
+		ADDED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:27:162-184
 	android:permission
-		ADDED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:27:105-161
+		ADDED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:27:105-161
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:27:17-104
+		ADDED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:27:17-104
 intent-filter#com.android.vending.INSTALL_REFERRER
-ADDED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:28:11-30:27
+ADDED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:28:11-30:27
 action#com.android.vending.INSTALL_REFERRER
-ADDED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:29:15-76
+ADDED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:29:15-76
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:29:23-74
+		ADDED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:29:23-74
 service#com.google.android.gms.measurement.AppMeasurementService
-ADDED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:32:7-137
-MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.8.0.aar/3a154c87122463e7a628450992d4f511/AndroidManifest.xml:27:7-137
-MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.8.0.aar/3a154c87122463e7a628450992d4f511/AndroidManifest.xml:27:7-137
+ADDED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:32:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.8.0.aar\74938b0c877cda3992e60c7de282d335\AndroidManifest.xml:27:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.8.0.aar\74938b0c877cda3992e60c7de282d335\AndroidManifest.xml:27:7-137
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:32:88-110
+		ADDED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:32:88-110
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:32:111-135
+		ADDED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:32:111-135
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.8.0.aar/35daff3e02194470e78b1d4604d98683/AndroidManifest.xml:32:16-87
+		ADDED from [com.google.firebase:firebase-analytics:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.8.0.aar\09f8361ae4c36b03b4ab00722f485642\AndroidManifest.xml:32:16-87
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-base-9.8.0.aar/51fa21ec4ffdf224daf5deb6336ec596/AndroidManifest.xml:19:9-172
+ADDED from [com.google.android.gms:play-services-base:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-base-9.8.0.aar\5b226ce1de3743fb936da5d4a9edb864\AndroidManifest.xml:19:9-172
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-base-9.8.0.aar/51fa21ec4ffdf224daf5deb6336ec596/AndroidManifest.xml:19:146-170
+		ADDED from [com.google.android.gms:play-services-base:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-base-9.8.0.aar\5b226ce1de3743fb936da5d4a9edb864\AndroidManifest.xml:19:146-170
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-base-9.8.0.aar/51fa21ec4ffdf224daf5deb6336ec596/AndroidManifest.xml:19:86-145
+		ADDED from [com.google.android.gms:play-services-base:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-base-9.8.0.aar\5b226ce1de3743fb936da5d4a9edb864\AndroidManifest.xml:19:86-145
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-base-9.8.0.aar/51fa21ec4ffdf224daf5deb6336ec596/AndroidManifest.xml:19:19-85
+		ADDED from [com.google.android.gms:play-services-base:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-base-9.8.0.aar\5b226ce1de3743fb936da5d4a9edb864\AndroidManifest.xml:19:19-85
 uses-permission#com.google.android.c2dm.permission.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:22:5-81
+ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:22:5-81
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:22:22-79
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:22:22-79
 permission#${applicationId}.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:24:5-109
+ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:24:5-109
 	android:protectionLevel
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:24:72-107
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:24:72-107
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:24:17-71
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:24:17-71
 permission#com.example.jonsmauricio.eyesfood.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:24:5-109
+ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:24:5-109
 	android:protectionLevel
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:24:72-107
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:24:72-107
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:24:17-71
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:24:17-71
 uses-permission#${applicationId}.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:26:5-78
+ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:26:5-78
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:26:22-76
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:26:22-76
 uses-permission#com.example.jonsmauricio.eyesfood.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:26:5-78
+ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:26:5-78
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:26:22-76
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:26:22-76
 receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
-ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:30:9-36:20
+ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:30:9-36:20
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:30:85-108
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:30:85-108
 	android:permission
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:30:109-169
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:30:109-169
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:30:19-84
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:30:19-84
 intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE+com.google.android.c2dm.intent.REGISTRATION
-ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:31:13-35:29
+ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:31:13-35:29
 intent-filter#com.example.jonsmauricio.eyesfood+com.google.android.c2dm.intent.RECEIVE+com.google.android.c2dm.intent.REGISTRATION
-ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:31:13-35:29
+ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:31:13-35:29
 action#com.google.android.c2dm.intent.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:32:17-80
+ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:32:17-80
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:32:25-78
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:32:25-78
 action#com.google.android.c2dm.intent.REGISTRATION
-ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:33:17-85
+ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:33:17-85
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:33:25-83
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:33:25-83
 category#${applicationId}
-ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:34:17-60
+ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:34:17-60
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:34:27-58
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:34:27-58
 category#com.example.jonsmauricio.eyesfood
-ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:34:17-60
+ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:34:17-60
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:34:27-58
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:34:27-58
 receiver#com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
-ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:40:9-119
+ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:40:9-119
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:40:93-117
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:40:93-117
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:40:19-92
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:40:19-92
 service#com.google.firebase.iid.FirebaseInstanceIdService
-ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:44:9-48:19
+ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:44:9-48:19
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:44:83-106
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:44:83-106
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:44:18-82
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:44:18-82
 intent-filter#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:45:13-47:29
+ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:45:13-47:29
 	android:priority
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:45:28-51
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:45:28-51
 action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:46:17-79
+ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:46:17-79
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.8.0.aar/a1039c842d913c98b4ce1089b46e9566/AndroidManifest.xml:46:25-77
+		ADDED from [com.google.firebase:firebase-iid:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.8.0.aar\15aa252ba0a93477afb07b29ec5980c9\AndroidManifest.xml:46:25-77
 provider#com.google.firebase.provider.FirebaseInitProvider
-ADDED from [com.google.firebase:firebase-common:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-common-9.8.0.aar/41e379204425692569345ca56d512449/AndroidManifest.xml:6:9-175
+ADDED from [com.google.firebase:firebase-common:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-common-9.8.0.aar\58a1d66477b793490f031a0f01524a47\AndroidManifest.xml:6:9-175
 	android:authorities
-		ADDED from [com.google.firebase:firebase-common:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-common-9.8.0.aar/41e379204425692569345ca56d512449/AndroidManifest.xml:6:19-78
+		ADDED from [com.google.firebase:firebase-common:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-common-9.8.0.aar\58a1d66477b793490f031a0f01524a47\AndroidManifest.xml:6:19-78
 	android:exported
-		ADDED from [com.google.firebase:firebase-common:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-common-9.8.0.aar/41e379204425692569345ca56d512449/AndroidManifest.xml:6:125-149
+		ADDED from [com.google.firebase:firebase-common:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-common-9.8.0.aar\58a1d66477b793490f031a0f01524a47\AndroidManifest.xml:6:125-149
 	android:initOrder
-		ADDED from [com.google.firebase:firebase-common:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-common-9.8.0.aar/41e379204425692569345ca56d512449/AndroidManifest.xml:6:150-173
+		ADDED from [com.google.firebase:firebase-common:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-common-9.8.0.aar\58a1d66477b793490f031a0f01524a47\AndroidManifest.xml:6:150-173
 	android:name
-		ADDED from [com.google.firebase:firebase-common:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/firebase-common-9.8.0.aar/41e379204425692569345ca56d512449/AndroidManifest.xml:6:79-124
+		ADDED from [com.google.firebase:firebase-common:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\firebase-common-9.8.0.aar\58a1d66477b793490f031a0f01524a47\AndroidManifest.xml:6:79-124
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.8.0.aar/ea311e3435db30b9f830971298fb4868/AndroidManifest.xml:20:9-121
+ADDED from [com.google.android.gms:play-services-basement:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.8.0.aar\0502de8933699e49ab0c71c1e71e4d8f\AndroidManifest.xml:20:9-121
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.8.0.aar/ea311e3435db30b9f830971298fb4868/AndroidManifest.xml:20:66-119
+		ADDED from [com.google.android.gms:play-services-basement:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.8.0.aar\0502de8933699e49ab0c71c1e71e4d8f\AndroidManifest.xml:20:66-119
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:9.8.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.8.0.aar/ea311e3435db30b9f830971298fb4868/AndroidManifest.xml:20:20-65
+		ADDED from [com.google.android.gms:play-services-basement:9.8.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.8.0.aar\0502de8933699e49ab0c71c1e71e4d8f\AndroidManifest.xml:20:20-65
 provider#com.facebook.internal.FacebookInitProvider
-ADDED from [com.facebook.android:facebook-core:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-core-4.42.0.aar/a960d6c31bb4cdb70366be752cfd2d40/AndroidManifest.xml:39:9-42:40
+ADDED from [com.facebook.android:facebook-core:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-core-4.42.0.aar\e0ef0a9ebf1dac291a12cc0f31ad140c\AndroidManifest.xml:39:9-42:40
 	android:authorities
-		ADDED from [com.facebook.android:facebook-core:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-core-4.42.0.aar/a960d6c31bb4cdb70366be752cfd2d40/AndroidManifest.xml:41:13-72
+		ADDED from [com.facebook.android:facebook-core:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-core-4.42.0.aar\e0ef0a9ebf1dac291a12cc0f31ad140c\AndroidManifest.xml:41:13-72
 	android:exported
-		ADDED from [com.facebook.android:facebook-core:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-core-4.42.0.aar/a960d6c31bb4cdb70366be752cfd2d40/AndroidManifest.xml:42:13-37
+		ADDED from [com.facebook.android:facebook-core:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-core-4.42.0.aar\e0ef0a9ebf1dac291a12cc0f31ad140c\AndroidManifest.xml:42:13-37
 	android:name
-		ADDED from [com.facebook.android:facebook-core:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-core-4.42.0.aar/a960d6c31bb4cdb70366be752cfd2d40/AndroidManifest.xml:40:13-70
+		ADDED from [com.facebook.android:facebook-core:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-core-4.42.0.aar\e0ef0a9ebf1dac291a12cc0f31ad140c\AndroidManifest.xml:40:13-70
 receiver#com.facebook.CurrentAccessTokenExpirationBroadcastReceiver
-ADDED from [com.facebook.android:facebook-core:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-core-4.42.0.aar/a960d6c31bb4cdb70366be752cfd2d40/AndroidManifest.xml:44:9-50:20
+ADDED from [com.facebook.android:facebook-core:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-core-4.42.0.aar\e0ef0a9ebf1dac291a12cc0f31ad140c\AndroidManifest.xml:44:9-50:20
 	android:exported
-		ADDED from [com.facebook.android:facebook-core:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-core-4.42.0.aar/a960d6c31bb4cdb70366be752cfd2d40/AndroidManifest.xml:46:13-37
+		ADDED from [com.facebook.android:facebook-core:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-core-4.42.0.aar\e0ef0a9ebf1dac291a12cc0f31ad140c\AndroidManifest.xml:46:13-37
 	android:name
-		ADDED from [com.facebook.android:facebook-core:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-core-4.42.0.aar/a960d6c31bb4cdb70366be752cfd2d40/AndroidManifest.xml:45:13-86
+		ADDED from [com.facebook.android:facebook-core:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-core-4.42.0.aar\e0ef0a9ebf1dac291a12cc0f31ad140c\AndroidManifest.xml:45:13-86
 intent-filter#com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED
-ADDED from [com.facebook.android:facebook-core:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-core-4.42.0.aar/a960d6c31bb4cdb70366be752cfd2d40/AndroidManifest.xml:47:13-49:29
+ADDED from [com.facebook.android:facebook-core:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-core-4.42.0.aar\e0ef0a9ebf1dac291a12cc0f31ad140c\AndroidManifest.xml:47:13-49:29
 action#com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED
-ADDED from [com.facebook.android:facebook-core:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-core-4.42.0.aar/a960d6c31bb4cdb70366be752cfd2d40/AndroidManifest.xml:48:17-95
+ADDED from [com.facebook.android:facebook-core:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-core-4.42.0.aar\e0ef0a9ebf1dac291a12cc0f31ad140c\AndroidManifest.xml:48:17-95
 	android:name
-		ADDED from [com.facebook.android:facebook-core:4.42.0] /home/pablov/.gradle/caches/transforms-1/files-1.1/facebook-core-4.42.0.aar/a960d6c31bb4cdb70366be752cfd2d40/AndroidManifest.xml:48:25-92
+		ADDED from [com.facebook.android:facebook-core:4.42.0] C:\Users\pavlo\.gradle\caches\transforms-1\files-1.1\facebook-core-4.42.0.aar\e0ef0a9ebf1dac291a12cc0f31ad140c\AndroidManifest.xml:48:25-92

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="?attr/listPreferredItemHeight"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.jonsmauricio.eyesfood.ui.CalendarActivity"
+    tools:showIn="@layout/activity_calendar"
+    android:orientation="vertical">
+
+        <CalendarView
+            android:id="@+id/cvDiaryCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </CalendarView>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btExport"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cvDiaryCalendar"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="0dp"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:text="@string/export_button"
+            tools:textSize="12dp"
+            style="@style/RaisedButton"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btShare"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cvDiaryCalendar"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="0dp"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:text="@string/share_button"
+            tools:textSize="12dp"
+            style="@style/RaisedButton"/>
+
+</RelativeLayout>

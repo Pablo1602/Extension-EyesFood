@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvDateInicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calendar_date_ini"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"/>
+    <DatePicker
+        android:id="@+id/dpInicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"/>
+    <TextView
+        android:id="@+id/tvDateFin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calendar_date_fin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"/>
+    <DatePicker
+        android:id="@+id/dpFin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"/>
+
+</LinearLayout>

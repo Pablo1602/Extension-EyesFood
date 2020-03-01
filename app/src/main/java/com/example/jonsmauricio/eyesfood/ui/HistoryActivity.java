@@ -761,9 +761,8 @@ public class HistoryActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.history, menu);
-
-        MenuItem item = menu.findItem(R.id.searchHistory);
-        searchView.setMenuItem(item);
+        MenuItem item = (MenuItem) menu.findItem(R.id.searchHistory);
+        searchView.setMenuItem((MenuItem) item);
 
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
             @Override
@@ -895,6 +894,19 @@ public class HistoryActivity extends AppCompatActivity
                     .replace(R.id.llMainActivity, fragmentProfile, "fragmento_perfil")
                     .commit();
         }
+        else if(title.equals(getResources().getString(R.string.nav_diary))){
+            showSelectedDialog(5);
+            //Si vengo del perfil oculto el recycler
+            if (perfil == 1) {
+                showProgress(false,"PERFIL");
+                fab.setVisibility(View.GONE);
+                fabProfile.setVisibility(View.VISIBLE);
+            }
+            else{
+                showProgress(false,"");
+            }
+            setTitle = 0;
+        }
         else if(title.equals(getResources().getString(R.string.nav_experts))){
             showSelectedDialog(0);
             //Si vengo del perfil oculto el recycler
@@ -1014,6 +1026,7 @@ public class HistoryActivity extends AppCompatActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         ExpertsFragment expertsFragment = new ExpertsFragment();
+        DiaryFragment diaryFragment  = new DiaryFragment();
         HelpFragment helpFragment = new HelpFragment();
         StoresFragment storeFragment = new StoresFragment();
 
@@ -1054,6 +1067,8 @@ public class HistoryActivity extends AppCompatActivity
             storeFragment.setArguments(bundle);
             //transaction.replace(android.R.id.content, expertsFragment);
             transaction.add(android.R.id.content, storeFragment, "fragmento_tiendas").addToBackStack(null);
+        } else if (seleccion == 5) {
+            transaction.add(android.R.id.content, diaryFragment, "fragmento_diarios").addToBackStack(null);
         }
         transaction.commit();
     }

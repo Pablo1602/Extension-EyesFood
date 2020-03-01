@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/pablov/Escritorio/Memoria/Extension-EyesFood/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "C:\\Users\\pavlo\\OneDrive\\Escritorio\\Tesis\\Extension-EyesFood\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rAU\\values-en-rAU.xml",
             "map": [
                 {
-                    "source": "/home/pablov/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f23d904491347cab378013a8fa2742a8/res/values-en-rAU/values-en-rAU.xml",
+                    "source": "C:\\Users\\pavlo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\9c1c424923e4fbe2797a5bb200ef8a46\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/pablov/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/d1057b19baac4ac678cb33657580d6a0/res/values-en-rAU/values-en-rAU.xml",
+                    "source": "C:\\Users\\pavlo\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\098c92414ebe554423ade685a03cb6e4\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

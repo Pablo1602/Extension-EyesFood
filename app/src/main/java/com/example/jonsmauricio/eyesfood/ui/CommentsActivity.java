@@ -366,8 +366,6 @@ public class CommentsActivity extends AppCompatActivity {
                     transaction.add(android.R.id.content, expertsFragment, "fragmento_expertos").addToBackStack(null);
                 }
         }
-
         return(super.onOptionsItemSelected(item));
     }
-
 }

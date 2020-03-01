@@ -90,6 +90,6 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 26 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Gradle: __local_aars__:/home/pablov/Escritorio/Memoria/Extension-EyesFood/scanner/libs/core-3.3.0.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:C.\Users\pavlo\OneDrive\Escritorio\Tesis\Extension-EyesFood\scanner\libs\core-3.3.0.jar:unspecified@jar" level="project" />
   </component>
 </module>

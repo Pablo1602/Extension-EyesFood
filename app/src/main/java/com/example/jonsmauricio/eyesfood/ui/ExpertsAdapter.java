@@ -26,9 +26,6 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Created by JonásMauricio on 04-11-2017.
- */
 
 public class ExpertsAdapter extends ArrayAdapter<Expert> {
 

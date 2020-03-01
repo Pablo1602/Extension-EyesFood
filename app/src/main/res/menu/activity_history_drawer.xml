@@ -24,6 +24,11 @@
             android:icon="@mipmap/ic_thumb_down_black_18dp"
             android:title="@string/nav_rejected" />
         <item
+            android:id="@+id/bt_nav_diary"
+            android:icon="@mipmap/ic_mode_comment_black_18dp"
+            android:title="@string/nav_diary" />
+
+        <item
             android:id="@+id/bt_nav_profile"
             android:icon="@mipmap/ic_account_circle_black_18dp"
             android:title="@string/nav_profile" />

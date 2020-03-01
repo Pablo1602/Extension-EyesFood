@@ -3,6 +3,8 @@ package com.example.jonsmauricio.eyesfood.data.api;
 import com.example.jonsmauricio.eyesfood.data.api.model.Comment;
 import com.example.jonsmauricio.eyesfood.data.api.model.CommentBody;
 import com.example.jonsmauricio.eyesfood.data.api.model.Counter;
+import com.example.jonsmauricio.eyesfood.data.api.model.Diary;
+import com.example.jonsmauricio.eyesfood.data.api.model.Entry;
 
 import java.util.List;
 
@@ -54,4 +56,42 @@ public interface CommentsApi {
     @Headers("Content-Type: application/json")
     @POST("comments/editar/respuesta/{idRespuesta}")
     Call<Comment> modifyResponse(@Body CommentBody commentBody, @Path("idRespuesta") int idRespuesta);
+
+    //Peticion que retorna los diarios de una persona
+    @GET("diary/{idUsuario}")
+    Call<List<Diary>> getDiary(@Path("idUsuario") String idUsuario);
+
+    //Peticion que retorna las entradas de un diario
+    @GET("diary/entrada/{idDiario}")
+    Call<List<Entry>> getEntry(@Path("idDiario") String idDiario);
+
+    //Peticion que retorna las entradas de un diario en un día
+    @GET("diary/entrada/{idDiario}/{fecha}")
+    Call<List<Entry>> getEntryDate(@Path("idDiario") String idDiario, @Path("fecha") String fecha);
+
+    //Peticion de creacion de un diario
+    @POST("diary/{idUsuario}")
+    Call<Diary> newDiary(@Body Diary diary, @Path("idUsuario") int idUsuario);
+
+    //Peticion de creacion de una entrada
+    @POST("diary/entrada/{idDiario}")
+    Call<Entry> newEntry(@Body Entry entry, @Path("idDiario") int idDiario);
+
+    //Peticion para borrar un diario
+    @POST("diary/borrar/{idDiario}")
+    Call<Diary> deleteDiary(@Path("idDiario") int idDiario);
+
+    //Peticion para borrar una entrada
+    @POST("diary/borrar/entrada/{idEntrada}")
+    Call<Entry> deleteEntry(@Path("idEntrada") int idEntrada);
+
+    //Actualiza un diario
+    @Headers("Content-Type: application/json")
+    @POST("diary/editar/{idDiario}")
+    Call<Diary> modifyDiary(@Body Diary diary, @Path("idDiario") int idDiario);
+
+    //Actualiza una entrada
+    @Headers("Content-Type: application/json")
+    @POST("diary/editar/entrada/{idEntrada}")
+    Call<Entry> modifyEntry(@Body Entry entry, @Path("idEntrada") int idEntrada);
 }

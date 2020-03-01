@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/pablov/Escritorio/Memoria/Extension-EyesFood/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
+            "outputFile": "C:\\Users\\pavlo\\OneDrive\\Escritorio\\Tesis\\Extension-EyesFood\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
             "map": [
                 {
-                    "source": "/home/pablov/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f23d904491347cab378013a8fa2742a8/res/values-v11/values-v11.xml",
+                    "source": "C:\\Users\\pavlo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\9c1c424923e4fbe2797a5bb200ef8a46\\res\\values-v11\\values-v11.xml",
                     "from": {
                         "startLines": "2,8,14,20,26,32,38,39,43,47,48,52,56,57,61,66,71,76,78,80,81,82,136,191",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

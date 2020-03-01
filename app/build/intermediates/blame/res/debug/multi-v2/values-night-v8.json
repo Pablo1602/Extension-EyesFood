@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/pablov/Escritorio/Memoria/Extension-EyesFood/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "C:\\Users\\pavlo\\OneDrive\\Escritorio\\Tesis\\Extension-EyesFood\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/pablov/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f23d904491347cab378013a8fa2742a8/res/values-night-v8/values-night-v8.xml",
+                    "source": "C:\\Users\\pavlo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\9c1c424923e4fbe2797a5bb200ef8a46\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",

@@ -181,6 +181,7 @@
     <string name="nav_uploads">Subidos</string>
     <string name="nav_favorites">Destacados</string>
     <string name="nav_rejected">Rechazados</string>
+    <string name="nav_diary">Diarios</string>
 
     <string name="nav_profile">Mi perfil</string>
     <string name="nav_experts">Expertos</string>
@@ -243,5 +244,13 @@
     <string name="image_ingredients">Ingredientes</string>
     <string name="image_nutrients">Nutrientes</string>
     <string name="consulta">Consulta</string>
+    <string name="calendar_button">Calendario</string>
+    <string name="export_button">Exportar</string>
+    <string name="share_button">Compartir</string>
+    <string name="entry_button_delete">Borrar</string>
+    <string name="entry_text">Titulo de entrada</string>
+    <string name="entry_title">Texto de entrada</string>
+    <string name="calendar_date_ini">Fecha Inicio</string>
+    <string name="calendar_date_fin">Fecha Final</string>
 
 </resources>

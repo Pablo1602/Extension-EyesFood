@@ -94,7 +94,7 @@ public class ExpertsFragment extends DialogFragment {
 
             @Override
             public void onFailure(Call<List<Expert>> call, Throwable t) {
-                Log.d("Falla Retrofit", "Falla en new food solitude");
+                Log.d("Falla Retrofit", "Falla en retrieveExperts");
                 Log.d("Falla", t.getMessage());
             }
         });

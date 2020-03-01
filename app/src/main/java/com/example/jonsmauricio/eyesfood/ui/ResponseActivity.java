@@ -75,7 +75,7 @@ public class ResponseActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarResponse);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         userIdFinal = SessionPrefs.get(this).getUserId();
         userRolFinal = SessionPrefs.get(this).getUserRol();

@@ -36,10 +36,6 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Created by JonásMauricio on 04-11-2017.
- */
-
 public class CommentsAdapter extends ArrayAdapter<Comment>{
 
     final String baseFotoUsuario = EyesFoodApi.BASE_URL+"img/users/";
@@ -103,7 +99,6 @@ public class CommentsAdapter extends ArrayAdapter<Comment>{
 
         // Setup.
         //Cargo avatar de usuario actual
-        // TODO: 07-11-2017 VER COMO ARREGLAR ESTO
         /*if(currentComment.getUserPhoto().contains("facebook") || currentComment.getUserPhoto().contains("google")) {
             Picasso.with(getContext()).load(currentComment.getUserPhoto()).resize(800, 800).into(avatar);
         }*/
