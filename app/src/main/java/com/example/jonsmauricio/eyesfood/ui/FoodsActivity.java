@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -29,42 +30,30 @@ import android.widget.Toast;
 import com.example.jonsmauricio.eyesfood.R;
 import com.example.jonsmauricio.eyesfood.data.api.CommentsApi;
 import com.example.jonsmauricio.eyesfood.data.api.EyesFoodApi;
-import com.example.jonsmauricio.eyesfood.data.api.OpenFoodFactsApi;
-import com.example.jonsmauricio.eyesfood.data.api.model.Additive;
 import com.example.jonsmauricio.eyesfood.data.api.model.Comment;
 import com.example.jonsmauricio.eyesfood.data.api.model.Counter;
 import com.example.jonsmauricio.eyesfood.data.api.model.Food;
 import com.example.jonsmauricio.eyesfood.data.api.model.FoodImage;
-import com.example.jonsmauricio.eyesfood.data.api.model.FoodStore;
-import com.example.jonsmauricio.eyesfood.data.api.model.HistoryFoodBody;
-import com.example.jonsmauricio.eyesfood.data.api.model.Ingredient;
 import com.example.jonsmauricio.eyesfood.data.api.model.InsertFromLikeBody;
 import com.example.jonsmauricio.eyesfood.data.api.model.NewFoodBody;
 import com.example.jonsmauricio.eyesfood.data.api.model.Nutriments;
 import com.example.jonsmauricio.eyesfood.data.api.model.Product;
-import com.example.jonsmauricio.eyesfood.data.api.model.ProductResponse;
 import com.example.jonsmauricio.eyesfood.data.api.model.Recommendation;
 import com.example.jonsmauricio.eyesfood.data.api.model.ShortFood;
 import com.example.jonsmauricio.eyesfood.data.api.model.Store;
 import com.example.jonsmauricio.eyesfood.data.prefs.SessionPrefs;
-import com.rapidapi.rapidconnect.Argument;
-import com.rapidapi.rapidconnect.RapidApiConnect;
 import com.squareup.picasso.Picasso;
 
-import java.io.FilePermission;
 import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -82,6 +71,8 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
     //Para la info general
     TextView infoGeneralNombre, infoGeneralProducto, infoGeneralCodigo, infoGeneralMarca, infoGeneralNeto,
             infoGeneralFecha, tvIngredientes, infoGeneralAlergenos, infoGeneralTrazas;
+
+    ImageView ivNutricion, ivNova;
 
     //Para la info nutricional
     TextView porcion, porcionEnvase, energia100, energiaPorcion, proteinas100, proteinasPorcion, grasaTotal100,
@@ -117,6 +108,8 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
     private String tipo;
     private String alergeno;
     private String traza;
+    private String gradoNutri;
+    private int nova;
 
     //Permissions
     private static final int PERMISSION_CODE = 123;
@@ -138,8 +131,12 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabFoods);
+        FloatingActionButton fabPhoto = (FloatingActionButton) findViewById(R.id.fabPhotoFoods);
+        FloatingActionButton fabEdit = (FloatingActionButton) findViewById(R.id.fabEditFoods);
 
         fab.setOnClickListener(this);
+        fabPhoto.setOnClickListener(this);
+        fabEdit.setOnClickListener(this);
 
         //Para la info general
         infoGeneralNombre = (TextView) findViewById(R.id.tvFoodsInfoGeneralNombre);
@@ -151,6 +148,8 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
         infoGeneralRating = (RatingBar) findViewById(R.id.rbFoodsRating);
         infoGeneralAlergenos = (TextView) findViewById(R.id.tvFoodsInfoGeneralAllergy);
         infoGeneralTrazas = (TextView) findViewById(R.id.tvFoodsInfoGeneralTrace);
+        ivNutricion = (ImageView) findViewById(R.id.ivFoodsNutrition);
+        ivNova = (ImageView) findViewById(R.id.ivFoodsNova);
 
         //Para la info nutricional
         porcion = (TextView) findViewById(R.id.tvFoodsInfoNutricionalPorcion);
@@ -191,7 +190,6 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
         like = (Button) findViewById(R.id.btFoodsLike);
         dislike = (Button) findViewById(R.id.btFoodsDisLike);
         edits = (Button) findViewById(R.id.btFoodsEdits);
-
         stores.setOnClickListener(this);
         additives.setOnClickListener(this);
         recommendations.setOnClickListener(this);
@@ -236,6 +234,8 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
                 collapser.setTitle(pendiente.getName());
                 CodigoBarras = pendiente.getBarcode();
                 fab.setVisibility(View.GONE);
+                fabPhoto.setVisibility(View.GONE);
+                fabEdit.setVisibility(View.GONE);
                 additives.setVisibility(View.GONE);
                 recommendations.setVisibility(View.GONE);
                 images.setVisibility(View.GONE);
@@ -253,7 +253,6 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
             }
             //showFood(Alimento);
         }
-
         showFood(product,Alimento);
         showNutritionFacts(product);
         loadIngredients();
@@ -266,6 +265,21 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
         else if(MeGusta == 2){
             dislike.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.colorAccent, null));
         }
+        ivNutricion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://cl.openfoodfacts.org/nova"));
+                startActivity(browserIntent);
+            }
+        });
+
+        ivNova.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://cl.openfoodfacts.org/nutriscore"));
+                startActivity(browserIntent);
+            }
+        });
     }
 
     //Carga los datos del alimento al iniciar la pantalla
@@ -315,6 +329,54 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
             }
             else{
                 infoGeneralAlergenos.append(" "+product.getTraces().replace("(es)",""));
+            }
+            if (product.getNutritionGrades() != null){
+                switch(product.getNutritionGrades()) {
+                    case "a":
+                        ivNutricion.setColorFilter(Color.rgb(24, 106, 59));
+                        ivNutricion.setImageResource(R.drawable.ic_sentiment_very_satisfied_black_24dp);
+                        break;
+                    case "b":
+                        ivNutricion.setColorFilter(Color.rgb( 46, 204, 113 ));
+                        ivNutricion.setImageResource(R.drawable.ic_sentiment_satisfied_black_24dp);
+                        break;
+                    case "c":
+                        ivNutricion.setColorFilter(Color.rgb( 247, 220, 111 ));
+                        ivNutricion.setImageResource(R.drawable.ic_sentiment_neutral_black_24dp);
+                        break;
+                    case "d":
+                        ivNutricion.setColorFilter(Color.rgb(235, 152, 78));
+                        ivNutricion.setImageResource(R.drawable.ic_sentiment_dissatisfied_black_24dp);
+                        break;
+                    case "e":
+                        ivNutricion.setColorFilter(Color.rgb(231, 76, 60));
+                        ivNutricion.setImageResource(R.drawable.ic_sentiment_very_dissatisfied_black_24dp);
+                        break;
+                    default:
+                        // code block
+                }
+            }
+            if (product.getNova() != null){
+                switch(product.getNova()) {
+                    case "1":
+                        ivNova.setColorFilter(Color.rgb(24, 106, 59));
+                        ivNova.setImageResource(R.drawable.ic_sentiment_very_satisfied_black_24dp);
+                        break;
+                    case "2":
+                        ivNova.setColorFilter(Color.rgb( 46, 204, 113 ));
+                        ivNova.setImageResource(R.drawable.ic_sentiment_satisfied_black_24dp);
+                        break;
+                    case "3":
+                        ivNova.setColorFilter(Color.rgb( 247, 220, 111 ));
+                        ivNova.setImageResource(R.drawable.ic_sentiment_dissatisfied_black_24dp);
+                        break;
+                    case "4":
+                        ivNova.setColorFilter(Color.rgb(235, 152, 78));
+                        ivNova.setImageResource(R.drawable.ic_sentiment_very_dissatisfied_black_24dp);
+                        break;
+                    default:
+                        // code block
+                }
             }
             SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Date d = new Date(product.getLast_modified_t()*1000);
@@ -603,6 +665,29 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
                 loadImages(CodigoBarras);
                 break;
             }
+            case R.id.fabEditFoods:{
+                showSelectedDialog(0);
+                break;
+            }
+            case R.id.fabPhotoFoods:{
+                if (ContextCompat.checkSelfPermission(this, permissions[0]) == PackageManager.PERMISSION_GRANTED &&
+                        ContextCompat.checkSelfPermission(this, permissions[1]) == PackageManager.PERMISSION_GRANTED) {
+                    showSelectedDialog(1);
+                }
+                else{
+                    if (ContextCompat.checkSelfPermission(this, permissions[0]) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(this, permissions, PERMISSION_CODE);
+                    }
+                    if (ContextCompat.checkSelfPermission(this, permissions[1]) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(this, permissions, PERMISSION_CODE);
+                    }
+                    if (ContextCompat.checkSelfPermission(this, permissions[2]) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(this, permissions, PERMISSION_CODE);
+                    }
+                }
+                break;
+            }
+
             case R.id.btFoodsLike: {
                 Log.d("myTag",String.valueOf(MeGusta));
                 if(MeGusta == 2){
@@ -744,6 +829,10 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.action_foods_comments:{
+                loadComments(CodigoBarras);
+                break;
+            }
             case R.id.action_foods_complaint:{
                 showSelectedDialog(0);
                 break;

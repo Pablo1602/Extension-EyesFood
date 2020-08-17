@@ -1,26 +1,22 @@
 package com.example.jonsmauricio.eyesfood.ui;
 
-import android.Manifest;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
+
 import android.support.v4.app.DialogFragment;
-import android.support.v4.content.ContextCompat;
+
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -30,27 +26,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.jonsmauricio.eyesfood.R;
 import com.example.jonsmauricio.eyesfood.data.api.EyesFoodApi;
-import com.example.jonsmauricio.eyesfood.data.api.model.ApiError;
 import com.example.jonsmauricio.eyesfood.data.api.model.Food;
-import com.example.jonsmauricio.eyesfood.data.api.model.Ingredient;
-import com.example.jonsmauricio.eyesfood.data.api.model.LoginBody;
-import com.example.jonsmauricio.eyesfood.data.api.model.NewFoodBody;
-import com.example.jonsmauricio.eyesfood.data.api.model.ShortFood;
-import com.example.jonsmauricio.eyesfood.data.api.model.User;
 import com.example.jonsmauricio.eyesfood.data.prefs.SessionPrefs;
-import com.google.zxing.client.android.CaptureActivity;
 import com.squareup.picasso.Picasso;
 
 import net.gotev.uploadservice.MultipartUploadRequest;
@@ -62,18 +47,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.UUID;
 
-import okhttp3.MediaType;
-import okhttp3.RequestBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import static android.app.Activity.RESULT_OK;
-import static com.example.jonsmauricio.eyesfood.R.id.barcode_image_view;
-import static com.example.jonsmauricio.eyesfood.R.id.ivProfile;
-import static com.example.jonsmauricio.eyesfood.R.id.rbFront;
 
 public class UploadImageDialogFragment extends DialogFragment {
     /** The system calls this to get the DialogFragment's layout, regardless
@@ -191,9 +168,9 @@ public class UploadImageDialogFragment extends DialogFragment {
     @Override
     public void onPrepareOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);
+        menu.findItem(R.id.action_foods_comments).setVisible(false);
         menu.findItem(R.id.action_foods_complaint).setVisible(false);
         menu.findItem(R.id.action_foods_add_photos).setVisible(false);
-        menu.findItem(R.id.action_foods_settings).setVisible(false);
     }
 
     //method to show file chooser

@@ -26,18 +26,6 @@
         android:textAppearance="?attr/textAppearanceListItem"
         tools:text="Alexander Pierrot" />
 
-    <RatingBar
-        android:id="@+id/rbCommentsRating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="?android:attr/ratingBarStyleSmall"
-        android:layout_marginLeft="0dp"
-        android:numStars="5"
-        android:stepSize="0.1"
-        android:isIndicator="true"
-        android:layout_above="@+id/tvCommentsComment"
-        android:layout_alignParentRight="true"/>
-
     <TextView
         android:id="@+id/tvCommentsComment"
         android:layout_width="wrap_content"

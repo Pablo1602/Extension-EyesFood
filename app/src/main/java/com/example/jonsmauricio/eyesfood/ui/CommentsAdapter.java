@@ -12,16 +12,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.jonsmauricio.eyesfood.R;
 import com.example.jonsmauricio.eyesfood.data.api.CommentsApi;
 import com.example.jonsmauricio.eyesfood.data.api.EyesFoodApi;
 import com.example.jonsmauricio.eyesfood.data.api.model.Comment;
-import com.example.jonsmauricio.eyesfood.data.api.model.Food;
-import com.example.jonsmauricio.eyesfood.data.api.model.Product;
 import com.example.jonsmauricio.eyesfood.data.api.model.User;
 import com.example.jonsmauricio.eyesfood.data.prefs.SessionPrefs;
 import com.squareup.picasso.Picasso;
@@ -29,7 +25,6 @@ import com.squareup.picasso.Picasso;
 import java.io.Serializable;
 import java.util.List;
 
-import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -91,7 +86,6 @@ public class CommentsAdapter extends ArrayAdapter<Comment>{
         final TextView name = convertView.findViewById(R.id.tvCommentsName);
         final TextView comment = convertView.findViewById(R.id.tvCommentsComment);
         final TextView date = convertView.findViewById(R.id.tvCommentsDate);
-        final RatingBar ratingBar = convertView.findViewById(R.id.rbCommentsRating);
         final Button response = convertView.findViewById(R.id.btResponse);
 
         // Comentario actual.
@@ -114,7 +108,6 @@ public class CommentsAdapter extends ArrayAdapter<Comment>{
                              User user = response.body();
                              Picasso.with(getContext()).load(baseFotoUsuario + "default.png").resize(800, 800).into(avatar);
                              name.setText(user.getName() + " " + user.getSurName());
-                             ratingBar.setRating(Float.parseFloat(user.getReputation()));
                              comment.setText(currentComment.getComment());
                              date.setText(currentComment.getDate());
 

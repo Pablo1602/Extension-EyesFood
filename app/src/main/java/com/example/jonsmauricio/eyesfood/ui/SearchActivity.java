@@ -133,6 +133,7 @@ public class SearchActivity extends AppCompatActivity {
         Bundle b = i.getExtras();
 
         if(b != null){
+            Log.d("myTag", "Bundle no vacio");
             showLists(false);
             showProgress(true);
             query = (String) b.get("query");
@@ -194,7 +195,7 @@ public class SearchActivity extends AppCompatActivity {
     public void makeQueryAdditives(String query){
         resultadoAditivos = new ArrayList<>();
         showListAdditives(resultadoAditivos);
-        /*Call<List<Additive>> call = mEyesFoodApi.getAdditivesQuery(query);
+        Call<List<Additive>> call = mEyesFoodApi.getAdditivesQuery(query);
         call.enqueue(new Callback<List<Additive>>() {
             @Override
             public void onResponse(Call<List<Additive>> call,
@@ -211,7 +212,7 @@ public class SearchActivity extends AppCompatActivity {
             public void onFailure(Call<List<Additive>> call, Throwable t) {
                 Log.d("myTag", "Falla en la llamada de aditivos: loadAdditives");
             }
-        });*/
+        });
     }
 
 
@@ -260,7 +261,7 @@ public class SearchActivity extends AppCompatActivity {
         }
         else{
             noAdditives = true;
-            showEmptyState(noAdditives, noFoods);
+            showEmptyState(noAdditives, noFoods, noAllergy);
         }
         showProgress(false);
         if(!noAdditives || !noFoods){
@@ -280,11 +281,14 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 //Vacío la lista anterior seteo el empty state y el progress antes de hacer la query
-                //resultadoAlimentos.clear();
-                //resultadoAditivos.clear();
+                Log.d("Search", "query"+ query);
+                resultadoAlimentos.clear();
+                resultadoAditivos.clear();
+                resultadoAlergenos.clear();
                 showProgress(true);
                 makeQueryFoods(query);
                 makeQueryAdditives(query);
+                makeQueryAllergy(query);
                 return false;
             }
 
@@ -299,10 +303,10 @@ public class SearchActivity extends AppCompatActivity {
     private void showProgress(boolean show) {
         if(show) {
             showLists(false);
-            showEmptyState(false, false);
+            showEmptyState(false, false, false);
         }
         else{
-            showEmptyState(noAdditives, noFoods);
+            showEmptyState(noAdditives, noFoods, noAllergy);
         }
         searchProgress.setVisibility(show ? View.VISIBLE : View.GONE);
         searchProgressText.setVisibility(show ? View.VISIBLE : View.GONE);
@@ -314,17 +318,21 @@ public class SearchActivity extends AppCompatActivity {
             searchFoodsHeader.setVisibility(View.GONE);
             resultAdditives.setVisibility(View.GONE);
             searchAdditivesHeader.setVisibility(View.GONE);
+            resultAllergy.setVisibility(View.GONE);
+            searchAllergyHeader.setVisibility(View.GONE);
         }
         else{
             resultFoods.setVisibility(View.VISIBLE);
             searchFoodsHeader.setVisibility(View.VISIBLE);
             resultAdditives.setVisibility(View.VISIBLE);
             searchAdditivesHeader.setVisibility(View.VISIBLE);
+            resultAllergy.setVisibility(View.VISIBLE);
+            searchAllergyHeader.setVisibility(View.VISIBLE);
         }
     }
 
-    public void showEmptyState(boolean noAdditives, boolean noFoods){
-        if(noAdditives && noFoods){
+    public void showEmptyState(boolean noAdditives, boolean noFoods, boolean noAllergy){
+        if(noAdditives && noFoods && noAllergy){
             searchEmptyState.setVisibility(View.VISIBLE);
         }
         else{

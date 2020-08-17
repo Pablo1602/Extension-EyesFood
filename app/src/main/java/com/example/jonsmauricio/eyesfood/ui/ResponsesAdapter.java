@@ -81,7 +81,6 @@ public class ResponsesAdapter extends ArrayAdapter<Comment> {
         final TextView name = convertView.findViewById(R.id.tvCommentsName);
         final TextView comment = convertView.findViewById(R.id.tvCommentsComment);
         final TextView date = convertView.findViewById(R.id.tvCommentsDate);
-        final RatingBar ratingBar = convertView.findViewById(R.id.rbCommentsRating);
 
 
         // Comentario actual.
@@ -105,7 +104,6 @@ public class ResponsesAdapter extends ArrayAdapter<Comment> {
                              User user = response.body();
                              Picasso.with(getContext()).load(baseFotoUsuario + "default.png").resize(800, 800).into(avatar);
                              name.setText(user.getName() + " " + user.getSurName());
-                             ratingBar.setRating(Float.parseFloat(user.getReputation()));
                              comment.setText(currentComment.getComment());
                              date.setText(currentComment.getDate());
                          }

@@ -1,10 +1,6 @@
 package com.example.jonsmauricio.eyesfood.data.api.model;
 
-import android.os.Parcelable;
-
 import com.google.gson.annotations.SerializedName;
-
-import java.io.Serializable;
 
 /*
     Define un objeto alimento incompleto

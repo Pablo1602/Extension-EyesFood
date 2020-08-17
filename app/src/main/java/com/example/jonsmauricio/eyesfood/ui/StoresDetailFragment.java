@@ -2,6 +2,8 @@ package com.example.jonsmauricio.eyesfood.ui;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
@@ -44,6 +46,11 @@ public class StoresDetailFragment extends DialogFragment {
     Button foods;
     int menu;
     String barcode;
+    String url;
+    String address;
+    String email;
+    String phone;
+    Intent intent;
     private ProgressDialog progressDialog;
 
     @Override
@@ -120,6 +127,47 @@ public class StoresDetailFragment extends DialogFragment {
             }
         });
 
+        if (!url.isEmpty()) {
+            storeWeb.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (!url.startsWith("http://") && !url.startsWith("https://")) {
+                        url = "http://" + url;
+                    }
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(intent);
+                }
+            });
+        }
+
+        if (!email.isEmpty()) {
+            storeEmail.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:" + email));
+                    startActivity(intent);
+                }
+            });
+        }
+
+        if (!address.isEmpty()) {
+            storeAddress.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://maps.google.co.in/maps?q=" + address));
+                    startActivity(intent);
+                }
+            });
+        }
+
+        /*storePhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phone));
+                startActivity(intent);
+            }
+        });*/
+
         return view;
     }
 
@@ -141,6 +189,10 @@ public class StoresDetailFragment extends DialogFragment {
         storeEmail.setText(tienda.getEmail());
         storeAddress.setText(tienda.getAddress());
         storeDescription.setText(tienda.getDescription());
+        url = tienda.getWeb();
+        address = tienda.getAddress();
+        email = tienda.getEmail();
+        phone = tienda.getPhone();
         //getListFoods();
     }
 

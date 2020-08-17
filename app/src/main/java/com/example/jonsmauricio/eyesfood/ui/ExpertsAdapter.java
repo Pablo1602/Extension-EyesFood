@@ -70,8 +70,8 @@ public class ExpertsAdapter extends ArrayAdapter<Expert> {
         TextView name = convertView.findViewById(R.id.tvStoresName);
         TextView specialty = convertView.findViewById(R.id.tvStoresPage);
         TextView phone = convertView.findViewById(R.id.tvExpertsPhone);
-        RatingBar ratingBar = convertView.findViewById(R.id.rbExpertsRating);
-        TextView commentsCount = convertView.findViewById(R.id.tvCommentsCount);
+        //RatingBar ratingBar = convertView.findViewById(R.id.rbExpertsRating);
+        //TextView commentsCount = convertView.findViewById(R.id.tvCommentsCount);
         //TextView quality = convertView.findViewById(R.id.tvExpertQualify);
 
         // Experto actual.
@@ -82,12 +82,12 @@ public class ExpertsAdapter extends ArrayAdapter<Expert> {
         Picasso.with(getContext()).load(baseFotoExperto + currentExpert.getPhoto()).resize(800,800).into(avatar);
 
         name.setText(currentExpert.getName() + " " + currentExpert.getLastName());
-        ratingBar.setRating(currentExpert.getReputation());
+        //ratingBar.setRating(currentExpert.getReputation());
         //quality.setText(Float.toString(currentExpert.getReputation()));
         specialty.setText(currentExpert.getSpecialty());
         phone.setText("Alimentos Aprobados: "+currentExpert.getFoods());
         //REVISAR POR QUE NO SIEMPRE CARGA BIEN LA CANTIDAD DE COMENTARIOS
-        getCommentsCount(commentsCount, String.valueOf(currentExpert.getExpertId()));
+        //getCommentsCount(commentsCount, String.valueOf(currentExpert.getExpertId()));
         //commentsCount.setText(String.valueOf(comments));
 
         return convertView;

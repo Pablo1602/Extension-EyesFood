@@ -5,6 +5,7 @@ import com.example.jonsmauricio.eyesfood.data.api.model.CommentBody;
 import com.example.jonsmauricio.eyesfood.data.api.model.Counter;
 import com.example.jonsmauricio.eyesfood.data.api.model.Diary;
 import com.example.jonsmauricio.eyesfood.data.api.model.Entry;
+import com.example.jonsmauricio.eyesfood.data.api.model.Notification;
 
 import java.util.List;
 
@@ -94,4 +95,25 @@ public interface CommentsApi {
     @Headers("Content-Type: application/json")
     @POST("diary/editar/entrada/{idEntrada}")
     Call<Entry> modifyEntry(@Body Entry entry, @Path("idEntrada") int idEntrada);
+
+    //Peticion que retorna la lista de notificaciones
+    @GET("notifications")
+    Call<List<Notification>> getNotification();
+
+    //Peticion que retorna la lista de notificaciones vistas por el usuario
+    @GET("notifications/{idUsuario}")
+    Call<List<Notification>> getNotificationUser(@Path("idUsuario") String idUsuario);
+
+    //Peticion que verifica la lista de notificaciones de un usuario
+    @GET("notifications/{idUsuario}/{idNotificacion}")
+    Call<Notification> findNotification(@Path("idUsuario") String idUsuario, @Path("idNotificacion") String idNotificacion);
+
+    //Peticion para crear una vinculacion usuario - notificacion
+    @Headers("Content-Type: application/json")
+    @POST("notifications/new/{idUsuario}/{idNotificacion}")
+    Call<Notification> newNotification(@Path("idUsuario") String idUsuario, @Path("idNotificacion") String idNotificacion);
+
+    //Peticion para no ver notificacion
+    @POST("notifications/no/{idUsuario}/{idNotificacion}")
+    Call<Notification> noNotification(@Path("idUsuario") String idUsuario, @Path("idNotificacion") String idNotificacion);
 }

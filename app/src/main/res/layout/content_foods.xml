@@ -79,6 +79,49 @@ android:paddingTop="24dp">
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvFoodsInfoGeneralNeto"
                 android:text="@string/foods_info_general_fecha" />
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/lyNutricion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvFoodsInfoGeneralFecha">
+                <TextView
+                    android:id="@+id/tvFoodsNutrition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvFoodsInfoGeneralFecha"
+                    android:text="Nutri-Score" />
+
+                <ImageView
+                    android:id="@+id/ivFoodsNutrition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvFoodsInfoGeneralFecha"
+                    android:src="@drawable/ic_sentiment_neutral_black_24dp"
+                    />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/lyNova"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lyNutricion">
+                <TextView
+                    android:id="@+id/tvFoodsNova"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvFoodsInfoGeneralFecha"
+                    android:text="NOVA" />
+
+                <ImageView
+                    android:id="@+id/ivFoodsNova"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvFoodsInfoGeneralFecha"
+                    android:src="@drawable/ic_sentiment_neutral_black_24dp"
+                    />
+            </android.support.v7.widget.LinearLayoutCompat>
+
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>

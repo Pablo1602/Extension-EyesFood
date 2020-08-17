@@ -1,9 +1,7 @@
 package com.example.jonsmauricio.eyesfood.ui;
 
 import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.DialogFragment;
@@ -23,12 +21,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jonsmauricio.eyesfood.R;
 import com.example.jonsmauricio.eyesfood.data.api.CommentsApi;
 import com.example.jonsmauricio.eyesfood.data.api.EyesFoodApi;
-import com.example.jonsmauricio.eyesfood.data.api.OpenFoodFactsApi;
 import com.example.jonsmauricio.eyesfood.data.api.model.Diary;
 import com.example.jonsmauricio.eyesfood.data.prefs.SessionPrefs;
 
@@ -53,6 +51,7 @@ public class DiaryFragment extends DialogFragment {
     private List<Diary> listaDiarios;
     private ArrayAdapter<Diary> adaptadorDiarios;
     private FloatingActionButton addDiary;
+    private TextView emptyState;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -70,13 +69,14 @@ public class DiaryFragment extends DialogFragment {
         if(actionBar!=null){
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeButtonEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.mipmap.ic_close_black_24dp);
+            //actionBar.setHomeAsUpIndicator(R.mipmap.ic_close_black_24dp);
         }
 
         setHasOptionsMenu(true);
 
         resultDiary = (ListView) view.findViewById(R.id.lvDiary);
         addDiary = (FloatingActionButton) view.findViewById(R.id.fabDiary);
+        emptyState = (TextView) view.findViewById(R.id.tvCommentsEmptyState);
         userIdFinal = SessionPrefs.get(getContext()).getUserId();
 
         // Crear conexión al servicio REST
@@ -173,6 +173,12 @@ public class DiaryFragment extends DialogFragment {
                 listaDiarios = response.body();
                 adaptadorDiarios = new DiaryAdapter(getContext(), listaDiarios);
                 resultDiary.setAdapter(adaptadorDiarios);
+                if(!listaDiarios.isEmpty()){
+                    showEmptyState(false);
+                }
+                else{
+                    showEmptyState(true);
+                }
             }
 
             @Override
@@ -245,6 +251,17 @@ public class DiaryFragment extends DialogFragment {
             public void onFailure(Call<Diary> call, Throwable t) {
             }
         }));
+    }
+
+    public void showEmptyState(boolean show){
+        if(show){
+            resultDiary.setVisibility(View.GONE);
+            emptyState.setVisibility(View.VISIBLE);
+        }
+        else{
+            resultDiary.setVisibility(View.VISIBLE);
+            emptyState.setVisibility(View.GONE);
+        }
     }
 
     /** The system calls this only when creating the layout in a dialog. */

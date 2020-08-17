@@ -1,7 +1,6 @@
 package com.example.jonsmauricio.eyesfood.ui;
 
 import android.Manifest;
-import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -21,9 +20,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CalendarView;
-import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.jonsmauricio.eyesfood.R;
@@ -31,6 +33,7 @@ import com.example.jonsmauricio.eyesfood.data.api.CommentsApi;
 import com.example.jonsmauricio.eyesfood.data.api.EyesFoodApi;
 import com.example.jonsmauricio.eyesfood.data.api.model.Diary;
 import com.example.jonsmauricio.eyesfood.data.api.model.Entry;
+import com.example.jonsmauricio.eyesfood.data.api.model.Expert;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.Paragraph;
@@ -40,6 +43,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -49,6 +53,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import sun.bob.mcalendarview.MCalendarView;
+import sun.bob.mcalendarview.listeners.OnDateClickListener;
+import sun.bob.mcalendarview.vo.DateData;
 
 public class CalendarActivity extends AppCompatActivity {
 
@@ -57,9 +64,13 @@ public class CalendarActivity extends AppCompatActivity {
     private EyesFoodApi mEyesFoodApi;
     private CommentsApi mCommentsApi;
     private String userIdFinal, pdfname;
-    private CalendarView calendar;
+    private MCalendarView calendar;
     private Diary diario;
-    private List<Entry> entradas;
+    private List<Entry> listaEntradas;
+    private List<Expert> listaExpertos;
+    private ArrayList<String> list;
+    private ArrayAdapter<String > adapter;
+    private String[] parts;
     private Fragment fragment;
     private FragmentManager fragmentManager;
     private int frag_open = 0;
@@ -80,6 +91,8 @@ public class CalendarActivity extends AppCompatActivity {
         calendar = findViewById(R.id.cvDiaryCalendar);
         export = findViewById(R.id.btExport);
         share = findViewById(R.id.btShare);
+
+        // Crear conexión al servicio REST
         mRestAdapter2 = new Retrofit.Builder()
                 .baseUrl(CommentsApi.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -88,6 +101,13 @@ public class CalendarActivity extends AppCompatActivity {
 
         mCommentsApi = mRestAdapter2.create(CommentsApi.class);
 
+        mRestAdapter = new Retrofit.Builder()
+                .baseUrl(EyesFoodApi.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        mEyesFoodApi = mRestAdapter.create(EyesFoodApi.class);
+
         Intent i = getIntent();
         Bundle b = i.getExtras();
         if (b != null) {
@@ -95,16 +115,22 @@ public class CalendarActivity extends AppCompatActivity {
             setTitle(diario.getTitulo());
         }
 
-        Bundle args = i.getBundleExtra("BUNDLE");
-        entradas = (List<Entry>) args.getSerializable("Entradas");
-
-        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+        loadEntry(diario);
+        retrieveExperts();
+        calendar.setOnDateClickListener(new OnDateClickListener() {
+            @Override
+            public void onDateClick(View view, DateData date) {
+                String fecha = date.getDayString()+"_"+date.getMonthString()+"_"+date.getYear();
+                showEntry(fecha);
+            }
+        });
+        /*calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
                 String date = i2+"_"+(i1+1)+"_"+i;
                 showEntry(date);
             }
-        });
+        });*/
         export.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -119,11 +145,72 @@ public class CalendarActivity extends AppCompatActivity {
         });
     }
 
+    public void loadEntry(final Diary currentDiary) {
+        Call<List<Entry>> call = mCommentsApi.getEntry(currentDiary.getId());
+        call.enqueue(new Callback<List<Entry>>() {
+            @Override
+            public void onResponse(Call<List<Entry>> call,
+                                   Response<List<Entry>> response) {
+                if (!response.isSuccessful()) {
+                    return;
+                }
+                listaEntradas = response.body();
+                paintCalendar();
+            }
+            @Override
+            public void onFailure(Call<List<Entry>> call, Throwable t) {
+            }
+        });
+    }
+
+    private void paintCalendar(){
+        String [] fecha;
+        for(Entry entrada : listaEntradas){
+            fecha = entrada.getFecha().split("_");
+            calendar.markDate(Integer.parseInt(fecha[2]), Integer.parseInt(fecha[1]), Integer.parseInt(fecha[0]));
+        }
+    }
+
     private void showDialog(Boolean correo){
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        //LayoutInflater inflater = this.getLayoutInflater();
-        //alert.setView(inflater.inflate(R.layout.dialog_calendar, null));
-        final EditText edittext = new EditText(this);
+        final SearchView taskSearchview = new SearchView(this);
+        final ListView searchList = new ListView(this);
+
+        searchList.setVisibility(View.GONE);
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,list);
+        searchList.setAdapter(adapter);
+
+        taskSearchview.setOnSearchClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                searchList.setVisibility(View.VISIBLE);
+            }
+        });
+
+        taskSearchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                if(list.contains(s)){
+                    adapter.getFilter().filter(s);
+                }
+                searchList.setVisibility(View.GONE);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                adapter.getFilter().filter(s);
+                return false;
+            }
+        });
+
+        searchList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                taskSearchview.setQuery((CharSequence) adapterView.getItemAtPosition(i), false);
+                searchList.setVisibility(View.GONE);
+            }
+        });
 
         // Permisos
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) !=
@@ -147,15 +234,26 @@ public class CalendarActivity extends AppCompatActivity {
         }
         else{
             alert.setTitle("Compartir Diario");
-            alert.setMessage("Indicar correo a compartir el diario");
-            edittext.setText("");
-            alert.setView(edittext);
-
+            alert.setMessage("Indicar profesional de la salud");
+            LinearLayout lay = new LinearLayout(this);
+            lay.setOrientation(LinearLayout.VERTICAL);
+            lay.addView(taskSearchview);
+            lay.addView(searchList);
+            alert.setView(lay);
             alert.setPositiveButton("Compartir", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
                     pdfCreator();
-                    sendmail(edittext.getText().toString());
-                    Toast.makeText(getApplicationContext(), "Se envio el diario con exito", Toast.LENGTH_SHORT).show();
+                    try{
+                        if(taskSearchview.getQuery().toString().indexOf(" - ") > -1){
+                            parts = taskSearchview.getQuery().toString().split(" - ");
+                            sendmail(parts[1]);
+                        }
+                        else{
+                            sendmail(taskSearchview.getQuery().toString());
+                        }
+                    }catch (Throwable t){
+                        Toast.makeText(getApplicationContext(), "Error en compartir el calendario",Toast.LENGTH_LONG).show();
+                    };
                 }
             });
         }
@@ -181,9 +279,10 @@ public class CalendarActivity extends AppCompatActivity {
             PdfWriter writer = PdfWriter.getInstance(documento, ficheroPDF);
             documento.open();
             documento.add(new Paragraph("Diario alimenticio: "+diario.getTitulo()+ "\n\n"));
-            for (Entry e : entradas) {
+            for (Entry e : listaEntradas) {
                 documento.add(new Paragraph(e.getTitulo()+" en el día "+e.getFecha().replace("_","/")+"\n"));
                 documento.add(new Paragraph(e.getTexto()+"\n\n"));
+                documento.add(new Paragraph("Alimento de la entrada: "+e.getAlimento()+"\n\n"));
             }
 
         } catch(DocumentException e) {
@@ -238,50 +337,33 @@ public class CalendarActivity extends AppCompatActivity {
         }
     }
 
-    /*
-    private void sendmail2(String correo){
-        //Creating properties
-        Properties props = new Properties();
+    private void retrieveExperts() {
+        Call<List<Expert>> call = mEyesFoodApi.getExperts();
+        call.enqueue(new Callback<List<Expert>>() {
+            @Override
+            public void onResponse(Call<List<Expert>> call, Response<List<Expert>> response) {
+                if (!response.isSuccessful()) {
 
-        //Configuring properties for gmail
-        //If you are not using gmail you may need to change the values
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.socketFactory.port", "465");
-        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.port", "465");
+                    return;
+                }
+                listaExpertos = response.body();
+                createLisExpert(listaExpertos);
+            }
 
-        //Creating a new session
-        mSession = Session.getDefaultInstance(props,
-                new javax.mail.Authenticator() {
-                    //Authenticating the password
-                    protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication("eyesfoodcl@gmail.com", "Eyesfood_2020");
-                    }
-                });
+            @Override
+            public void onFailure(Call<List<Expert>> call, Throwable t) {
+                Log.d("Falla Retrofit", "Falla en retrieveExperts");
+                Log.d("Falla", t.getMessage());
+            }
+        });
+    }
 
-        try {
-            //Creating MimeMessage object
-            MimeMessage mm = new MimeMessage(mSession);
-
-            //Setting sender address
-            mm.setFrom(new InternetAddress("eyesfoodcl@gmail.com"));
-            //Adding receiver
-            mm.addRecipient(Message.RecipientType.TO, new InternetAddress(correo));
-            //Adding subject
-            mm.setSubject("No reply");
-            //Adding message
-            mm.setText("Hola estimado usuario de EyesFood, " +
-                    "el usuario compartio su diario "+diario.getTitulo()+" contigo en formato PDF.\n Recordamos que " +
-                            "EyesFood nunca solicitara información confidencial.");
-            //Sending email
-            Transport.send(mm);
-
-        } catch (MessagingException e) {
-            e.printStackTrace();
+    private void createLisExpert (List<Expert> experts){
+        list = new ArrayList<>();
+        for(Expert expert: experts){
+            list.add(expert.getName()+" "+expert.getLastName()+" - "+expert.getEmail());
         }
     }
-*/
 
     private void showEntry(String date){
         fragmentManager = getSupportFragmentManager();
@@ -323,6 +405,7 @@ public class CalendarActivity extends AppCompatActivity {
                     fragmentManager.beginTransaction().remove(fragment).commit();
                     setTitle(diario.getTitulo());
                     frag_open = 0;
+                    loadEntry(diario);
                 }
         }
         return(super.onOptionsItemSelected(item));

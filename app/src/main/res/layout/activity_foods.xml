@@ -60,6 +60,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
+
     <!-- FAB -->
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabFoods"
@@ -69,6 +70,26 @@
         android:src="@mipmap/ic_mode_comment_white_24dp"
         app:borderWidth="0dp"
         app:layout_anchor="@id/foods_app_bar"
-        app:layout_anchorGravity="bottom|right|end" />
+        app:layout_anchorGravity="bottom|right" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabPhotoFoods"
+        android:layout_width="@dimen/size_fab"
+        android:layout_height="@dimen/size_fab"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@mipmap/ic_photo_library_white_24dp"
+        app:borderWidth="0dp"
+        app:layout_anchor="@id/foods_app_bar"
+        app:layout_anchorGravity="bottom|left" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabEditFoods"
+        android:layout_width="@dimen/size_fab"
+        android:layout_height="@dimen/size_fab"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@mipmap/ic_mode_edit_white_18dp"
+        app:borderWidth="0dp"
+        app:layout_anchor="@id/foods_app_bar"
+        app:layout_anchorGravity="bottom|center" />
 
 </android.support.design.widget.CoordinatorLayout>

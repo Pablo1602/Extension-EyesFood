@@ -24,7 +24,6 @@ import android.widget.ListView;
 import com.example.jonsmauricio.eyesfood.R;
 import com.example.jonsmauricio.eyesfood.data.api.EyesFoodApi;
 import com.example.jonsmauricio.eyesfood.data.api.OpenFoodFactsApi;
-import com.example.jonsmauricio.eyesfood.data.api.model.Expert;
 import com.example.jonsmauricio.eyesfood.data.api.model.Food;
 import com.example.jonsmauricio.eyesfood.data.api.model.FoodStore;
 import com.example.jonsmauricio.eyesfood.data.api.model.HistoryFoodBody;

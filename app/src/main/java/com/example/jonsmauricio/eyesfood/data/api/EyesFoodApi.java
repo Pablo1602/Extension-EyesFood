@@ -49,7 +49,7 @@ public interface EyesFoodApi {
     //URL nueva https://dinky-frequency.000webhostapp.com/api.eyesfood.cl/v1/
     String BASE_URL = "https://eyesfoodapi.herokuapp.com/api.eyesfood.cl/v1/";
     String BASE_URL_PHOTO = "https://eyesfoodapi.herokuapp.com/api.eyesfood.cl/v1/img/users/";
-    String BASE_URL_ADMIN = "https://eyesfoodweb.herokuapp.com/EyesFoodWeb/";
+    String BASE_URL_ADMIN = "https://eyesfoodweb.herokuapp.com/";
     String ADDITIVE_URL = "https://cl.openfoodfacts.org/aditivo/";
     //URL API WEB
     //String BASE_URL = "https://eyesfood.000webhostapp.com/api.eyesfood.cl/v1/";
@@ -163,7 +163,7 @@ public interface EyesFoodApi {
     @POST("foods/new")
     Call<Food> newFoodSolitude(@Body NewFoodBody newFoodBody);
 
-    ////inserta un alimento
+    //inserta un alimento
     @POST("foods/create")
     Call<Food> newFood(@Body Food newfood);
 

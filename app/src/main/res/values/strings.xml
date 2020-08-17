@@ -176,6 +176,8 @@
 
     <string name="hint_comments">Escribe un comentario...</string>
     <string name="comments_empty_state">El alimento no tiene comentarios ¡Se el primero!</string>
+    <string name="diary_empty_state">No hay diarios guardados ¡Crea tu primer diario!</string>
+    <string name="entry_empty_state">No hay entradas guardadas este día ¡Crea tu primera entrada!</string>
     <string name="login_gmail_failed">No se pudo iniciar sesión</string>
     <string name="nav_history">Historial</string>
     <string name="nav_uploads">Subidos</string>
@@ -248,8 +250,10 @@
     <string name="export_button">Exportar</string>
     <string name="share_button">Compartir</string>
     <string name="entry_button_delete">Borrar</string>
-    <string name="entry_text">Titulo de entrada</string>
-    <string name="entry_title">Texto de entrada</string>
+    <string name="entry_title">Titulo de la entrada</string>
+    <string name="entry_text">Texto de la entrada</string>
+    <string name="entry_food">Alimento de la entrada</string>
+    <string name="enty_search">Agregar alimento</string>
     <string name="calendar_date_ini">Fecha Inicio</string>
     <string name="calendar_date_fin">Fecha Final</string>
 

@@ -65,7 +65,7 @@ public class StoresFragment extends DialogFragment {
         if(actionBar!=null){
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeButtonEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.mipmap.ic_close_black_24dp);
+            //actionBar.setHomeAsUpIndicator(R.mipmap.ic_close_black_24dp);
         }
 
         setHasOptionsMenu(true);

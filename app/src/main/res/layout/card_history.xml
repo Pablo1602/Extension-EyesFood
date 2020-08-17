@@ -152,7 +152,7 @@
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
             android:layout_alignParentBottom="true"
-            android:src="@drawable/ic_alert_black"/>
+            android:src="@drawable/ic_error_outline_black_24dp"/>
 
         <TextView
             android:id="@+id/tvDenunciasCount"

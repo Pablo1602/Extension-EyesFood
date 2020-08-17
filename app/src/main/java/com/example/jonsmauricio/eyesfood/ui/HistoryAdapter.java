@@ -225,8 +225,8 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
             public void onClick(View view) {
                 if (items.get(i).getDenuncia()==1){
                     AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                    builder.setTitle("Denuncia")
-                            .setMessage("La imagen del producto ya ha sido denunciada por otro usuario. Gracias")
+                    builder.setTitle("Reportar")
+                            .setMessage("La imagen del producto ya ha sido reportada por otro usuario. Gracias")
                             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
@@ -244,8 +244,8 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
 
     private void denunciar(final ShortFood shortFood) {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            builder.setTitle("Denuncia")
-                    .setMessage("Desea denunciar la imagen de este producto ?")
+            builder.setTitle("Reportar")
+                    .setMessage("Desea reportar la imagen de este producto?")
                     .setPositiveButton("Si", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -285,8 +285,8 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
 
     private void showSuccesDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Denuncia")
-                .setMessage("El producto ha sido denunciado con exito")
+        builder.setTitle("Reportar")
+                .setMessage("El producto ha sido reportado con exito")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

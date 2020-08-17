@@ -419,6 +419,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == GMAIL_RESULT_CODE){
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+            Log.d("TAGGAMIL","getStatus:"+result.getStatus());
             handleSignInResult(result);
         }
         callbackManager.onActivityResult(requestCode, resultCode, data);
@@ -435,6 +436,9 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
             correo = account.getEmail();
             foto = account.getPhotoUrl();
             fotoString = "default.png";
+            Log.d("TAGGAMIL","nombre:"+nombre);
+            Log.d("TAGGAMIL","apellido:"+apellido);
+            Log.d("TAGGAMIL","correo:"+correo);
             if(foto != null) {
                 fotoString = foto.toString();
             }

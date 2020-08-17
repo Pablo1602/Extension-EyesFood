@@ -4,12 +4,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.service.textservice.SpellCheckerService;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.NavUtils;
+
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -20,7 +18,6 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -31,20 +28,15 @@ import android.widget.Toast;
 import com.example.jonsmauricio.eyesfood.R;
 import com.example.jonsmauricio.eyesfood.data.api.CommentsApi;
 import com.example.jonsmauricio.eyesfood.data.api.EyesFoodApi;
-import com.example.jonsmauricio.eyesfood.data.api.model.Additive;
 import com.example.jonsmauricio.eyesfood.data.api.model.Comment;
 import com.example.jonsmauricio.eyesfood.data.api.model.CommentBody;
 import com.example.jonsmauricio.eyesfood.data.api.model.Expert;
 import com.example.jonsmauricio.eyesfood.data.api.model.Food;
-import com.example.jonsmauricio.eyesfood.data.api.model.NewFoodBody;
 import com.example.jonsmauricio.eyesfood.data.api.model.Product;
-import com.example.jonsmauricio.eyesfood.data.api.model.Recommendation;
 import com.example.jonsmauricio.eyesfood.data.api.model.User;
 import com.example.jonsmauricio.eyesfood.data.prefs.SessionPrefs;
 import com.squareup.picasso.Picasso;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -254,7 +246,6 @@ public class CommentsActivity extends AppCompatActivity {
                     Log.d("myTag","Fallo en la API "+response.message());
                 }
                 Toast.makeText(getApplicationContext(), "Se edito el comentario", Toast.LENGTH_LONG).show();
-                Log.d("myTag","currentComment referencia: "+currentComment.getReferencia());
                 loadComments(Referencia);
 
             }

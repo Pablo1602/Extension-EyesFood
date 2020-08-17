@@ -10,11 +10,10 @@
     tools:showIn="@layout/activity_calendar"
     android:orientation="vertical">
 
-        <CalendarView
+        <sun.bob.mcalendarview.MCalendarView
             android:id="@+id/cvDiaryCalendar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </CalendarView>
+            android:layout_width="400dp"
+            android:layout_height="400dp"/>
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btExport"

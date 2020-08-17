@@ -1,10 +1,8 @@
 package com.example.jonsmauricio.eyesfood.ui;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.DialogFragment;
@@ -25,16 +23,18 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jonsmauricio.eyesfood.R;
 import com.example.jonsmauricio.eyesfood.data.api.CommentsApi;
 import com.example.jonsmauricio.eyesfood.data.api.EyesFoodApi;
-import com.example.jonsmauricio.eyesfood.data.api.model.Diary;
 import com.example.jonsmauricio.eyesfood.data.api.model.Entry;
-import com.example.jonsmauricio.eyesfood.data.api.model.Entry;
+import com.example.jonsmauricio.eyesfood.data.api.model.ShortFood;
 import com.example.jonsmauricio.eyesfood.data.prefs.SessionPrefs;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -47,8 +47,12 @@ public class EntryFragment extends DialogFragment {
 
     private ListView resultEntry;
     private List<Entry> listaEntradas;
+    private List<ShortFood> listaFood;
+    private ArrayList<String> list;
+    private ArrayAdapter<String > adapter;
     private ArrayAdapter<Entry> adaptadorEntradas;
     private FloatingActionButton addEntry;
+    private TextView emptyState;
 
     String date;
     String title;
@@ -58,7 +62,6 @@ public class EntryFragment extends DialogFragment {
     EyesFoodApi mEyesFoodApi;
     CommentsApi mCommentsApi;
     String userIdFinal;
-    Toolbar toolbar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -73,16 +76,24 @@ public class EntryFragment extends DialogFragment {
         if(actionBar!=null){
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeButtonEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.mipmap.ic_close_black_24dp);
+            //actionBar.setHomeAsUpIndicator(R.mipmap.ic_close_black_24dp);
         }
 
         setHasOptionsMenu(true);
 
         resultEntry = (ListView) view.findViewById(R.id.lvEntry);
         addEntry = (FloatingActionButton) view.findViewById(R.id.fabEntry);
+        emptyState = (TextView) view.findViewById(R.id.tvCommentsEmptyState);
         userIdFinal = SessionPrefs.get(getContext()).getUserId();
 
         // Crear conexión al servicio REST
+        mRestAdapter = new Retrofit.Builder()
+                .baseUrl(EyesFoodApi.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        mEyesFoodApi= mRestAdapter.create(EyesFoodApi.class);
+
         mRestAdapter2 = new Retrofit.Builder()
                 .baseUrl(CommentsApi.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -112,32 +123,75 @@ public class EntryFragment extends DialogFragment {
                 showDialogAdd(date);
             }
         });
-
+        retrieveFood();
         retrieveEntry();
         return view;
     }
+    @SuppressLint("WrongConstant")
     private void showDialogAdd(final String date) {
         AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
         final EditText edittext1 = new EditText(getContext());
         final EditText edittext2 = new EditText(getContext());
+        final SearchView taskSearchview = new SearchView(getContext());
+        final ListView searchList = new ListView(getContext());
         //final EditText edittext = new EditText(getActivity());
         //edittext.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
 
         alert.setTitle("Nuevo Registro");
         edittext1.setText("Nuevo titulo");
         edittext2.setText("Nuevo texto");
+        taskSearchview.setQueryHint("Buscar alimento");
 
         LinearLayout lay = new LinearLayout(getContext());
         lay.setOrientation(LinearLayout.VERTICAL);
         lay.addView(edittext1);
         lay.addView(edittext2);
+        lay.addView(taskSearchview);
+        lay.addView(searchList);
         alert.setView(lay);
+
+        searchList.setVisibility(View.GONE);
+        adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1,list);
+        searchList.setAdapter(adapter);
+
+        taskSearchview.setOnSearchClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                searchList.setVisibility(View.VISIBLE);
+            }
+        });
+
+        taskSearchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                if(list.contains(s)){
+                    adapter.getFilter().filter(s);
+                }
+                searchList.setVisibility(View.GONE);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                adapter.getFilter().filter(s);
+                return false;
+            }
+        });
+
+        searchList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                taskSearchview.setQuery((CharSequence) adapterView.getItemAtPosition(i), false);
+                searchList.setVisibility(View.GONE);
+            }
+        });
 
         alert.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 String newTitle = edittext1.getText().toString();
                 String newText = edittext2.getText().toString();
-                newEntry(newTitle, newText, date);
+                String newFood = taskSearchview.getQuery().toString();
+                newEntry(newTitle, newText, newFood, date);
             }
         });
         alert.setNeutralButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -153,24 +207,67 @@ public class EntryFragment extends DialogFragment {
         AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
         final EditText edittext1 = new EditText(getContext());
         final EditText edittext2 = new EditText(getContext());
+        final SearchView taskSearchview = new SearchView(getContext());
+        final ListView searchList = new ListView(getContext());
         //final EditText edittext = new EditText(getActivity());
         //edittext.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
 
         alert.setTitle("Editar Registro");
         edittext1.setText(Entrada.getTitulo());
         edittext2.setText(Entrada.getTexto());
+        taskSearchview.setQuery(Entrada.getAlimento(),false);
 
         LinearLayout lay = new LinearLayout(getContext());
         lay.setOrientation(LinearLayout.VERTICAL);
         lay.addView(edittext1);
         lay.addView(edittext2);
+        lay.addView(taskSearchview);
+        lay.addView(searchList);
         alert.setView(lay);
+
+        searchList.setVisibility(View.GONE);
+        adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1,list);
+        searchList.setAdapter(adapter);
+
+        taskSearchview.setOnSearchClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                searchList.setVisibility(View.VISIBLE);
+            }
+        });
+
+        taskSearchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                if(list.contains(s)){
+                    adapter.getFilter().filter(s);
+                }
+                searchList.setVisibility(View.GONE);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                adapter.getFilter().filter(s);
+                return false;
+            }
+        });
+
+        searchList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                taskSearchview.setQuery((CharSequence) adapterView.getItemAtPosition(i), false);
+                searchList.setVisibility(View.GONE);
+            }
+        });
+
 
         alert.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 String newTitle = edittext1.getText().toString();
                 String newText = edittext2.getText().toString();
-                editEntry(Entrada.getId(), newTitle, newText);
+                String newFood = taskSearchview.getQuery().toString();
+                editEntry(Entrada.getId(), newTitle, newText, newFood);
             }
         });
         alert.setNegativeButton("Borrar", new DialogInterface.OnClickListener() {
@@ -187,8 +284,35 @@ public class EntryFragment extends DialogFragment {
         alert.show();
     }
 
+    private void retrieveFood(){
+        Call<List<ShortFood>> call = mEyesFoodApi.getFoodsInHistory(userIdFinal);
+        call.enqueue(new Callback<List<ShortFood>>() {
+            @Override
+            public void onResponse(Call<List<ShortFood>> call, Response<List<ShortFood>> response) {
+                if(!response.isSuccessful()){
+                    Log.d("Falla", "Falla en retrieveFood "+ response.errorBody().toString());
+                    return;
+                }
+                listaFood = response.body();
+                createListFood(listaFood);
+            }
+
+            @Override
+            public void onFailure(Call<List<ShortFood>> call, Throwable t) {
+                Log.d("Error Retrofit", "Error en retrieveFood");
+                Log.d("Error", t.getMessage());
+            }
+        });
+    }
+
+    private void createListFood (List<ShortFood> foods){
+        list = new ArrayList<>();
+        for(ShortFood food: foods){
+            list.add(food.getName());
+        }
+    }
+
     private void retrieveEntry(){
-        Log.d("Entrada", "idDiary "+idDiary+" date "+date);
         Call<List<Entry>> call = mCommentsApi.getEntryDate(idDiary, date);
         call.enqueue(new Callback<List<Entry>>() {
             @Override
@@ -201,6 +325,12 @@ public class EntryFragment extends DialogFragment {
                 listaEntradas = response.body();
                 adaptadorEntradas = new EntryAdapter(getContext(), listaEntradas);
                 resultEntry.setAdapter(adaptadorEntradas);
+                if(!listaEntradas.isEmpty()){
+                    showEmptyState(false);
+                }
+                else{
+                    showEmptyState(true);
+                }
             }
 
             @Override
@@ -211,8 +341,8 @@ public class EntryFragment extends DialogFragment {
         });
     }
 
-    public void newEntry(String titulo, String texto, String fecha){
-        Entry entrada = new Entry("",titulo,texto,fecha);
+    public void newEntry(String titulo, String texto, String alimento, String fecha){
+        Entry entrada = new Entry("",titulo,texto,alimento,fecha);
         Call<Entry> call = mCommentsApi.newEntry(entrada, Integer.parseInt(idDiary));
         call.enqueue(new Callback<Entry>() {
             @Override
@@ -233,8 +363,8 @@ public class EntryFragment extends DialogFragment {
         });
     }
 
-    public void editEntry(final String id, final String newTitle, final String newText){
-        Entry newEntry = new Entry(id, newTitle, newText, date);
+    public void editEntry(final String id, final String newTitle, final String newText, final String newFood){
+        Entry newEntry = new Entry(id, newTitle, newText, newFood, date);
         Call<Entry> call = mCommentsApi.modifyEntry(newEntry, Integer.parseInt(id));
         call.enqueue(new Callback<Entry>() {
             @Override
@@ -270,6 +400,17 @@ public class EntryFragment extends DialogFragment {
 
             }
         }));
+    }
+
+    public void showEmptyState(boolean show){
+        if(show){
+            resultEntry.setVisibility(View.GONE);
+            emptyState.setVisibility(View.VISIBLE);
+        }
+        else{
+            resultEntry.setVisibility(View.VISIBLE);
+            emptyState.setVisibility(View.GONE);
+        }
     }
 
     /** The system calls this only when creating the layout in a dialog. */

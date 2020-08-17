@@ -2,10 +2,15 @@ package com.example.jonsmauricio.eyesfood.ui;
 
 import android.Manifest;
 import android.animation.Animator;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.media.RingtoneManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -14,6 +19,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -36,11 +42,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jonsmauricio.eyesfood.R;
+import com.example.jonsmauricio.eyesfood.data.api.CommentsApi;
 import com.example.jonsmauricio.eyesfood.data.api.EyesFoodApi;
 import com.example.jonsmauricio.eyesfood.data.api.OpenFoodFactsApi;
 import com.example.jonsmauricio.eyesfood.data.api.model.Food;
 import com.example.jonsmauricio.eyesfood.data.api.model.HistoryFoodBody;
 import com.example.jonsmauricio.eyesfood.data.api.model.NewFoodBody;
+import com.example.jonsmauricio.eyesfood.data.api.model.Notification;
 import com.example.jonsmauricio.eyesfood.data.api.model.Product;
 import com.example.jonsmauricio.eyesfood.data.api.model.ProductResponse;
 import com.example.jonsmauricio.eyesfood.data.api.model.ShortFood;
@@ -69,8 +77,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class HistoryActivity extends AppCompatActivity
         implements OnClickListener, ItemClickListener, GoogleApiClient.OnConnectionFailedListener{
 
-    Retrofit mRestAdapter, mOpenRestAdapter;
+    Retrofit mRestAdapter, mRestAdapter2, mOpenRestAdapter;
     EyesFoodApi mEyesFoodApi;
+    CommentsApi mCommentsApi;
     private OpenFoodFactsApi mOpenFoodApi;
 
     //Obtengo id de Usuario y sesión
@@ -109,6 +118,10 @@ public class HistoryActivity extends AppCompatActivity
     private int like;
 
     private Toolbar toolbar;
+    private List<Notification> listaNotificacion;
+    private List<Notification> listUserNotification;
+    private static final int NOTIFICATION_ID = 1;
+    private static final String NOTIFICATION_CHANNEL_ID = "my_notification_channel";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,6 +170,14 @@ public class HistoryActivity extends AppCompatActivity
         //  Crear conexión a la API de OpenFood
         mOpenFoodApi = mOpenRestAdapter.create(OpenFoodFactsApi.class);
 
+
+        mRestAdapter2 = new Retrofit.Builder()
+                .baseUrl(CommentsApi.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        mCommentsApi = mRestAdapter2.create(CommentsApi.class);
+
         drawerTitle = getResources().getString(R.string.nav_history);
         // Redirección al Login
         if (!SessionPrefs.get(this).isLoggedIn()) {
@@ -204,6 +225,7 @@ public class HistoryActivity extends AppCompatActivity
                     .load(SessionPrefs.get(this).getUserPhoto())
                     .into(avatar);
         }
+        notification();
         //Toast.makeText(getApplicationContext(), "showHistory", Toast.LENGTH_SHORT).show();
     }
 
@@ -212,6 +234,160 @@ public class HistoryActivity extends AppCompatActivity
     protected void onResume() {
         super.onResume();
     }*/
+
+    public void notification(){
+        Call <List<Notification>> call = mCommentsApi.getNotification();
+        call.enqueue(new Callback<List<Notification>>() {
+            @Override
+            public void onResponse(Call<List<Notification>> call, Response<List<Notification>> response) {
+                if(!response.isSuccessful()){
+                    Log.d("NOTIFY", "Mala respuesta en notificaciones" + response.toString());
+                    return;
+                }
+                listaNotificacion = response.body();
+                for(Notification noti:listaNotificacion){
+                    findNotification(noti.getId());
+                }
+                userNotification();
+            }
+
+            @Override
+            public void onFailure(Call<List<Notification>> call, Throwable t) {
+                Log.d("NOTIFY", "Error en notification" + t.getMessage());
+            }
+        });
+    }
+
+    public void findNotification(final String idNotificacion){
+        Call<Notification> call = mCommentsApi.findNotification(userIdFinal, idNotificacion);
+        call.enqueue(new Callback<Notification>() {
+            @Override
+            public void onResponse(Call<Notification> call, Response<Notification> response) {
+                if(!response.isSuccessful()){
+                    Log.d("NOTIFY", "Mala respuesta en findnotificacion" + response.toString());
+                    return;
+                }
+                // Ya existe la notificacion para el usuario
+            }
+
+            @Override
+            public void onFailure(Call<Notification> call, Throwable t) {
+                // No existe un notificacion para el usuario
+                newNotification(idNotificacion);
+            }
+        });
+    }
+
+    public void newNotification(final String idNotificacion){
+        Call<Notification> call = mCommentsApi.newNotification(userIdFinal, idNotificacion);
+        Log.d("NOTIFY", "userid:"+userIdFinal+" idnoti:"+idNotificacion);
+        call.enqueue(new Callback<Notification>() {
+            @Override
+            public void onResponse(Call<Notification> call, Response<Notification> response) {
+                if(!response.isSuccessful()){
+                    Log.d("NOTIFY", "Mala respuesta en newNotification" + response.toString());
+                    return;
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Notification> call, Throwable t) {
+                Log.d("NOTIFY", "Error en newNotification" + t.getMessage());
+            }
+        });
+    }
+
+    public void noNotification(final String idNotification){
+        Call<Notification> call = mCommentsApi.noNotification(userIdFinal, idNotification);
+        call.enqueue(new Callback<Notification>() {
+            @Override
+            public void onResponse(Call<Notification> call, Response<Notification> response) {
+                if(!response.isSuccessful()) {
+                    Log.d("NOTIFY", "Mala respuesta en noNotification" + response.toString());
+                    return;
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Notification> call, Throwable t) {
+                Log.d("NOTIFY", "Error en noNotification" + t.getMessage());
+            }
+        });
+    }
+
+    public void userNotification(){
+        Call<List<Notification>> call = mCommentsApi.getNotificationUser(userIdFinal);
+        call.enqueue(new Callback<List<Notification>>() {
+            @Override
+            public void onResponse(Call<List<Notification>> call, Response<List<Notification>> response) {
+                if(!response.isSuccessful()) {
+                    Log.d("NOTIFY", "Mala respuesta en userNotification" + response.toString());
+                    return;
+                }
+                listUserNotification = response.body();
+                for(Notification noti:listUserNotification){
+                    Log.d("NOTIFY", "Notificacion "+noti.getId()+" push "+noti.getPush());
+                    if(noti.getPush().equals("0")){
+                        showDialog(noti);
+                    }
+                    else if(noti.getPush().equals("1")){
+                        showPushNotification(noti);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Notification>> call, Throwable t) {
+                Log.d("NOTIFY", "Error en userNotification" + t.getMessage());
+            }
+        });
+    }
+
+    public void showDialog(final Notification noti){
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+
+        alert.setTitle(noti.getTitulo());
+        alert.setMessage(noti.getTexto());
+
+        alert.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+
+            }
+        });
+
+        alert.setNeutralButton("No mostrar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                noNotification(noti.getId());
+            }
+        });
+
+        alert.show();
+    }
+
+    public void showPushNotification(Notification noti){
+        Log.d("NOTIFY/PUSH", "Notificacion push");
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "My Notifications", NotificationManager.IMPORTANCE_DEFAULT);
+
+            // Configure the notification channel.
+            notificationChannel.setDescription("Channel description");
+            notificationChannel.enableLights(true);
+            notificationChannel.setLightColor(Color.RED);
+            notificationChannel.setVibrationPattern(new long[]{0, 1000, 500, 1000});
+            notificationChannel.enableVibration(true);
+            notificationManager.createNotificationChannel(notificationChannel);
+        }
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
+                .setVibrate(new long[]{0, 100, 100, 100, 100, 100})
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentTitle(noti.getTitulo())
+                .setContentText(noti.getTexto());
+
+        notificationManager.notify(NOTIFICATION_ID, builder.build());
+    }
 
     //Carga alimentos en el historial
     //UserId: Id de usuario
@@ -238,7 +414,6 @@ public class HistoryActivity extends AppCompatActivity
     }
 
     public void loadScan(String userId){
-        Log.d("myTag","En load Scan");
         Call<List<ShortFood>> call = mEyesFoodApi.getFoodsInHistory(userId);
         call.enqueue(new Callback<List<ShortFood>>() {
             @Override
@@ -246,7 +421,7 @@ public class HistoryActivity extends AppCompatActivity
                                    Response<List<ShortFood>> response) {
                 if (!response.isSuccessful()) {
                     // TODO: Procesar error de API
-                    Log.d("myTag", "hola"+response.errorBody().toString());
+                    Log.d("myTag", response.errorBody().toString());
                     return;
                 }
                 historial = response.body();
@@ -255,7 +430,7 @@ public class HistoryActivity extends AppCompatActivity
 
             @Override
             public void onFailure(Call<List<ShortFood>> call, Throwable t) {
-                Log.d("Falla", "Falla en la llamada a historial: loadHistoryFoods"+t.getMessage());
+                Log.d("Falla", "Falla en la llamada a historial: loadScan"+t.getMessage());
             }
         });
     }
@@ -279,7 +454,7 @@ public class HistoryActivity extends AppCompatActivity
 
             @Override
             public void onFailure(Call<List<ShortFood>> call, Throwable t) {
-                Log.d("Falla", "Falla en la llamada a historial: loadHistoryFoods");
+                Log.d("Falla", "Falla en la llamada a historial: loadFavorites");
             }
         });
     }
@@ -310,12 +485,12 @@ public class HistoryActivity extends AppCompatActivity
     //Muestra el historial
     //historial: Lista de alimentos en el historial
     public void showHistory(final List<ShortFood> historial2) {
+        //Log.d("myTag", "En show History ");
         products = new ArrayList<>();
         ArrayList<Call<ProductResponse>> productResponseCalls = new ArrayList<>();
         for (ShortFood food : historial2) {
             productResponseCalls.add(mOpenFoodApi.obtenerProducto(food.getBarCode()));
         }
-        Log.d("myTag", "En show History ");
         for (Call<ProductResponse> call2 : productResponseCalls){
             call2.enqueue(new Callback<ProductResponse>() {
                 @Override
@@ -330,10 +505,11 @@ public class HistoryActivity extends AppCompatActivity
                             showHistory2(historial2,products);
                         }
                     }
+                    Log.d("myTag", "Sin exito en show History ");
                 }
                 @Override
                 public void onFailure(Call<ProductResponse> call, Throwable t) {
-
+                    Log.d("myTag", "Error en show History "+t.getMessage());
                 }
             });
         }
@@ -445,6 +621,7 @@ public class HistoryActivity extends AppCompatActivity
                     return;
                 }
                 //Si entro acá el alimento existe en la BD y lo obtengo
+                Log.d("myTag", "Si entro acá el alimento existe en la BD y lo obtengo");
                 Food resultado = response.body();
 
                 //Muestro el alimento
@@ -452,7 +629,8 @@ public class HistoryActivity extends AppCompatActivity
             }
 
             @Override
-            public void onFailure(Call<Food> call, Throwable t) {
+            public void onFailure(Call<Food> call, Throwable t){
+                Log.d("myTag", "Si entro acá el alimento NO existe en la BD");
                 progressDialog.dismiss();
                 noFood();
             }
@@ -461,6 +639,7 @@ public class HistoryActivity extends AppCompatActivity
 
     private void showFoodsScreenFinal(Food resultado, Product product) {
         Intent i = new Intent(this, FoodsActivity.class);
+        Log.d("myTag", "showFoodsScreenFinal");
         i.putExtra("Product",product);
         i.putExtra("Alimento",resultado);
         i.putExtra("MeGusta",like);
@@ -494,14 +673,18 @@ public class HistoryActivity extends AppCompatActivity
                             return;
                         }
                         //Si el producto existe en BD EyesFood, se obtiene
-                        Log.d("myTag", "Nombre Producto: "+product.getProduct_name());
+                        Log.d("myTag", "loadFoods getProduct_name: "+product.getProduct_name());
+                        Log.d("myTag", "loadFoods getAllergens: "+product.getAllergens());
+                        Log.d("myTag", "loadFoodsget Nutriments: "+product.getNutriments());
+                        Log.d("myTag", "loadFoodsget Nova: "+product.getNova());
+                        Log.d("myTag", "loadFoods getIngredients_text : "+product.getIngredients_text());
                         isFoodInHistory(userIdFinal, product);
                     }
 
                     @Override
                     public void onFailure(Call<Food> call, Throwable t) {
                         //Si existe en OpenFood pero no en EyesFood, se crea
-                        if (product==null){
+                        if (product==null || product.getProduct_name().isEmpty()){
                             Log.d("myTag", "No existe producto en OpenFoods: ");
                             noFood();
                         }else{
@@ -550,6 +733,7 @@ public class HistoryActivity extends AppCompatActivity
             public void onResponse(Call<ShortFood> call, Response<ShortFood> response) {
                 if (!response.isSuccessful()) {
                     Log.d("myTag", "Mala respuesta. " + response.toString());
+                    insertFood(userIdFinal, product);
                     return;
                 }
                 //El alimento está en el historial
@@ -652,7 +836,7 @@ public class HistoryActivity extends AppCompatActivity
                 //barCode = "7802920001326";
                 //Iansa cerok
                 //barCode = "7801505000877";
-                //Log.d("myTag","Barcode = "+barCode);
+                Log.d("myTag","Barcode = "+barCode);
                 progressDialog.setMessage("Cargando Producto");
                 progressDialog.show();
                 loadFoods(barCode);
@@ -761,12 +945,14 @@ public class HistoryActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.history, menu);
-        MenuItem item = (MenuItem) menu.findItem(R.id.searchHistory);
-        searchView.setMenuItem((MenuItem) item);
+
+        MenuItem item = menu.findItem(R.id.searchHistory);
+        searchView.setMenuItem(item);
 
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+                Log.d("myTag", "query " + query);
                 Intent i = new Intent(getApplicationContext(), SearchActivity.class);
                 i.putExtra("query", query);
                 startActivity(i);

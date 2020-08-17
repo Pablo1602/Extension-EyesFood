@@ -23,7 +23,6 @@ import android.view.WindowManager;
 import android.widget.EditText;
 
 import com.example.jonsmauricio.eyesfood.R;
-import com.example.jonsmauricio.eyesfood.data.api.EyesFoodApi;
 import com.example.jonsmauricio.eyesfood.data.api.UserDataApi;
 import com.example.jonsmauricio.eyesfood.data.api.model.InsertMeasureBody;
 import com.example.jonsmauricio.eyesfood.data.api.model.Measure;

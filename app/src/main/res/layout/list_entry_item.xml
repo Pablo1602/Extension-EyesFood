@@ -29,5 +29,14 @@
         android:textSize="16dp"
         android:textAppearance="?attr/textAppearanceListItem" />
 
+    <TextView
+        android:id="@+id/tvEntryFood"
+        android:layout_below="@id/tvEntryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="@string/entry_food"
+        android:textSize="14dp"
+        android:textAppearance="?attr/textAppearanceListItem" />
 
 </LinearLayout>

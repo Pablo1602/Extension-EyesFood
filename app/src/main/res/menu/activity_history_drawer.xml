@@ -15,14 +15,14 @@
             android:id="@+id/bt_nav_modified"
             android:icon="@drawable/ic_edit_black"
             android:title="@string/nav_modified" />
-        <item
+       <!-- <item
             android:id="@+id/bt_nav_favorite"
             android:icon="@mipmap/ic_thumb_up_black_18dp"
             android:title="@string/nav_favorites" />
         <item
             android:id="@+id/bt_nav_rejected"
             android:icon="@mipmap/ic_thumb_down_black_18dp"
-            android:title="@string/nav_rejected" />
+            android:title="@string/nav_rejected" />-->
         <item
             android:id="@+id/bt_nav_diary"
             android:icon="@mipmap/ic_mode_comment_black_18dp"

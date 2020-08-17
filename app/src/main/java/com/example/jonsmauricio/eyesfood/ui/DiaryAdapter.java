@@ -75,34 +75,15 @@ public class DiaryAdapter extends ArrayAdapter<Diary> {
         ver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadEntry(currentDiary);
+                showCalendar(currentDiary);
             }
         });
         return convertView;
     }
-    //Carga los comentarios del alimento
-    public void loadEntry(final Diary currentDiary) {
-        Call<List<Entry>> call = mCommentsApi.getEntry(currentDiary.getId());
-        call.enqueue(new Callback<List<Entry>>() {
-            @Override
-            public void onResponse(Call<List<Entry>> call,
-                                   Response<List<Entry>> response) {
-                if (!response.isSuccessful()) {
-                    return;
-                }
-                listaEntradas = response.body();
-                showCalendar(listaEntradas, currentDiary);
-            }
-            @Override
-            public void onFailure(Call<List<Entry>> call, Throwable t) {
-            }
-        });
-    }
 
-    public void showCalendar(List<Entry> lista, Diary currentDiary){
+    public void showCalendar(Diary currentDiary){
         Intent intent = new Intent(getContext(), CalendarActivity.class);
         Bundle args = new Bundle();
-        args.putSerializable("Entradas",(Serializable) lista);
         intent.putExtra("BUNDLE",args);
         intent.putExtra("Diario", currentDiary);
         getContext().startActivity(intent);

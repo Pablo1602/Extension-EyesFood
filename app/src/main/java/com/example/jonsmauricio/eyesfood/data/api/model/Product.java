@@ -39,6 +39,10 @@ public class Product implements Serializable {
     private String allergens_from_user;
     //Trazas
     private String traces_from_user;
+    //Puntaje Nova (nivel de procesamiento del producto)
+    private String nova_group;
+    //Puntaje nutricional
+    private String nutrition_grades;
 
     public String getProduct_name() {
         return product_name;
@@ -174,5 +178,21 @@ public class Product implements Serializable {
 
     public void setTraces_from_user(String traces_from_user) {
         this.traces_from_user = traces_from_user;
+    }
+
+    public String getNova() {
+        return nova_group;
+    }
+
+    public void setNova_group(String nova_group) {
+        this.nova_group = nova_group;
+    }
+
+    public String getNutritionGrades() {
+        return nutrition_grades;
+    }
+
+    public void setNutrition_grades(String nutrition_grades) {
+        this.nutrition_grades = nutrition_grades;
     }
 }

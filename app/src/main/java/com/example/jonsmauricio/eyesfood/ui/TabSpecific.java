@@ -1,7 +1,6 @@
 package com.example.jonsmauricio.eyesfood.ui;
 
 import android.content.DialogInterface;
-import android.icu.text.NumberFormat;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -16,7 +15,6 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import com.example.jonsmauricio.eyesfood.R;
-import com.example.jonsmauricio.eyesfood.data.api.EyesFoodApi;
 import com.example.jonsmauricio.eyesfood.data.api.UserDataApi;
 import com.example.jonsmauricio.eyesfood.data.api.model.EditMeasureBody;
 import com.example.jonsmauricio.eyesfood.data.api.model.InsertMeasureBody;

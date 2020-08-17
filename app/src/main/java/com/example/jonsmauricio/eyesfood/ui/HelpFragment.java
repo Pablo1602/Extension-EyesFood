@@ -1,7 +1,6 @@
 package com.example.jonsmauricio.eyesfood.ui;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
@@ -18,15 +17,10 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.jonsmauricio.eyesfood.R;
 import com.example.jonsmauricio.eyesfood.data.api.EyesFoodApi;
-import com.example.jonsmauricio.eyesfood.data.api.model.Comment;
-import com.example.jonsmauricio.eyesfood.data.api.model.Expert;
-import com.example.jonsmauricio.eyesfood.data.api.model.Food;
 import com.example.jonsmauricio.eyesfood.data.api.model.Help;
-import com.example.jonsmauricio.eyesfood.data.api.model.NewFoodBody;
 
 import java.util.List;
 

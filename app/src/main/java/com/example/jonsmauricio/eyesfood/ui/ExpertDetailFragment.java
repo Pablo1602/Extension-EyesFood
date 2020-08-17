@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
@@ -19,11 +20,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,8 +32,6 @@ import com.example.jonsmauricio.eyesfood.data.api.EyesFoodApi;
 import com.example.jonsmauricio.eyesfood.data.api.model.Comment;
 import com.example.jonsmauricio.eyesfood.data.api.model.Consult;
 import com.example.jonsmauricio.eyesfood.data.api.model.Expert;
-import com.example.jonsmauricio.eyesfood.data.api.model.Food;
-import com.example.jonsmauricio.eyesfood.data.api.model.NewFoodBody;
 import com.example.jonsmauricio.eyesfood.data.api.model.Rating;
 import com.example.jonsmauricio.eyesfood.data.prefs.SessionPrefs;
 import com.squareup.picasso.Picasso;
@@ -184,7 +180,7 @@ public class ExpertDetailFragment extends DialogFragment {
             @Override
             public void onResponse(Call<Rating> call, Response<Rating> response) {
                 if(!response.isSuccessful()){
-                    Log.d("myTag", "Mala respuesta en evaluarRating" + response.toString());
+                    Log.d("myTag", "Mala respuesta en isRating" + response.toString());
                     return;
                 }
                 // Ya existe un rating

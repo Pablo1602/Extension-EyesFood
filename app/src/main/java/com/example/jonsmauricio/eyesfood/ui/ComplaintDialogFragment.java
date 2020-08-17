@@ -19,24 +19,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.jonsmauricio.eyesfood.R;
 import com.example.jonsmauricio.eyesfood.data.api.EyesFoodApi;
-import com.example.jonsmauricio.eyesfood.data.api.model.ApiError;
 import com.example.jonsmauricio.eyesfood.data.api.model.Food;
-import com.example.jonsmauricio.eyesfood.data.api.model.Ingredient;
-import com.example.jonsmauricio.eyesfood.data.api.model.LoginBody;
 import com.example.jonsmauricio.eyesfood.data.api.model.NewFoodBody;
 import com.example.jonsmauricio.eyesfood.data.api.model.Product;
-import com.example.jonsmauricio.eyesfood.data.api.model.ShortFood;
-import com.example.jonsmauricio.eyesfood.data.api.model.User;
 import com.example.jonsmauricio.eyesfood.data.prefs.SessionPrefs;
-
-import java.io.IOException;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -260,9 +251,9 @@ public class ComplaintDialogFragment extends DialogFragment {
     @Override
     public void onPrepareOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);
+        menu.findItem(R.id.action_foods_comments).setVisible(false);
         menu.findItem(R.id.action_foods_complaint).setVisible(false);
         menu.findItem(R.id.action_foods_add_photos).setVisible(false);
-        menu.findItem(R.id.action_foods_settings).setVisible(false);
     }
 
     @Override

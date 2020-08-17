@@ -61,11 +61,13 @@ public class EntryAdapter extends ArrayAdapter<Entry> {
         // Referencias UI
         final TextView name = convertView.findViewById(R.id.tvEntryName);
         final TextView text = convertView.findViewById(R.id.tvEntryText);
+        final TextView food = convertView.findViewById(R.id.tvEntryFood);
 
         // Entrada actual
         final Entry currentEntry = getItem(position);
         name.setText(currentEntry.getTitulo());
         text.setText(currentEntry.getTexto());
+        food.setText(currentEntry.getAlimento());
 
         return convertView;
     }

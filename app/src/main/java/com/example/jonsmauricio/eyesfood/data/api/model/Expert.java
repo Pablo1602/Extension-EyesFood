@@ -15,7 +15,7 @@ public class Expert implements Serializable{
     private String name;
     @SerializedName("apellido")
     private String lastName;
-    @SerializedName("correo")
+    @SerializedName("email")
     private String email;
     @SerializedName("foto")
     private String photo;

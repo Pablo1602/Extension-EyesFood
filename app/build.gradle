@@ -58,6 +58,7 @@ dependencies {
     implementation 'com.rapidapi:rapidconnect-android:0.1'
     testCompile 'junit:junit:4.12'
     implementation files('libs/droidText.0.4.jar')
+    implementation 'sun.bob:mcalendarview:1.0.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
