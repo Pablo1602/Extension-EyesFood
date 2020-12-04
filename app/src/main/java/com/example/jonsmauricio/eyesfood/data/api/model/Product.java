@@ -168,7 +168,7 @@ public class Product implements Serializable {
         return allergens_from_user;
     }
 
-    public void setAllergens_from_user(String allergens_from_user) {
+    public void setAllergens(String allergens_from_user) {
         this.allergens_from_user = allergens_from_user;
     }
 
@@ -176,7 +176,7 @@ public class Product implements Serializable {
         return traces_from_user;
     }
 
-    public void setTraces_from_user(String traces_from_user) {
+    public void setTraces(String traces_from_user) {
         this.traces_from_user = traces_from_user;
     }
 

@@ -212,9 +212,10 @@ public class NewFoodsDialogFragment extends DialogFragment {
             @Override
             public void onResponse(Call<Food> call, Response<Food> response) {
                 if (!response.isSuccessful()) {
-
+                    Log.d("Falla sendSolitude", "Falla interna en new food solitude");
                     return;
                 }
+                Log.d("Falla sendSolitude", "Exito");
                 showSuccesDialog();
             }
 

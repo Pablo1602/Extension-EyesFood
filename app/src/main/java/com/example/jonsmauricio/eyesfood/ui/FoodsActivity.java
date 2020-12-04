@@ -30,6 +30,9 @@ import android.widget.Toast;
 import com.example.jonsmauricio.eyesfood.R;
 import com.example.jonsmauricio.eyesfood.data.api.CommentsApi;
 import com.example.jonsmauricio.eyesfood.data.api.EyesFoodApi;
+import com.example.jonsmauricio.eyesfood.data.api.OpenFoodFactsApi;
+import com.example.jonsmauricio.eyesfood.data.api.UserDataApi;
+import com.example.jonsmauricio.eyesfood.data.api.model.Allergy;
 import com.example.jonsmauricio.eyesfood.data.api.model.Comment;
 import com.example.jonsmauricio.eyesfood.data.api.model.Counter;
 import com.example.jonsmauricio.eyesfood.data.api.model.Food;
@@ -81,7 +84,7 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
     azucaresPorcion, fibra100, fibraPorcion, sodio100, sodioPorcion;
 
     String CodigoBarras;
-    RatingBar infoGeneralRating;
+    //RatingBar infoGeneralRating;
     private String userIdFinal;
 
     //Para los botonos
@@ -93,7 +96,8 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
     private List<Store> listaTiendas;
     ImageView ivFoodPhoto;
 
-    Retrofit mRestAdapter, mRestAdapter2;
+    Retrofit mRestAdapter, mRestAdapter2, mRestAdapter3;
+    private UserDataApi mUserDataApi;
     private EyesFoodApi mEyesFoodApi;
     private CommentsApi mCommentsApi;
     private Food Alimento;
@@ -110,6 +114,8 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
     private String traza;
     private String gradoNutri;
     private int nova;
+
+    private Allergy alergiasUser;
 
     //Permissions
     private static final int PERMISSION_CODE = 123;
@@ -145,7 +151,7 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
         infoGeneralMarca = (TextView) findViewById(R.id.tvFoodsInfoGeneralMarca);
         infoGeneralNeto = (TextView) findViewById(R.id.tvFoodsInfoGeneralNeto);
         infoGeneralFecha = (TextView) findViewById(R.id.tvFoodsInfoGeneralFecha);
-        infoGeneralRating = (RatingBar) findViewById(R.id.rbFoodsRating);
+        //infoGeneralRating = (RatingBar) findViewById(R.id.rbFoodsRating);
         infoGeneralAlergenos = (TextView) findViewById(R.id.tvFoodsInfoGeneralAllergy);
         infoGeneralTrazas = (TextView) findViewById(R.id.tvFoodsInfoGeneralTrace);
         ivNutricion = (ImageView) findViewById(R.id.ivFoodsNutrition);
@@ -214,11 +220,20 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
+        mRestAdapter3 = new Retrofit.Builder()
+                .baseUrl(UserDataApi.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+
         // Crear conexión a la API de EyesFood
         mEyesFoodApi = mRestAdapter.create(EyesFoodApi.class);
 
         // Crear conexión a la API de Comentarios
         mCommentsApi = mRestAdapter2.create(CommentsApi.class);
+
+        // Crear conexión a la API de Usuario data
+        mUserDataApi = mRestAdapter3.create(UserDataApi.class);
 
         Intent i = getIntent();
         Bundle b = i.getExtras();
@@ -233,6 +248,8 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
             if (Alimento==null && product == null){
                 collapser.setTitle(pendiente.getName());
                 CodigoBarras = pendiente.getBarcode();
+                //pendiente.setAllergens(pendiente.getAllergens().replace("(es)","").replace("en:","").replace("es:","").replace("(fr)",""));
+                //pendiente.setTraces(pendiente.getTraces().replace("(es)","").replace("en:","").replace("es:","").replace("(fr)",""));
                 fab.setVisibility(View.GONE);
                 fabPhoto.setVisibility(View.GONE);
                 fabEdit.setVisibility(View.GONE);
@@ -241,19 +258,21 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
                 images.setVisibility(View.GONE);
                 like.setVisibility(View.GONE);
                 dislike.setVisibility(View.GONE);
-                infoGeneralRating.setVisibility(View.GONE);
+                //infoGeneralRating.setVisibility(View.GONE);
                 tipo = "2";
             }else{
                 collapser.setTitle(product.getProduct_name()); // Cambiar título
                 //setTitle(Nombre);
                 CodigoBarras = product.getCodigo();
+                product.setAllergens(product.getAllergens().replace("(es)","").replace("en:","").replace("es:","").replace("(fr)",""));
+                product.setTraces(product.getTraces().replace("(es)","").replace("en:","").replace("es:","").replace("(fr)",""));
                 MeGusta = (int) b.get("MeGusta");
                 Log.d("myTag","Like: "+MeGusta);
                 tipo = "1";
             }
             //showFood(Alimento);
         }
-        showFood(product,Alimento);
+        prepareShowFood(userIdFinal,product,Alimento);
         showNutritionFacts(product);
         loadIngredients();
         getLikesCount(CodigoBarras, like);
@@ -268,7 +287,7 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
         ivNutricion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://cl.openfoodfacts.org/nova"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://cl.openfoodfacts.org/nutriscore"));
                 startActivity(browserIntent);
             }
         });
@@ -276,15 +295,42 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
         ivNova.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://cl.openfoodfacts.org/nutriscore"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://cl.openfoodfacts.org/nova"));
                 startActivity(browserIntent);
+            }
+        });
+    }
+
+    public void prepareShowFood(String userId, final Product product, final Food Alimento){
+        Call<Allergy> call = mUserDataApi.getAllergy(userId);
+        call.enqueue(new Callback<Allergy>() {
+            @Override
+            public void onResponse(Call<Allergy> call,
+                                   Response<Allergy> response) {
+                if (!response.isSuccessful()) {
+                    Log.d("FLAGSEARCH","loadAllergy Error"+response.message());
+                    return;
+                }
+                alergiasUser = response.body();
+                showFood(product,Alimento,alergiasUser);
+            }
+            @Override
+            public void onFailure(Call<Allergy> call, Throwable t) {
+                Log.d("FLAGSEARCH","loadAllergy Fallo en API "+t.getMessage());
             }
         });
     }
 
     //Carga los datos del alimento al iniciar la pantalla
     //alimento: Alimento a cargar
-    private void showFood(Product product, Food alimento) {
+    private void showFood(Product product, Food alimento, Allergy alergiasUser) {
+        Boolean getLeche = false, getGluten = false, checkLeche = false, checkGluten = false;
+        if (alergiasUser.getGluten() == 1){
+            checkGluten = true;
+        }
+        if (alergiasUser.getLeche() == 1){
+            checkLeche = true;
+        }
         if (product==null || alimento==null){
             infoGeneralNombre.setText(pendiente.getName());
             infoGeneralProducto.setText(pendiente.getProduct());
@@ -296,13 +342,37 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
                 infoGeneralAlergenos.append(" ");
             }
             else{
-                infoGeneralAlergenos.append(" "+pendiente.getAllergens().replace("(es)",""));
+                infoGeneralAlergenos.append(" "+pendiente.getAllergens());
+                if (checkGluten){
+                    if (pendiente.getAllergens().toLowerCase().contains("gluten")){
+                        infoGeneralAlergenos.setTextColor(Color.rgb(179,040,033));
+                        getGluten = true;
+                    }
+                }
+                if (checkLeche){
+                    if (pendiente.getAllergens().toLowerCase().contains("leche") || pendiente.getAllergens().toLowerCase().contains("lactosa")){
+                        infoGeneralAlergenos.setTextColor(Color.rgb(179,040,033));
+                        getLeche = true;
+                    }
+                }
             }
             if (pendiente.getTraces() == null){
-                infoGeneralAlergenos.append(" ");
+                infoGeneralTrazas.append(" ");
             }
             else{
-                infoGeneralAlergenos.append(" "+pendiente.getTraces().replace("(es)",""));
+                infoGeneralTrazas.append(" "+pendiente.getTraces());
+                if (checkGluten){
+                    if (pendiente.getTraces().toLowerCase().contains("gluten")){
+                        infoGeneralTrazas.setTextColor(Color.rgb(179,040,033));
+                        getGluten = true;
+                    }
+                }
+                if (checkLeche){
+                    if (pendiente.getTraces().toLowerCase().contains("leche") || pendiente.getTraces().toLowerCase().contains("lactosa")){
+                        infoGeneralTrazas.setTextColor(Color.rgb(179,040,033));
+                        getLeche = true;
+                    }
+                }
             }
             //SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             //Date d = new Date(pendiente.getDate()*1000);
@@ -314,21 +384,47 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
 
             infoGeneralNombre.setText(product.getProduct_name());
             infoGeneralProducto.setText(product.getCategories());
-            infoGeneralRating.setRating(alimento.getFoodHazard());
+            //infoGeneralRating.setRating(alimento.getFoodHazard());
             infoGeneralCodigo.append(" "+product.getCodigo());
             infoGeneralMarca.append(" "+product.getBrands());
             infoGeneralNeto.append(" "+product.getQuantity());
+
             if (product.getAllergens() == null){
                 infoGeneralAlergenos.append(" ");
             }
             else{
-                infoGeneralAlergenos.append(" "+product.getAllergens().replace("(es)",""));
+                infoGeneralAlergenos.append(" "+product.getAllergens());
+                if (checkGluten){
+                    if (product.getAllergens().toLowerCase().contains("gluten")){
+                        infoGeneralAlergenos.setTextColor(Color.rgb(179,040,033));
+                        getGluten = true;
+                    }
+                }
+                if (checkGluten){
+                    if (product.getAllergens().toLowerCase().contains("leche") || product.getAllergens().toLowerCase().contains("lactosa")){
+                        infoGeneralAlergenos.setTextColor(Color.rgb(179,040,033));
+                        getLeche = true;
+                    }
+                }
             }
+
             if (product.getTraces() == null){
-                infoGeneralAlergenos.append(" ");
+                infoGeneralTrazas.append(" ");
             }
             else{
-                infoGeneralAlergenos.append(" "+product.getTraces().replace("(es)",""));
+                infoGeneralTrazas.append(" "+product.getTraces());
+                if (checkGluten){
+                    if (product.getTraces().toLowerCase().contains("gluten")){
+                        infoGeneralTrazas.setTextColor(Color.rgb(179,040,033));
+                        getGluten = true;
+                    }
+                }
+                if (checkLeche){
+                    if (product.getTraces().toLowerCase().contains("leche") || product.getTraces().toLowerCase().contains("lactosa")){
+                        infoGeneralTrazas.setTextColor(Color.rgb(179,040,033));
+                        getLeche = true;
+                    }
+                }
             }
             if (product.getNutritionGrades() != null){
                 switch(product.getNutritionGrades()) {
@@ -381,7 +477,32 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
             SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Date d = new Date(product.getLast_modified_t()*1000);
             infoGeneralFecha.append(" "+f.format(d));
+            if (getLeche && getGluten && checkGluten && checkLeche){
+                popupMessage("El alimento parece que contiene leche o lactosa o gluten");
+            }
+            else if (getLeche && checkLeche){
+                popupMessage("El alimento parece que contiene leche o lactosa");
+            }
+            else if (getGluten && checkGluten){
+                popupMessage("El alimento parece que contiene gluten");
+            }
         }
+    }
+
+    private void popupMessage(String message){
+        new AlertDialog.Builder(this)
+                .setIcon(null)
+                .setTitle("Alerta")
+                .setMessage(message)
+                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+
+                })
+                .show();
     }
 
     //Muestra la información nutricional del alimento
@@ -440,15 +561,16 @@ public class FoodsActivity extends AppCompatActivity implements View.OnClickList
         Log.d("myTag","Cantidad: "+quantity+" Porcion: "+portion);
         float portions = 0;
         if (portion!=null){
+            quantity = quantity.replace(",",".");
             String[] cantidad =  quantity.split(" ");
             List<String> porcion = separaPorcion(portion);
             int porc = Integer.parseInt(porcion.get(0));
-            int cant;
+            float cant;
             if (cantidad.length==2){
-                cant = Integer.parseInt(cantidad[0]);
+                cant = Float.parseFloat(cantidad[0]);
             }else{
                 List<String> cantidad2 = separaPorcion(quantity);
-                cant = Integer.parseInt(cantidad2.get(0));
+                cant = Float.parseFloat(cantidad2.get(0));
             }
             if(cant<porc){
                 portions = (cant*1000)/porc;

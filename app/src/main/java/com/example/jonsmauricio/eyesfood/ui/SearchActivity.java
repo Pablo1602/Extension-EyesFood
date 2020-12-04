@@ -16,16 +16,16 @@ import android.widget.TextView;
 import com.example.jonsmauricio.eyesfood.R;
 import com.example.jonsmauricio.eyesfood.data.api.EyesFoodApi;
 import com.example.jonsmauricio.eyesfood.data.api.OpenFoodFactsApi;
-import com.example.jonsmauricio.eyesfood.data.api.model.Additive;
+import com.example.jonsmauricio.eyesfood.data.api.UserDataApi;
+import com.example.jonsmauricio.eyesfood.data.api.model.Allergy;
 import com.example.jonsmauricio.eyesfood.data.api.model.Food;
+import com.example.jonsmauricio.eyesfood.data.api.model.InsertFromLikeBody;
 import com.example.jonsmauricio.eyesfood.data.api.model.Product;
 import com.example.jonsmauricio.eyesfood.data.api.model.ProductResponse;
-import com.example.jonsmauricio.eyesfood.data.api.model.Rating;
 import com.example.jonsmauricio.eyesfood.data.api.model.ShortFood;
 import com.example.jonsmauricio.eyesfood.data.prefs.SessionPrefs;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -37,20 +37,24 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class SearchActivity extends AppCompatActivity {
 
     MaterialSearchView searchView;
-    private String query;
+    String query;
+
     Retrofit mRestAdapter;
+    Retrofit mRestAdapter2;
     Retrofit mOpenRestAdapter;
     EyesFoodApi mEyesFoodApi;
+    UserDataApi mUserDataApi;
     OpenFoodFactsApi mOpenFoodApi;
+
     private List<Food> resultadoAlimentos;
     private List<Food> resultadoAlergenos;
-    private List<Additive> resultadoAditivos;
+    //List<Additive> resultadoAditivos;
     private ListView resultFoods;
     private ListView resultAllergy;
-    private ListView resultAdditives;
+    //private ListView resultAdditives;
     private ArrayAdapter<Food> adaptadorFoods;
     private ArrayAdapter<Food> adaptadorAllergy;
-    private ArrayAdapter<Additive> adaptadorAdditives;
+    //private ArrayAdapter<Additive> adaptadorAdditives;
     private View searchProgress;
     TextView searchProgressText;
     TextView searchEmptyState;
@@ -59,11 +63,15 @@ public class SearchActivity extends AppCompatActivity {
     TextView searchAdditivesHeader;
     boolean noFoods;
     boolean noAllergy;
-    boolean noAdditives;
+    //boolean noAdditives;
     private ShortFood shortFood;
     private String userIdFinal;
     private int like;
     private int flag;
+
+    private Allergy alergiasUser;
+    private int alergiaLeche;
+    private int alergiaGluten;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +83,7 @@ public class SearchActivity extends AppCompatActivity {
         searchView = (MaterialSearchView) findViewById(R.id.search_view_search);
         resultFoods = (ListView) findViewById(R.id.lvResultPendientes);
         resultAllergy = (ListView) findViewById(R.id.lvResultAllergy);
-        resultAdditives = (ListView) findViewById(R.id.lvResultAdditives);
+        //resultAdditives = (ListView) findViewById(R.id.lvResultAdditives);
         searchProgress = findViewById(R.id.pbSearchProgress);
         searchProgressText = (TextView) findViewById(R.id.tvSearchProgressText);
         searchEmptyState = (TextView) findViewById(R.id.tvSearchEmptyState);
@@ -91,6 +99,11 @@ public class SearchActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
+        mRestAdapter2 = new Retrofit.Builder()
+                .baseUrl(UserDataApi.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
         mOpenRestAdapter = new Retrofit.Builder()
                 .baseUrl(OpenFoodFactsApi.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -101,12 +114,16 @@ public class SearchActivity extends AppCompatActivity {
 
         mOpenFoodApi = mOpenRestAdapter.create(OpenFoodFactsApi.class);
 
+        mUserDataApi = mRestAdapter2.create(UserDataApi.class);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         resultFoods.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Food currentSearch = adaptadorFoods.getItem(position);
+                Log.d("FLAGSEARCH","setOnItemClickListener getFoodName "+currentSearch.getFoodName());
+                Log.d("FLAGSEARCH","setOnItemClickListener getBarCode "+currentSearch.getBarCode());
                 isFoodInHistory(userIdFinal, currentSearch.getBarCode(), currentSearch);
             }
         });
@@ -115,11 +132,13 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Food currentSearch = adaptadorAllergy.getItem(position);
+                Log.d("FLAGSEARCH","setOnItemClickListener getFoodName "+currentSearch.getFoodName());
+                Log.d("FLAGSEARCH","setOnItemClickListener getBarCode "+currentSearch.getBarCode());
                 isFoodInHistory(userIdFinal, currentSearch.getBarCode(), currentSearch);
             }
         });
 
-        resultAdditives.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        /*resultAdditives.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Additive currentSearch = adaptadorAdditives.getItem(position);
@@ -127,20 +146,47 @@ public class SearchActivity extends AppCompatActivity {
                 i.putExtra("Aditivo", currentSearch);
                 startActivity(i);
             }
-        });
-
+        });*/
         Intent i = getIntent();
         Bundle b = i.getExtras();
 
         if(b != null){
-            Log.d("myTag", "Bundle no vacio");
-            showLists(false);
-            showProgress(true);
+            Log.d("FLAGSEARCH", "Bundle no vacio");
+            //showLists(false);
+            //showProgress(true);
             query = (String) b.get("query");
+            Log.d("FLAGSEARCH","query "+query);
             makeQueryFoods(query);
-            makeQueryAllergy(query);
-            makeQueryAdditives(query);
+            prepareAllergyQuery(userIdFinal,query);
+            //showProgress(false);
+            //showLists(true);
+            //makeQueryAdditives(query);
         }
+    }
+
+    public void prepareAllergyQuery(String userId, final String query){
+        Call<Allergy> call = mUserDataApi.getAllergy(userId);
+        call.enqueue(new Callback<Allergy>() {
+            @Override
+            public void onResponse(Call<Allergy> call,
+                                   Response<Allergy> response) {
+                if (!response.isSuccessful()) {
+                    Log.d("FLAGSEARCH","loadAllergy Error"+response.message());
+                    return;
+                }
+                alergiasUser = response.body();
+                if (alergiasUser.getLeche() == 0 && alergiasUser.getGluten() == 0){
+                    resultAllergy.setVisibility(View.GONE);
+                    searchAllergyHeader.setVisibility(View.GONE);
+                }else{
+                    makeQueryAllergy(query,alergiasUser);
+                }
+            }
+            @Override
+            public void onFailure(Call<Allergy> call, Throwable t) {
+                Log.d("FLAGSEARCH","loadAllergy Fallo en API "+t.getMessage());
+            }
+        });
     }
 
     public void makeQueryFoods(String query){
@@ -154,7 +200,14 @@ public class SearchActivity extends AppCompatActivity {
                     return;
                 }
                 resultadoAlimentos = response.body();
-                showListFoods(resultadoAlimentos);
+                if (!resultadoAlimentos.isEmpty()) {
+                    //for(Food food: resultadoAlergenos){
+                    //    Log.d("SEARCHFLAG","makeQueryFoods name:"+food.getFoodName());
+                    //}
+                    showListFoods(resultadoAlimentos);
+                }else{
+                    noFoods = true;
+                }
             }
 
             @Override
@@ -164,35 +217,37 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
 
-    public void makeQueryAllergy(String query){
-        String alergeno = query.toLowerCase();
-        if (alergeno.indexOf("leche") > 0 || alergeno.indexOf("lactosa") > 0){
-            alergeno = "leche";
-        }
-        if (alergeno.indexOf("gluten") > 0 || alergeno.indexOf("celiaca") > 0){
-            alergeno = "gluten";
-        }
-        Call<List<Food>> call = mEyesFoodApi.getAllergyQuery(alergeno);
-        call.enqueue(new Callback<List<Food>>() {
+    public void makeQueryAllergy(String query, Allergy alergiasUser){
+        Log.d("FLAGSEARCH","makeQueryAllergy alergiasUser.getLeche() "+alergiasUser.getLeche());
+        Log.d("FLAGSEARCH","makeQueryAllergy alergiasUser.getGluten() "+alergiasUser.getGluten());
+        Call<List<Food>> call2 = mEyesFoodApi.getAllergyQuery(alergiasUser.getLeche(),alergiasUser.getGluten(),query);
+        call2.enqueue(new Callback<List<Food>>() {
             @Override
             public void onResponse(Call<List<Food>> call,
                                    Response<List<Food>> response) {
                 if (!response.isSuccessful()) {
-                    Log.d("myTag", "Falla en la llamada de Foods: makeQueryFoods" + response.message());
+                    Log.d("myTag", "Falla en la llamada de Foods: makeQueryAllergy" + response.message());
                     return;
                 }
                 resultadoAlergenos = response.body();
-                showListFoodsAllergy(resultadoAlergenos);
+                if (!resultadoAlergenos.isEmpty()) {
+                    for(Food food: resultadoAlergenos){
+                        Log.d("SEARCHFLAG","makeQueryAllergy name:"+food.getFoodName());
+                    }
+                    showListFoodsAllergy(resultadoAlergenos);
+                }
+                else{
+                    noAllergy = true;
+                }
             }
-
             @Override
             public void onFailure(Call<List<Food>> call, Throwable t) {
-                Log.d("myTag", "Falla en la llamada de aditivos: loadAdditives");
+                Log.d("myTag", "Falla en la llamada de aditivos: makeQueryAllergy");
             }
         });
     }
 
-    public void makeQueryAdditives(String query){
+    /*public void makeQueryAdditives(String query){
         resultadoAditivos = new ArrayList<>();
         showListAdditives(resultadoAditivos);
         Call<List<Additive>> call = mEyesFoodApi.getAdditivesQuery(query);
@@ -213,19 +268,14 @@ public class SearchActivity extends AppCompatActivity {
                 Log.d("myTag", "Falla en la llamada de aditivos: loadAdditives");
             }
         });
-    }
-
-
+    }*/
 
     public void showListFoods(List<Food> lista){
         int tamanoLista = lista.size();
         //Log.d("myTag", "tamano Lista" + lista.size());
         if(tamanoLista > 0) {
             noFoods = false;
-            adaptadorFoods = new ArrayAdapter<>(
-                    this,
-                    android.R.layout.simple_list_item_1,
-                    lista);
+            adaptadorFoods = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, lista);
             resultFoods.setAdapter(adaptadorFoods);
         }
         else{
@@ -238,10 +288,7 @@ public class SearchActivity extends AppCompatActivity {
         //Log.d("myTag", "tamano Lista" + lista.size());
         if(tamanoLista > 0) {
             noAllergy = false;
-            adaptadorAllergy = new ArrayAdapter<>(
-                    this,
-                    android.R.layout.simple_list_item_1,
-                    lista);
+            adaptadorAllergy = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, lista);
             resultAllergy.setAdapter(adaptadorAllergy);
         }
         else{
@@ -249,7 +296,7 @@ public class SearchActivity extends AppCompatActivity {
         }
     }
 
-    public void showListAdditives(List<Additive> lista){
+    /*public void showListAdditives(List<Additive> lista){
         int tamanoLista = lista.size();
         if(tamanoLista > 0) {
             noAdditives = false;
@@ -267,7 +314,7 @@ public class SearchActivity extends AppCompatActivity {
         if(!noAdditives || !noFoods){
             showLists(true);
         }
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -281,14 +328,21 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 //Vacío la lista anterior seteo el empty state y el progress antes de hacer la query
-                Log.d("Search", "query"+ query);
-                resultadoAlimentos.clear();
-                resultadoAditivos.clear();
-                resultadoAlergenos.clear();
-                showProgress(true);
+                if (!resultadoAlimentos.isEmpty()){
+                    resultadoAlimentos.clear();
+                }
+                /*if (!resultadoAditivos.isEmpty()){
+                    resultadoAditivos.clear();
+                }*/
+                if (!resultadoAlergenos.isEmpty()){
+                    resultadoAlergenos.clear();
+                }
+                //showProgress(true);
+                prepareAllergyQuery(userIdFinal,query);
                 makeQueryFoods(query);
-                makeQueryAdditives(query);
-                makeQueryAllergy(query);
+                //makeQueryAdditives(query);
+                //showProgress(false);
+                //showLists(true);
                 return false;
             }
 
@@ -303,10 +357,10 @@ public class SearchActivity extends AppCompatActivity {
     private void showProgress(boolean show) {
         if(show) {
             showLists(false);
-            showEmptyState(false, false, false);
+            showEmptyState(false, false);
         }
         else{
-            showEmptyState(noAdditives, noFoods, noAllergy);
+            showEmptyState(noFoods, noAllergy);
         }
         searchProgress.setVisibility(show ? View.VISIBLE : View.GONE);
         searchProgressText.setVisibility(show ? View.VISIBLE : View.GONE);
@@ -316,23 +370,23 @@ public class SearchActivity extends AppCompatActivity {
         if(!show){
             resultFoods.setVisibility(View.GONE);
             searchFoodsHeader.setVisibility(View.GONE);
-            resultAdditives.setVisibility(View.GONE);
-            searchAdditivesHeader.setVisibility(View.GONE);
+            //resultAdditives.setVisibility(View.GONE);
+            //searchAdditivesHeader.setVisibility(View.GONE);
             resultAllergy.setVisibility(View.GONE);
             searchAllergyHeader.setVisibility(View.GONE);
         }
         else{
             resultFoods.setVisibility(View.VISIBLE);
             searchFoodsHeader.setVisibility(View.VISIBLE);
-            resultAdditives.setVisibility(View.VISIBLE);
-            searchAdditivesHeader.setVisibility(View.VISIBLE);
+            //resultAdditives.setVisibility(View.VISIBLE);
+            //searchAdditivesHeader.setVisibility(View.VISIBLE);
             resultAllergy.setVisibility(View.VISIBLE);
             searchAllergyHeader.setVisibility(View.VISIBLE);
         }
     }
 
-    public void showEmptyState(boolean noAdditives, boolean noFoods, boolean noAllergy){
-        if(noAdditives && noFoods && noAllergy){
+    public void showEmptyState(boolean noFoods, boolean noAllergy){
+        if(noFoods && noAllergy){
             searchEmptyState.setVisibility(View.VISIBLE);
         }
         else{
@@ -350,14 +404,15 @@ public class SearchActivity extends AppCompatActivity {
             public void onResponse(Call<ShortFood> call,
                                    Response<ShortFood> response) {
                 if (!response.isSuccessful()) {
+                    Log.d("myTag", "Falla en la llamada de Foods: isFoodInHistory " + response.message());
                     return;
                 }
                 //El alimento está en el historial
                 shortFood = response.body();
                 like = shortFood.getLike();
-                Log.d("myTag", "antes de show");
-                Log.d("myTag", String.valueOf(like));
-                //Log.d("myTag", currentSearch.getName());
+                Log.d("FLAGSEARCH","isFoodInHistory antes de show ");
+                Log.d("FLAGSEARCH","isFoodInHistory like "+like);
+                //Log.d("myTag", currentSearch.getName);
                 Call<ProductResponse> call2 = mOpenFoodApi.obtenerProducto(barcode);
                 call2.enqueue(new Callback<ProductResponse>() {
                     @Override
@@ -367,6 +422,7 @@ public class SearchActivity extends AppCompatActivity {
                             return;
                         }
                         ProductResponse respuesta = response.body();
+                        Log.d("FLAGSEARCH","isFoodInHistory obtenerProducto "+respuesta.getProduct().getProduct_name());
                         Product product = respuesta.getProduct();
                         product.setCodigo(respuesta.getCode());
                         showFood(like, currentSearch, product);
@@ -374,7 +430,7 @@ public class SearchActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<ProductResponse> call, Throwable t) {
-
+                        Log.d("myTag", "Falla en la llamada de aditivos: makeQueryAllergy");
                     }
                 });
             }
@@ -382,6 +438,7 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<ShortFood> call, Throwable t) {
                 //El alimento no está
+                Log.d("FLAGSEARCH","isFoodInHistory el alimento no esta");
                 like=0;
                 flag = 1;
                 Call<ProductResponse> call2 = mOpenFoodApi.obtenerProducto(barcode);
@@ -389,10 +446,12 @@ public class SearchActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<ProductResponse> call, Response<ProductResponse> response) {
                         if (!response.isSuccessful()) {
-                            // TODO: Procesar error de API
+                            Log.d("myTag", "Falla en la llamada de Foods: isFoodInHistory2 " + response.message());
                             return;
                         }
                         ProductResponse respuesta = response.body();
+                        insertNoScan(userIdFinal,respuesta.getCode());
+                        Log.d("FLAGSEARCH","isFoodInHistory obtenerProducto "+respuesta.getProduct().getProduct_name());
                         Product product = respuesta.getProduct();
                         product.setCodigo(respuesta.getCode());
                         showFood(like, currentSearch, product);
@@ -400,9 +459,29 @@ public class SearchActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<ProductResponse> call, Throwable t) {
-
+                        Log.d("myTag", "Falla en la llamada de aditivos: makeQueryAllergy2 ");
                     }
                 });
+            }
+        });
+    }
+
+    private void insertNoScan(String userIdFinal, String codigoBarras) {
+        Call<Food> call = mEyesFoodApi.insertNoScan(new InsertFromLikeBody(userIdFinal, codigoBarras, 0));
+        call.enqueue(new Callback<Food>() {
+            @Override
+            public void onResponse(Call<Food> call, Response<Food> response) {
+                if (!response.isSuccessful()) {
+                    return;
+                }
+                else {
+                    Log.d("myTag", "Éxito en insertFood");
+                }
+            }
+            @Override
+            public void onFailure(Call<Food> call, Throwable t) {
+                Log.d("myTag", "Fallo en insertFood " + t.getMessage());
+                return;
             }
         });
     }

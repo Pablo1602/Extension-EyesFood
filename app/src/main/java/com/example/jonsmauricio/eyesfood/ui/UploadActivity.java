@@ -299,7 +299,7 @@ public class UploadActivity extends AppCompatActivity {
                         return;
                     }
                     pendientes = response.body();
-                    Log.d("myTag", "pendientes: "+pendientes.size());
+                    Log.d("myTag", "new pendientes: "+pendientes.size());
                     showListPending(pendientes);
                 }
 
@@ -319,7 +319,7 @@ public class UploadActivity extends AppCompatActivity {
                         return;
                     }
                     pendientes = response.body();
-                    Log.d("myTag", "pendientes: "+pendientes.size());
+                    Log.d("myTag", "complaint pendientes: "+pendientes.size());
                     showListPending(pendientes);
                 }
 

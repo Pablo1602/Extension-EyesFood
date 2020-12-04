@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:textAppearance="?attr/textAppearanceListItem"
+        android:textStyle="bold"
         tools:text="Leche:" />
 
     <TextView
@@ -26,7 +27,7 @@
         android:layout_marginLeft="8dp"
         android:textAppearance="?attr/textAppearanceListItem"
         android:alpha="0.7"
-        tools:text="No" />
+        tools:text="habilitado" />
 
 
 </RelativeLayout>

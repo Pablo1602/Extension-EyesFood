@@ -24,14 +24,20 @@ public class Food implements Serializable{
     private float glycemicIndex;
     @SerializedName("nombreAlimento")
     private String foodName;
+    @SerializedName("alergenos")
+    private String alergenos;
+    @SerializedName("trazas")
+    private String trazas;
 
-    public Food(String barCode, String userId, float foodHazard, String date, float glycemicIndex, String foodName) {
+    public Food(String barCode, String userId, float foodHazard, String date, float glycemicIndex, String foodName, String alergenos, String trazas) {
         this.barCode = barCode;
         this.userId = userId;
         this.foodHazard = foodHazard;
         this.date = date;
         this.glycemicIndex = glycemicIndex;
         this.foodName = foodName;
+        this.alergenos = alergenos;
+        this.trazas = trazas;
     }
 
     public String getBarCode() {
@@ -88,6 +94,22 @@ public class Food implements Serializable{
 
     public void setFoodName(String foodName) {
         this.foodName = foodName;
+    }
+
+    public String getFoodAlergenos() {
+        return alergenos;
+    }
+
+    public void setFoodAlergenos(String alergenos) {
+        this.alergenos = alergenos;
+    }
+
+    public String getFoodTrazas() {
+        return trazas;
+    }
+
+    public void setFoodTrazas(String trazas) {
+        this.trazas = trazas;
     }
 
     @Override

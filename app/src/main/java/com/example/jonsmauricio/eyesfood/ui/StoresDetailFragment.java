@@ -74,7 +74,7 @@ public class StoresDetailFragment extends DialogFragment {
 
         storePhoto = view.findViewById(R.id.ivStoreDetail);
         storeName = view.findViewById(R.id.tvStoreDetailName);
-        storeRating = view.findViewById(R.id.rbStoreDetailRating);
+        //storeRating = view.findViewById(R.id.rbStoreDetailRating);
         storePhone = view.findViewById(R.id.tvStorePhone);
         storeWeb = view.findViewById(R.id.tvStoreWeb);
         storeEmail = view.findViewById(R.id.tvStoreEmail);

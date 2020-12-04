@@ -42,12 +42,12 @@ public class AdapterTabsAllergy extends ArrayAdapter<AllergyList>{
 
 
         AllergyList currentAllergy = getItem(position);
-        allergyName.setText(currentAllergy.getAlergeno());
+        allergyName.setText(currentAllergy.getAlergeno()+":");
         if(currentAllergy.getEstado() == 0){
-            allergy.setText("No");
+            allergy.setText("deshabilitado");
         }
         else if(currentAllergy.getEstado() == 1){
-            allergy.setText("Si");
+            allergy.setText("habilitado");
         }
         else{
             allergy.setText("");

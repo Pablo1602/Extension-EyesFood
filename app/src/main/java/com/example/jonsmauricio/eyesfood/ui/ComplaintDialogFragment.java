@@ -29,6 +29,10 @@ import com.example.jonsmauricio.eyesfood.data.api.model.NewFoodBody;
 import com.example.jonsmauricio.eyesfood.data.api.model.Product;
 import com.example.jonsmauricio.eyesfood.data.prefs.SessionPrefs;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -51,8 +55,6 @@ public class ComplaintDialogFragment extends DialogFragment {
 
     String Nombre, Producto, Marca, Porcion, Ingredientes, Neto, Energia, Proteinas, GrasaTotal, GrasaSat,
             GrasaMono, GrasaPoli, GrasaTrans, Colesterol, Hidratos, Azucares, Fibra, Sodio, Alergenos, Trazas;
-
-    String Date = "";
 
     String barCode;
 
@@ -308,14 +310,17 @@ public class ComplaintDialogFragment extends DialogFragment {
     }
 
     public void sendComplaint(){
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = df.format(c.getTime());
         Call<Food> call = mEyesFoodApi.newFoodComplaint(new NewFoodBody(userIdFinal, barCode, Nombre, Producto, Marca,
                 Neto, Porcion, "", Energia, Proteinas, GrasaTotal, GrasaSat, GrasaMono, GrasaPoli, GrasaTrans,
-                Colesterol, Hidratos, Azucares, Fibra, Sodio, Ingredientes, Date, "2", Alergenos, Trazas));
+                Colesterol, Hidratos, Azucares, Fibra, Sodio, Ingredientes, formattedDate, "2", Alergenos, Trazas));
         call.enqueue(new Callback<Food>() {
             @Override
             public void onResponse(Call<Food> call, Response<Food> response) {
                 if (!response.isSuccessful()) {
-                    Log.d("myTag","falla");
+                    Log.d("myTag","falla:"+response.message());
                     return;
                 }
                 Log.d("myTag","entro");

@@ -30,7 +30,7 @@
     <string name="error_network">"No hay conexión a Internet"</string>
     <string name="error_server">"Error de servidor"</string>
     <string name="title_activity_register">Registro</string>
-    <string name="no_account">¿No tienes cuenta? Registrate</string>
+    <string name="no_account">¿No tienes cuenta? Regístrate</string>
 
     <!-- Strings related to signup -->
     <string name="title_activity_fullscreen">Registro</string>
@@ -66,7 +66,7 @@
     <string name="foods_info_general_codigo">Código de barras: </string>
     <string name="foods_info_general_marca">Marca: </string>
     <string name="foods_info_general_neto">Contenido neto: </string>
-    <string name="foods_info_general_allergy">Alergenos: </string>
+    <string name="foods_info_general_allergy">Alérgenos: </string>
     <string name="foods_info_general_trace">Trazas: </string>
     <string name="foods_info_general_fecha">Última actualización: </string>
 
@@ -114,8 +114,8 @@
 
     <string name="search_progress_text">Buscando...</string>
     <string name="search_empty_state">Lo sentimos, no se encontraron resultados</string>
-    <string name="search_foods_header">Alimentos</string>
-    <string name="search_allergy_header">Alergenos</string>
+    <string name="search_foods_header">Todos los alimentos</string>
+    <string name="search_allergy_header">Alimentos sin alergenos</string>
     <string name="search_additives_header">Aditivos</string>
     <string name="title_activity_additive">Aditivo</string>
 
@@ -175,7 +175,7 @@
     <string name="title_activity_comments">CommentsActivity</string>
 
     <string name="hint_comments">Escribe un comentario...</string>
-    <string name="comments_empty_state">El alimento no tiene comentarios ¡Se el primero!</string>
+    <string name="comments_empty_state">No hay comentarios ¡Se el primero!</string>
     <string name="diary_empty_state">No hay diarios guardados ¡Crea tu primer diario!</string>
     <string name="entry_empty_state">No hay entradas guardadas este día ¡Crea tu primera entrada!</string>
     <string name="login_gmail_failed">No se pudo iniciar sesión</string>

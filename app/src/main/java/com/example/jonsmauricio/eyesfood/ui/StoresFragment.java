@@ -79,6 +79,8 @@ public class StoresFragment extends DialogFragment {
         // Crear conexión a la API de EyesFood
         mEyesFoodApi = mRestAdapter.create(EyesFoodApi.class);
 
+        progressDialog= new ProgressDialog(getContext());
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         Bundle bundle = this.getArguments();
         if (bundle != null) {
             //Si menu es 1, viene desde el navbar. Se accede a todos los stores
@@ -97,6 +99,8 @@ public class StoresFragment extends DialogFragment {
     }
 
     private void retrieveStores(String barcode) {
+        progressDialog.setMessage("Cargando tiendas");
+        progressDialog.show();
         Call<List<Store>> call = mEyesFoodApi.getStoresProduct(barcode);
         call.enqueue(new Callback<List<Store>>() {
             @Override
@@ -106,17 +110,21 @@ public class StoresFragment extends DialogFragment {
                 }
                 listaTiendas = response.body();
                 showListStores(listaTiendas);
+                progressDialog.dismiss();
             }
 
             @Override
             public void onFailure(Call<List<Store>> call, Throwable t) {
                 Log.d("Falla Retrofit", "Falla en new food solitude");
                 Log.d("Falla", t.getMessage());
+                progressDialog.dismiss();
             }
         });
     }
 
     private void retrieveStoresN() {
+        progressDialog.setMessage("Cargando tiendas");
+        progressDialog.show();
         Call<List<Store>> call = mEyesFoodApi.getStores();
         call.enqueue(new Callback<List<Store>>() {
             @Override
@@ -134,6 +142,7 @@ public class StoresFragment extends DialogFragment {
                 Log.d("Falla", t.getMessage());
             }
         });
+        progressDialog.dismiss();
     }
 
     public void showListStores(List<Store> lista){

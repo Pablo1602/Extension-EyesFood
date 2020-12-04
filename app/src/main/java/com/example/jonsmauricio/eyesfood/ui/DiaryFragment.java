@@ -1,6 +1,7 @@
 package com.example.jonsmauricio.eyesfood.ui;
 
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -52,6 +53,7 @@ public class DiaryFragment extends DialogFragment {
     private ArrayAdapter<Diary> adaptadorDiarios;
     private FloatingActionButton addDiary;
     private TextView emptyState;
+    private ProgressDialog progressDialog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -101,7 +103,8 @@ public class DiaryFragment extends DialogFragment {
                 showDialogAdd();
             }
         });
-
+        progressDialog= new ProgressDialog(getContext());
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         retrieveDiary();
         return view;
     }
@@ -112,14 +115,18 @@ public class DiaryFragment extends DialogFragment {
         //final EditText edittext = new EditText(getActivity());
         //edittext.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
 
-        alert.setTitle("Nuevo Diario");
-        edittext.setText("Nuevo titulo");
+        alert.setTitle("Nuevo diario alimenticio");
+        edittext.setHint("Titulo del diario");
         alert.setView(edittext);
 
         alert.setPositiveButton("Crear", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                String newDiary = edittext.getText().toString();
-                newDiary(newDiary);
+                if(edittext.getText().length() != 0){
+                    String newDiary = edittext.getText().toString();
+                    newDiary(newDiary);
+                }else{
+                    Toast.makeText(getContext(), "No se puede crear un registro sin titulo", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         alert.setNeutralButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -127,7 +134,6 @@ public class DiaryFragment extends DialogFragment {
                 // what ever you want to do with No option.
             }
         });
-
         alert.show();
     }
 
@@ -143,8 +149,12 @@ public class DiaryFragment extends DialogFragment {
 
         alert.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                String newDiary = edittext.getText().toString();
-                editDiary(diario.getId(), newDiary);
+                if(edittext.getText().length() != 0) {
+                    String newDiary = edittext.getText().toString();
+                    editDiary(diario.getId(), newDiary);
+                }else{
+                    Toast.makeText(getContext(), "No se puede crear un registro sin titulo", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         alert.setNegativeButton("Borrar", new DialogInterface.OnClickListener() {
@@ -162,6 +172,8 @@ public class DiaryFragment extends DialogFragment {
     }
 
     private void retrieveDiary(){
+        progressDialog.setMessage("Cargando diarios");
+        progressDialog.show();
         Call<List<Diary>> call = mCommentsApi.getDiary(userIdFinal);
         call.enqueue(new Callback<List<Diary>>() {
             @Override
@@ -179,12 +191,14 @@ public class DiaryFragment extends DialogFragment {
                 else{
                     showEmptyState(true);
                 }
+                progressDialog.dismiss();
             }
 
             @Override
             public void onFailure(Call<List<Diary>> call, Throwable t) {
                 Log.d("Falla Retrofit", "Falla en retrieveDiary");
                 Log.d("Falla", t.getMessage());
+                progressDialog.dismiss();
             }
         });
     }

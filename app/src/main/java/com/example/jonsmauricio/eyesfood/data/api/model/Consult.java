@@ -6,28 +6,28 @@ import java.io.Serializable;
 
 public class Consult implements Serializable {
     @SerializedName("idExperto")
-    private String experto;
+    private int experto;
     @SerializedName("idUsuario")
-    private String usuario;
+    private int usuario;
 
-    public Consult(String experto, String usuario) {
+    public Consult(int experto, int usuario) {
         this.experto = experto;
         this.usuario = usuario;
     }
 
-    public String getExperto() {
+    public int getExperto() {
         return experto;
     }
 
-    public void setExperto(String experto) {
+    public void setExperto(int experto) {
         this.experto = experto;
     }
 
-    public String getUsuario() {
+    public int getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(String usuario) {
+    public void setUsuario(int usuario) {
         this.usuario = usuario;
     }
 }

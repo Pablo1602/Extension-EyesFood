@@ -47,6 +47,7 @@ public interface EyesFoodApi {
     //URL API LOCAL
     //URL antigua https://eyesfood.000webhostapp.com/api.eyesfood.cl/v1/
     //URL nueva https://dinky-frequency.000webhostapp.com/api.eyesfood.cl/v1/
+    // *** USAR 4G WOM QUEDA EN TIMEOUT LAS PETICIONES AL SERVIDOR ***
     String BASE_URL = "https://eyesfoodapi.herokuapp.com/api.eyesfood.cl/v1/";
     String BASE_URL_PHOTO = "https://eyesfoodapi.herokuapp.com/api.eyesfood.cl/v1/img/users/";
     String BASE_URL_ADMIN = "https://eyesfoodweb.herokuapp.com/";
@@ -97,6 +98,10 @@ public interface EyesFoodApi {
     @GET("foods/{userId}/create")
     Call<List<ShortFood>> getNewFoodsAccepted(@Path("userId") String userId);
 
+    // ******************************************************************************
+    //Crear logica para actualizar una alimento en la DB segun consulta a openfoodfacts (UPDATE)
+    // ******************************************************************************
+
     //Petición que consulta si el usuario tiene un alimento en su historial de escaneo
     @GET("history/{userId}/{barcode}")
     Call<ShortFood> isInHistory(@Path("userId") String userId, @Path("barcode") String barcode);
@@ -124,8 +129,8 @@ public interface EyesFoodApi {
     //Petición que actualiza un alimento en el historial
     //No se usa Patch porque no resulta
     @Headers("Content-Type: application/json")
-    @POST("history/{userId}/{barcode}")
-    Call<ShortFood> modifyHistory(@Path("userId") String userId, @Path("barcode") String barcode);
+    @POST("history/{userId}/{barcode}/{fecha}")
+    Call<ShortFood> modifyHistory(@Path("userId") String userId, @Path("barcode") String barcode, @Path("fecha") String fecha);
 
     //Petición que actualiza un alimento en el historial
     //No se usa Patch porque no resulta
@@ -148,8 +153,8 @@ public interface EyesFoodApi {
     Call<List<Food>> getFoodsQuery(@Path("query") String query);
 
     //Petición que retorna alimentos desde una búsqueda
-    @GET("search/noallergy/{query}")
-    Call<List<Food>> getAllergyQuery(@Path("query") String query);
+    @GET("search/noallergy/{leche}/{gluten}/{query}")
+    Call<List<Food>> getAllergyQuery(@Path("leche") Integer leche, @Path("gluten") Integer gluten,@Path("query") String query);
 
     //Petición que retorna aditivos desde una búsqueda
     @GET("search/additives/{query}")
@@ -243,7 +248,7 @@ public interface EyesFoodApi {
     Call<Expert> modifyRatingExpert(@Path("idExperto") String idExperto, @Path("reputacion") float reputacion);
 
     //Petición que inserta una consulta
-    @POST("consult")
+    @POST("consult/new")
     Call<Consult> insertConsult(@Body Consult consulta);
 
     //Crea una valoracion a un experto

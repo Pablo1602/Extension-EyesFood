@@ -2,6 +2,7 @@ package com.example.jonsmauricio.eyesfood.ui;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -20,9 +21,11 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -62,6 +65,7 @@ public class EntryFragment extends DialogFragment {
     EyesFoodApi mEyesFoodApi;
     CommentsApi mCommentsApi;
     String userIdFinal;
+    ProgressDialog progressDialog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -123,43 +127,57 @@ public class EntryFragment extends DialogFragment {
                 showDialogAdd(date);
             }
         });
+        progressDialog= new ProgressDialog(getContext());
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         retrieveFood();
         retrieveEntry();
         return view;
     }
-    @SuppressLint("WrongConstant")
+
     private void showDialogAdd(final String date) {
         AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
-        final EditText edittext1 = new EditText(getContext());
-        final EditText edittext2 = new EditText(getContext());
+        final EditText edittextTitle = new EditText(getContext());
+        final EditText edittextBody = new EditText(getContext());
+        final TextView viewtextFood = new TextView(getContext());
         final SearchView taskSearchview = new SearchView(getContext());
         final ListView searchList = new ListView(getContext());
+        final Button buttonAdd = new Button(getContext());
+        final Button buttonRemove = new Button(getContext());
+        final ScrollView scroller = new ScrollView(getContext());
         //final EditText edittext = new EditText(getActivity());
         //edittext.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
 
         alert.setTitle("Nuevo Registro");
-        edittext1.setText("Nuevo titulo");
-        edittext2.setText("Nuevo texto");
+        edittextTitle.setHint("Titulo del registro");
+        edittextBody.setHint("Mensaje del registro");
+        taskSearchview.setQueryHint("Leche");
+        buttonAdd.setText("Agregar alimento");
+        buttonRemove.setText("Limpiar alimentos");
         taskSearchview.setQueryHint("Buscar alimento");
 
         LinearLayout lay = new LinearLayout(getContext());
         lay.setOrientation(LinearLayout.VERTICAL);
-        lay.addView(edittext1);
-        lay.addView(edittext2);
+        lay.addView(edittextTitle);
+        lay.addView(edittextBody);
         lay.addView(taskSearchview);
         lay.addView(searchList);
+        lay.addView(buttonAdd);
+        lay.addView(buttonRemove);
+        lay.addView(viewtextFood);
+        lay.addView(scroller);
         alert.setView(lay);
 
         searchList.setVisibility(View.GONE);
         adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1,list);
         searchList.setAdapter(adapter);
 
-        taskSearchview.setOnSearchClickListener(new View.OnClickListener() {
+        /*taskSearchview.setOnSearchClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 searchList.setVisibility(View.VISIBLE);
             }
-        });
+        });*/
+
 
         taskSearchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -174,6 +192,11 @@ public class EntryFragment extends DialogFragment {
             @Override
             public boolean onQueryTextChange(String s) {
                 adapter.getFilter().filter(s);
+                if (s.length() == 0){
+                    searchList.setVisibility(View.GONE);
+                }else{
+                    searchList.setVisibility(View.VISIBLE);
+                }
                 return false;
             }
         });
@@ -186,12 +209,39 @@ public class EntryFragment extends DialogFragment {
             }
         });
 
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (taskSearchview.getQuery().toString().length() != 0){
+                    if (viewtextFood.getText().length() != 0){
+                        viewtextFood.setText(viewtextFood.getText()+", "+taskSearchview.getQuery());
+                    }else{
+                        viewtextFood.setText(taskSearchview.getQuery());
+                    }
+                    taskSearchview.setQuery("", true);
+                }
+                searchList.setVisibility(View.GONE);
+                //taskSearchview.setIconified(true);
+            }
+        });
+
+        buttonRemove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewtextFood.setText("");
+            }
+        });
+
         alert.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                String newTitle = edittext1.getText().toString();
-                String newText = edittext2.getText().toString();
-                String newFood = taskSearchview.getQuery().toString();
-                newEntry(newTitle, newText, newFood, date);
+                if (edittextTitle.getText().length() != 0) {
+                    String newTitle = edittextTitle.getText().toString();
+                    String newText = edittextBody.getText().toString();
+                    String newFood = viewtextFood.getText().toString();
+                    newEntry(newTitle, newText, newFood, date);
+                }else{
+                    Toast.makeText(getContext(), "No se puede crear un registro sin titulo", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         alert.setNeutralButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -205,36 +255,47 @@ public class EntryFragment extends DialogFragment {
 
     private void showDialogEdit(final Entry Entrada) {
         AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
-        final EditText edittext1 = new EditText(getContext());
-        final EditText edittext2 = new EditText(getContext());
+        final EditText edittextTitle = new EditText(getContext());
+        final EditText edittextBody = new EditText(getContext());
+        final TextView viewtextFood = new TextView(getContext());
         final SearchView taskSearchview = new SearchView(getContext());
         final ListView searchList = new ListView(getContext());
+        final Button buttonAdd = new Button(getContext());
+        final Button buttonRemove = new Button(getContext());
         //final EditText edittext = new EditText(getActivity());
         //edittext.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
 
         alert.setTitle("Editar Registro");
-        edittext1.setText(Entrada.getTitulo());
-        edittext2.setText(Entrada.getTexto());
-        taskSearchview.setQuery(Entrada.getAlimento(),false);
-
+        edittextTitle.setText(Entrada.getTitulo());
+        edittextBody.setText(Entrada.getTexto());
+        edittextTitle.setHint("Titulo del registro");
+        edittextBody.setHint("Mensaje del registro");
+        taskSearchview.setQueryHint("Leche");
+        buttonAdd.setText("Agregar alimento");
+        buttonRemove.setText("Limpiar alimentos");
+        //taskSearchview.setQuery(Entrada.getAlimento(),false);
+        viewtextFood.setText(Entrada.getAlimento());
         LinearLayout lay = new LinearLayout(getContext());
         lay.setOrientation(LinearLayout.VERTICAL);
-        lay.addView(edittext1);
-        lay.addView(edittext2);
+        lay.addView(edittextTitle);
+        lay.addView(edittextBody);
         lay.addView(taskSearchview);
         lay.addView(searchList);
+        lay.addView(buttonAdd);
+        lay.addView(buttonRemove);
+        lay.addView(viewtextFood);
         alert.setView(lay);
 
         searchList.setVisibility(View.GONE);
         adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1,list);
         searchList.setAdapter(adapter);
 
-        taskSearchview.setOnSearchClickListener(new View.OnClickListener() {
+        /*taskSearchview.setOnSearchClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 searchList.setVisibility(View.VISIBLE);
             }
-        });
+        });*/
 
         taskSearchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -249,6 +310,11 @@ public class EntryFragment extends DialogFragment {
             @Override
             public boolean onQueryTextChange(String s) {
                 adapter.getFilter().filter(s);
+                if (s.length() == 0){
+                    searchList.setVisibility(View.GONE);
+                }else{
+                    searchList.setVisibility(View.VISIBLE);
+                }
                 return false;
             }
         });
@@ -261,13 +327,39 @@ public class EntryFragment extends DialogFragment {
             }
         });
 
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (taskSearchview.getQuery().toString().length() != 0){
+                    if (viewtextFood.getText().length() != 0){
+                        viewtextFood.setText(viewtextFood.getText()+", "+taskSearchview.getQuery());
+                    }else{
+                        viewtextFood.setText(taskSearchview.getQuery());
+                    }
+                    taskSearchview.setQuery("", true);
+                }
+                searchList.setVisibility(View.GONE);
+                //taskSearchview.setIconified(true);
+            }
+        });
+
+        buttonRemove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewtextFood.setText("");
+            }
+        });
 
         alert.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                String newTitle = edittext1.getText().toString();
-                String newText = edittext2.getText().toString();
-                String newFood = taskSearchview.getQuery().toString();
-                editEntry(Entrada.getId(), newTitle, newText, newFood);
+                if (edittextTitle.getText().length() != 0) {
+                    String newTitle = edittextTitle.getText().toString();
+                    String newText = edittextBody.getText().toString();
+                    String newFood = viewtextFood.getText().toString();
+                    editEntry(Entrada.getId(), newTitle, newText, newFood);
+                }else{
+                    Toast.makeText(getContext(), "No se puede tener un registro sin titulo", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         alert.setNegativeButton("Borrar", new DialogInterface.OnClickListener() {
@@ -313,6 +405,8 @@ public class EntryFragment extends DialogFragment {
     }
 
     private void retrieveEntry(){
+        progressDialog.setMessage("Cargando entradas");
+        progressDialog.show();
         Call<List<Entry>> call = mCommentsApi.getEntryDate(idDiary, date);
         call.enqueue(new Callback<List<Entry>>() {
             @Override
@@ -331,12 +425,14 @@ public class EntryFragment extends DialogFragment {
                 else{
                     showEmptyState(true);
                 }
+                progressDialog.dismiss();
             }
 
             @Override
             public void onFailure(Call<List<Entry>> call, Throwable t) {
                 Log.d("Error Retrofit", "Error en retrieveEntry");
                 Log.d("Error", t.getMessage());
+                progressDialog.dismiss();
             }
         });
     }

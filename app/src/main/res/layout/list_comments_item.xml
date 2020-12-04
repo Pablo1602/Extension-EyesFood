@@ -23,8 +23,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="56dp"
         android:text="Nombre"
+        android:textStyle="bold"
         android:textAppearance="?attr/textAppearanceListItem"
-        tools:text="Alexander Pierrot" />
+        android:textSize="20dp"/>
 
     <TextView
         android:id="@+id/tvCommentsComment"
@@ -34,8 +35,7 @@
         android:layout_below="@+id/tvCommentsName"
         android:text="Comentario"
         android:textAppearance="?attr/textAppearanceListItem"
-        android:alpha="0.7"
-        tools:text="Muy lindo todo muy lindo ola ke ase?" />
+        android:textSize="20dp"/>
 
     <TextView
         android:id="@+id/tvCommentsDate"
@@ -46,8 +46,7 @@
         android:text="Fecha"
         android:paddingTop="8dp"
         style="@style/BodyRegular"
-        android:textSize="10sp"
-        tools:text="2017-04-11 07:00" />
+        android:textSize="15dp" />
 
     <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="wrap_content"

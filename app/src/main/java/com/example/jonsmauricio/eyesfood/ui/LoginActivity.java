@@ -345,7 +345,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
                         showProgress(false);
                         String error = "Ha ocurrido un error. Contacte al administrador";
                         //errorBody: El contenido plano de una respuesta con error
-                        Log.d("LoginActivity", "Error:"+response.message());
+                        Log.d("TAGLoginActivity", "Error:"+response.message());
                         if (response.errorBody()
                                 .contentType()
                                 .subtype()
@@ -353,11 +353,11 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
                             ApiError apiError = ApiError.fromResponseBody(response.errorBody());
 
                             error = apiError.getMessage();
-                            Log.d("LoginActivity", apiError.getDeveloperMessage());
+                            Log.d("TAGLoginActivity", apiError.getDeveloperMessage());
                         } else {
                             try {
                                 // Reportar causas de error no relacionado con la API
-                                Log.d("LoginActivity", response.errorBody().string());
+                                Log.d("TAGLoginActivity", response.errorBody().string());
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
@@ -380,6 +380,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
                 public void onFailure(Call<User> call, Throwable t) {
                     showProgress(false);
                     showLoginError(t.getMessage());
+                    Log.d("TAGLoginActivity", t.getMessage());
                 }
             });
         }

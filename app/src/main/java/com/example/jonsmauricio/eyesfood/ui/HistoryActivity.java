@@ -123,6 +123,11 @@ public class HistoryActivity extends AppCompatActivity
     private static final int NOTIFICATION_ID = 1;
     private static final String NOTIFICATION_CHANNEL_ID = "my_notification_channel";
 
+    long tStart, tEnd, tDelta;
+    double elapsedSeconds;
+
+    private String Allergens, Traces;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -332,6 +337,7 @@ public class HistoryActivity extends AppCompatActivity
                     }
                     else if(noti.getPush().equals("1")){
                         showPushNotification(noti);
+                        noNotification(noti.getId()); //La notificacion push solos e muestra 1 vez
                     }
                 }
             }
@@ -368,7 +374,7 @@ public class HistoryActivity extends AppCompatActivity
         Log.d("NOTIFY/PUSH", "Notificacion push");
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "My Notifications", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "My Notifications", NotificationManager.IMPORTANCE_LOW);
 
             // Configure the notification channel.
             notificationChannel.setDescription("Channel description");
@@ -557,6 +563,7 @@ public class HistoryActivity extends AppCompatActivity
                 }
                 //Si hay permiso se va al escáner
                 else{
+                    tStart = System.currentTimeMillis();
                     Intent intent = new Intent(getApplicationContext(),CaptureActivity.class);
                     intent.setAction("com.google.zxing.client.android.SCAN");
                     intent.putExtra("SAVE_HISTORY", false);
@@ -625,6 +632,10 @@ public class HistoryActivity extends AppCompatActivity
                 Food resultado = response.body();
 
                 //Muestro el alimento
+                tEnd = System.currentTimeMillis();
+                tDelta = tEnd - tStart;
+                elapsedSeconds = tDelta / 1000.0;
+                Log.d("TIMERECORD", "Se demoro "+elapsedSeconds+" (s) en encontrar "+resultado.getBarCode());
                 showFoodsScreenFinal(resultado,product);
             }
 
@@ -678,6 +689,10 @@ public class HistoryActivity extends AppCompatActivity
                         Log.d("myTag", "loadFoodsget Nutriments: "+product.getNutriments());
                         Log.d("myTag", "loadFoodsget Nova: "+product.getNova());
                         Log.d("myTag", "loadFoods getIngredients_text : "+product.getIngredients_text());
+                        Allergens = product.getAllergens().replace("(es)","").replace("en:","").replace("es:","").replace("(fr)","");
+                        Traces = product.getTraces().replace("(es)","").replace("en:","").replace("es:","").replace("(fr)","");
+                        product.setAllergens(Allergens);
+                        product.setTraces(Traces);
                         isFoodInHistory(userIdFinal, product);
                     }
 
@@ -704,7 +719,13 @@ public class HistoryActivity extends AppCompatActivity
     }
 
     private void createProduct(final Product product) {
-        Call<Food> call = mEyesFoodApi.newFood(new Food(product.getCodigo(), null, 0,"" , 0, product.getProduct_name()));
+        // Insertar alergenos y trazas aca y ver Food para agregar lo que falte
+        //product.getAllergens()
+        Allergens = product.getAllergens().replace("(es)","").replace("en:","").replace("es:","").replace("(fr)","");
+        Traces = product.getTraces().replace("(es)","").replace("en:","").replace("es:","").replace("(fr)","");
+        product.setAllergens(Allergens);
+        product.setTraces(Traces);
+        Call<Food> call = mEyesFoodApi.newFood(new Food(product.getCodigo(), null, 0,"" , 0, product.getProduct_name(), Allergens,Traces));
         call.enqueue(new Callback<Food>() {
             @Override
             public void onResponse(Call<Food> call, Response<Food> response) {
@@ -836,9 +857,14 @@ public class HistoryActivity extends AppCompatActivity
                 //barCode = "7802920001326";
                 //Iansa cerok
                 //barCode = "7801505000877";
-                Log.d("myTag","Barcode = "+barCode);
+                tEnd = System.currentTimeMillis();
+                tDelta = tEnd - tStart;
+                elapsedSeconds = tDelta / 1000.0;
+                Log.d("SCAN","Barcode = "+barCode);
+                Log.d("TIMERECORD", "Se demoro "+elapsedSeconds+" (s) en capturar "+barCode);
                 progressDialog.setMessage("Cargando Producto");
                 progressDialog.show();
+                tStart = System.currentTimeMillis();
                 loadFoods(barCode);
             }
             //Si no obtiene el código
@@ -947,7 +973,8 @@ public class HistoryActivity extends AppCompatActivity
         getMenuInflater().inflate(R.menu.history, menu);
 
         MenuItem item = menu.findItem(R.id.searchHistory);
-        searchView.setMenuItem(item);
+        Log.d("myTag","item:"+item);
+        searchView.setMenuItem(item); // No soporta API 22
 
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
             @Override
@@ -961,6 +988,7 @@ public class HistoryActivity extends AppCompatActivity
 
             @Override
             public boolean onQueryTextChange(String newText) {
+                Log.d("myTag", "query " + newText);
                 return false;
             }
         });
@@ -1108,6 +1136,7 @@ public class HistoryActivity extends AppCompatActivity
         }
         else if(title.equals(getResources().getString(R.string.nav_settings))){
             setTitle = 0;
+            showSuccesDialog();
         }
         else if(title.equals(getResources().getString(R.string.nav_help))){
             showSelectedDialog(1);
@@ -1171,6 +1200,22 @@ public class HistoryActivity extends AppCompatActivity
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+    }
+
+    public void showSuccesDialog(){
+        new AlertDialog.Builder(this)
+                .setIcon(null)
+                .setTitle("Area en contrucción")
+                .setMessage("Estamos trabajando para traer nuevas funcionalidades")
+                .setPositiveButton(getResources().getString(R.string.ok_dialog), new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+
+                })
+                .show();
     }
 
     @Override

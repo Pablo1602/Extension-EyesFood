@@ -33,6 +33,9 @@ import com.example.jonsmauricio.eyesfood.data.prefs.SessionPrefs;
 import com.squareup.picasso.Picasso;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -202,26 +205,31 @@ public class ResponseActivity extends AppCompatActivity {
     }
 
     public void deleteResponse(final int idComentario, final Comment currentComment){
-        Call<Comment> call = mCommentsApi.deleteComment(Integer.parseInt(currentComment.getId()));
+        Call<Comment> call = mCommentsApi.deleteResponse(Integer.parseInt(currentComment.getidRespuesta()));
         call.enqueue((new Callback<Comment>() {
             @Override
             public void onResponse(Call<Comment> call, Response<Comment> response) {
                 if(!response.isSuccessful()){
+                    Log.d("COMMENTTAG","Error interno:"+response.message());
                 }
                 Toast.makeText(getApplicationContext(), "Se borro el comentario", Toast.LENGTH_LONG).show();
+                Log.d("COMMENTTAG","Se borro el comentario");
                 loadResponses(idComentario);
 
             }
 
             @Override
             public void onFailure(Call<Comment> call, Throwable t) {
-
+                Log.d("COMMENTTAG","Error al llamar:"+t.getMessage());
             }
         }));
     }
 
     public void editResponse(final int idComentario, final Comment currentComment, String newComment){
-        CommentBody body = new CommentBody(currentComment.getColaborador(), currentComment.getIdColaborador(), newComment);
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = df.format(c.getTime());
+        CommentBody body = new CommentBody(currentComment.getColaborador(), currentComment.getIdColaborador(), newComment, formattedDate);
         Call<Comment> call = mCommentsApi.modifyResponse(body, Integer.parseInt(currentComment.getidRespuesta()));
         call.enqueue((new Callback<Comment>() {
             @Override
@@ -257,12 +265,15 @@ public class ResponseActivity extends AppCompatActivity {
     }
 
     public void sendResponse(final int idComentario, String comentario){
-        Call<Comment> call = mCommentsApi.newResponse(new CommentBody(userIdFinal, userRolFinal, comentario), idComentario);
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = df.format(c.getTime());
+        Call<Comment> call = mCommentsApi.newResponse(new CommentBody(userIdFinal, userRolFinal, comentario, formattedDate), idComentario);
         call.enqueue(new Callback<Comment>() {
             @Override
             public void onResponse(Call<Comment> call, Response<Comment> response) {
                 if (!response.isSuccessful()) {
-
+                    Log.d("myTag","ERROR INTERNO:"+response.message());
                     return;
                 }
                 Log.d("myTag","Respuesta publicada con exito");

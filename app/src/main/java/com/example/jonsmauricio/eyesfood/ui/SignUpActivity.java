@@ -186,6 +186,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         String email = etSignupEmail.getText().toString();
         String date = etPlannedDate.getText().toString();
         String password = etSignupPassword.getText().toString();
+
         // TODO: 19-10-2017 Usar esto para confirmar el password
         String passwordConfirm = etSignupPasswordConfirm.getText().toString();
 
@@ -236,10 +237,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 public void onResponse(Call<User> call, Response<User> response) {
                     // Mostrar progreso
                     //showProgress(false);
-
                     // Procesar errores
                     //Es true si se obtienen códigos 200
                     if (!response.isSuccessful()) {
+                        Log.d("LOGINRESPONSE", response.message());
                         showProgress(false);
                         String error = "Ha ocurrido un error. Contacte al administrador";
                         //errorBody: El contenido plano de una respuesta con error

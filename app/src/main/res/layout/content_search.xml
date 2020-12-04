@@ -10,35 +10,18 @@
     tools:showIn="@layout/activity_search"
     android:layout_below="@+id/toolbarSearch">
 
-    <TextView
-    android:id="@+id/tvPendientesHeader"
-    style="@style/Base.TextAppearance.AppCompat.Widget.PopupMenu.Header"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/search_foods_header"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="8dp"
-    android:paddingBottom="8dp"/>
-
-    <ListView
-        android:id="@+id/lvResultPendientes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvPendientesHeader">
-    </ListView>
 
     <TextView
         android:id="@+id/tvAllergyHeader"
         style="@style/Base.TextAppearance.AppCompat.Widget.PopupMenu.Header"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/search_allergy_header"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:layout_below="@id/lvResultPendientes"/>
+        android:paddingBottom="8dp" />
 
     <ListView
         android:id="@+id/lvResultAllergy"
@@ -47,7 +30,27 @@
         android:layout_below="@+id/tvAllergyHeader">
     </ListView>
 
-   <TextView
+    <TextView
+        android:id="@+id/tvPendientesHeader"
+        style="@style/Base.TextAppearance.AppCompat.Widget.PopupMenu.Header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_foods_header"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_below="@id/lvResultAllergy"
+        android:textStyle="bold"/>
+
+    <ListView
+        android:id="@+id/lvResultPendientes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPendientesHeader">
+    </ListView>
+
+   <!--<TextView
         android:id="@+id/tvAceptadosHeader"
         style="@style/Base.TextAppearance.AppCompat.Widget.PopupMenu.Header"
         android:layout_width="match_parent"
@@ -57,14 +60,14 @@
         android:paddingRight="16dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
-        android:layout_below="@id/lvResultAllergy"/>
+        android:layout_below="@id/lvResultPendientes"/>
 
     <ListView
         android:id="@+id/lvResultAdditives"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvAceptadosHeader">
-    </ListView>
+    </ListView>-->
 
     <TextView
         android:id="@+id/tvSearchProgressText"

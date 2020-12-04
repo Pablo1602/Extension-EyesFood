@@ -1,6 +1,7 @@
 package com.example.jonsmauricio.eyesfood.ui;
 
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
@@ -43,6 +44,7 @@ public class ExpertsFragment extends DialogFragment {
     EyesFoodApi mEyesFoodApi;
     private List<Expert> listaExpertos;
     private ArrayAdapter<Expert> adaptadorExpertos;
+    ProgressDialog progressDialog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -73,13 +75,16 @@ public class ExpertsFragment extends DialogFragment {
 
         // Crear conexión a la API de EyesFood
         mEyesFoodApi = mRestAdapter.create(EyesFoodApi.class);
-
+        progressDialog= new ProgressDialog(getContext());
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         retrieveExperts();
 
         return view;
     }
 
     private void retrieveExperts() {
+        progressDialog.setMessage("Cargando expertos");
+        progressDialog.show();
         Call<List<Expert>> call = mEyesFoodApi.getExperts();
         call.enqueue(new Callback<List<Expert>>() {
             @Override
@@ -90,12 +95,14 @@ public class ExpertsFragment extends DialogFragment {
                 }
                 listaExpertos = response.body();
                 showListExperts(listaExpertos);
+                progressDialog.dismiss();
             }
 
             @Override
             public void onFailure(Call<List<Expert>> call, Throwable t) {
                 Log.d("Falla Retrofit", "Falla en retrieveExperts");
                 Log.d("Falla", t.getMessage());
+                progressDialog.dismiss();
             }
         });
     }

@@ -1,5 +1,6 @@
 package com.example.jonsmauricio.eyesfood.ui;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -37,7 +38,11 @@ import com.example.jonsmauricio.eyesfood.data.api.model.User;
 import com.example.jonsmauricio.eyesfood.data.prefs.SessionPrefs;
 import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -74,6 +79,7 @@ public class CommentsActivity extends AppCompatActivity {
     Retrofit mRestAdapter2;
     EyesFoodApi mEyesFoodApi;
     CommentsApi mCommentsApi;
+    ProgressDialog progressDialog;
 
 
     final String baseFotoUsuario = EyesFoodApi.BASE_URL + "img/users/";
@@ -237,7 +243,10 @@ public class CommentsActivity extends AppCompatActivity {
     }
 
     public void editComment(final Comment currentComment, String newComment){
-        CommentBody body = new CommentBody(currentComment.getColaborador(), currentComment.getIdColaborador(), newComment);
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = df.format(c.getTime());
+        CommentBody body = new CommentBody(currentComment.getColaborador(), currentComment.getIdColaborador(), newComment, formattedDate);
         Call<Comment> call = mCommentsApi.modifyComment(body, Integer.parseInt(currentComment.getId()));
         call.enqueue((new Callback<Comment>() {
             @Override
@@ -275,7 +284,10 @@ public class CommentsActivity extends AppCompatActivity {
     }
 
     public void sendComment(int contexto, String referencia, String comentario){
-        Call<Comment> call = mCommentsApi.newComment(new CommentBody(userIdFinal, userRolFinal, comentario), contexto, referencia);
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = df.format(c.getTime());
+        Call<Comment> call = mCommentsApi.newComment(new CommentBody(userIdFinal, userRolFinal, comentario, formattedDate), contexto, referencia);
         call.enqueue(new Callback<Comment>() {
             @Override
             public void onResponse(Call<Comment> call, Response<Comment> response) {

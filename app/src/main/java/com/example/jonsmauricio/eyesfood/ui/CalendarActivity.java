@@ -1,9 +1,12 @@
 package com.example.jonsmauricio.eyesfood.ui;
 
 import android.Manifest;
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Environment;
 import android.os.StrictMode;
@@ -34,8 +37,10 @@ import com.example.jonsmauricio.eyesfood.data.api.EyesFoodApi;
 import com.example.jonsmauricio.eyesfood.data.api.model.Diary;
 import com.example.jonsmauricio.eyesfood.data.api.model.Entry;
 import com.example.jonsmauricio.eyesfood.data.api.model.Expert;
+import com.example.jonsmauricio.eyesfood.data.prefs.SessionPrefs;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
+import com.lowagie.text.Font;
 import com.lowagie.text.Paragraph;
 import com.lowagie.text.pdf.PdfWriter;
 
@@ -45,8 +50,12 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
+
+import javax.xml.datatype.Duration;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -55,7 +64,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import sun.bob.mcalendarview.MCalendarView;
 import sun.bob.mcalendarview.listeners.OnDateClickListener;
+import sun.bob.mcalendarview.listeners.OnMonthChangeListener;
 import sun.bob.mcalendarview.vo.DateData;
+import sun.bob.mcalendarview.vo.MarkedDates;
 
 public class CalendarActivity extends AppCompatActivity {
 
@@ -63,7 +74,7 @@ public class CalendarActivity extends AppCompatActivity {
     private Retrofit mRestAdapter2;
     private EyesFoodApi mEyesFoodApi;
     private CommentsApi mCommentsApi;
-    private String userIdFinal, pdfname;
+    private String userNameFinal, pdfname, path;
     private MCalendarView calendar;
     private Diary diario;
     private List<Entry> listaEntradas;
@@ -75,8 +86,14 @@ public class CalendarActivity extends AppCompatActivity {
     private FragmentManager fragmentManager;
     private int frag_open = 0;
     private Button export, share;
-    String NOMBRE_DIRECTORIO = "Mis_Diarios";
-    File file;
+    private String NOMBRE_DIRECTORIO = "Mis_Diarios";
+    private File file;
+    String dateSelect, hoy, hoyAnno, hoyMes, hoyDia;
+    String year;
+    Date now;
+    Boolean dateValid;
+    MarkedDates markedDates;
+    ArrayList<DateData> allMarkedDates;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +108,8 @@ public class CalendarActivity extends AppCompatActivity {
         calendar = findViewById(R.id.cvDiaryCalendar);
         export = findViewById(R.id.btExport);
         share = findViewById(R.id.btShare);
+
+        userNameFinal = SessionPrefs.get(this).getUserName();
 
         // Crear conexión al servicio REST
         mRestAdapter2 = new Retrofit.Builder()
@@ -114,14 +133,48 @@ public class CalendarActivity extends AppCompatActivity {
             diario = (Diary) b.getSerializable("Diario");
             setTitle(diario.getTitulo());
         }
+        final SimpleDateFormat NowDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+        final SimpleDateFormat YearDate = new SimpleDateFormat("yyyy", Locale.getDefault());
+        final SimpleDateFormat MothDate = new SimpleDateFormat("MM", Locale.getDefault());
+        final SimpleDateFormat DayDate = new SimpleDateFormat("dd", Locale.getDefault());
+        now = new Date();
+        hoyAnno = YearDate.format(now);
+        hoyMes = MothDate.format(now);
+        hoyDia = DayDate.format(now);
+        hoy = NowDate.format(now);
 
+        markedDates = calendar.getMarkedDates();
+        allMarkedDates = markedDates.getAll();
+        for (int n=0; n<allMarkedDates.size(); n++) {
+            calendar.unMarkDate(allMarkedDates.get(n));
+        }
         loadEntry(diario);
         retrieveExperts();
+
         calendar.setOnDateClickListener(new OnDateClickListener() {
             @Override
             public void onDateClick(View view, DateData date) {
-                String fecha = date.getDayString()+"_"+date.getMonthString()+"_"+date.getYear();
-                showEntry(fecha);
+                dateValid = true;
+                dateSelect = date.getDayString()+"_"+date.getMonthString()+"_"+date.getYear();
+                year = Integer.toString(date.getYear());
+                Log.d("FECHA","Fecha consultada:"+dateSelect);
+                Log.d("FECHA","hoy:"+hoy);
+                if (hoyAnno.compareTo(year) >= 0) {
+                    if (hoyMes.compareTo(date.getMonthString()) >= 0) {
+                        if (hoyDia.compareTo(date.getDayString()) >= 0 || hoyMes.compareTo(date.getMonthString()) > 0) {
+                            showEntry(dateSelect);
+                        }else{
+                            dateValid = false;
+                        }
+                    }else{
+                        dateValid = false;
+                    }
+                }else{
+                    dateValid = false;
+                }
+                if (!dateValid){
+                    Toast.makeText(getApplicationContext(),"Debe seleccionar una fecha igual o menor a "+hoy, Toast.LENGTH_SHORT).show();
+                }
             }
         });
         /*calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -155,7 +208,7 @@ public class CalendarActivity extends AppCompatActivity {
                     return;
                 }
                 listaEntradas = response.body();
-                paintCalendar();
+                paintCalendar(listaEntradas);
             }
             @Override
             public void onFailure(Call<List<Entry>> call, Throwable t) {
@@ -163,7 +216,7 @@ public class CalendarActivity extends AppCompatActivity {
         });
     }
 
-    private void paintCalendar(){
+    private void paintCalendar(List<Entry> listaEntradas){
         String [] fecha;
         for(Entry entrada : listaEntradas){
             fecha = entrada.getFecha().split("_");
@@ -227,8 +280,15 @@ public class CalendarActivity extends AppCompatActivity {
 
             alert.setPositiveButton("Exportar", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
+                    path = "";
                     pdfCreator();
-                    Toast.makeText(getApplicationContext(), "Se exporto el diario con exito", Toast.LENGTH_SHORT).show();
+                    if (path != ""){
+                        Toast.makeText(getApplicationContext(), "Se exporto el diario con exito en:"+path, Toast.LENGTH_SHORT).show();
+                        abrirPdf();
+                    }else{
+                        Toast.makeText(getApplicationContext(), "Error al exportar el diario", Toast.LENGTH_SHORT).show();
+                    }
+
                 }
             });
         }
@@ -273,18 +333,35 @@ public class CalendarActivity extends AppCompatActivity {
             Calendar c = Calendar.getInstance();
             SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
             String formattedDate = df.format(c.getTime());
-            pdfname = diario.getTitulo().replace(".","")+" "+formattedDate+".pdf";
+            pdfname = formattedDate.replace(".","")+"_"+diario.getTitulo().replace(".","").replace(" ","_")+".pdf";
             file = crearFichero(pdfname);
-            FileOutputStream ficheroPDF = new FileOutputStream(file.getAbsolutePath());
+            path = file.getAbsolutePath();
+            FileOutputStream ficheroPDF = new FileOutputStream(path);
             PdfWriter writer = PdfWriter.getInstance(documento, ficheroPDF);
-            documento.open();
-            documento.add(new Paragraph("Diario alimenticio: "+diario.getTitulo()+ "\n\n"));
-            for (Entry e : listaEntradas) {
-                documento.add(new Paragraph(e.getTitulo()+" en el día "+e.getFecha().replace("_","/")+"\n"));
-                documento.add(new Paragraph(e.getTexto()+"\n\n"));
-                documento.add(new Paragraph("Alimento de la entrada: "+e.getAlimento()+"\n\n"));
-            }
+            Font FontHELTitulo = new Font(Font.HELVETICA,30.0f,Font.BOLD);
+            Font FontHELdiario = new Font(Font.HELVETICA,24.0f,Font.BOLD);
+            Font FontHELCuerpo = new Font(Font.HELVETICA,20.0f);
 
+            Paragraph parrafo = new Paragraph("Diario alimenticio: "+diario.getTitulo()+ "\n\n",FontHELTitulo);
+            parrafo.setAlignment(Paragraph.ALIGN_CENTER);
+            //parrafo.setFont(FontHELTitulo);
+            documento.open();
+            documento.add(parrafo);
+
+            for (Entry e : listaEntradas) {
+                parrafo = new Paragraph(e.getTitulo()+" en el día "+e.getFecha().replace("_","/")+"\n",FontHELdiario);
+                parrafo.setAlignment(Paragraph.ALIGN_LEFT);
+                //parrafo.setFont(FontHELCuerpo);
+                documento.add(parrafo);
+                parrafo = new Paragraph("Detalles:"+e.getTexto()+"\n",FontHELCuerpo);
+                parrafo.setAlignment(Paragraph.ALIGN_LEFT);
+                //parrafo.setFont(FontHELCuerpo);
+                documento.add(parrafo);
+                parrafo = new Paragraph("Alimentos: "+e.getAlimento()+"\n\n",FontHELCuerpo);
+                parrafo.setAlignment(Paragraph.ALIGN_LEFT);
+                //parrafo.setFont(FontHELCuerpo);
+                documento.add(parrafo);
+            }
         } catch(DocumentException e) {
         } catch(IOException e) {
         } finally {
@@ -316,6 +393,21 @@ public class CalendarActivity extends AppCompatActivity {
         return ruta;
     }
 
+    private void abrirPdf(){
+        try {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setDataAndType(Uri.fromFile(file), "application/pdf");
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            this.startActivity(intent);
+        }
+        catch (Throwable t)
+        {
+            Log.d("abrirPdf","ERROR al intentar abrir");
+            Toast.makeText(this, "No se encuentra una aplicación para abrir el PDF", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     private void sendmail(String correo){
         try {
             StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
@@ -325,10 +417,10 @@ public class CalendarActivity extends AppCompatActivity {
             final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
             emailIntent.setType("plain/text");
             emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{correo});
-            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Diario alimenticio");
+            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Diario alimenticio de "+userNameFinal);
             emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://" + getRuta() + "/" + pdfname));
-            emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Hola estimado usuario de EyesFood, " +
-                    "quiero compartirte mi diario " + diario.getTitulo() + " contigo en formato PDF.");
+            emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Hola estimado(a), " +
+                    "quiero compartirte mi diario '" + diario.getTitulo() + "' contigo en formato PDF.");
             this.startActivity(Intent.createChooser(emailIntent, "Sending email..."));
         }
         catch (Throwable t)

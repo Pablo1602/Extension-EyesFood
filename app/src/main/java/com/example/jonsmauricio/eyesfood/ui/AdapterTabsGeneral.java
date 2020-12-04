@@ -1,6 +1,7 @@
 package com.example.jonsmauricio.eyesfood.ui;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,7 +68,9 @@ public class AdapterTabsGeneral extends ArrayAdapter<Measure>{
         }
         else if(position == 2){
             measureName.setText("Último IMC:");
-            if (getItem(1).getId() > 0 && !SessionPrefs.get(getContext()).getUserHeight().equals(null) && !SessionPrefs.get(getContext()).getUserHeight().equals("")) {
+            Log.d("TAB","getItem:"+getItem(1).getId());
+            Log.d("TAB","getUserHeight:"+SessionPrefs.get(getContext()).getUserHeight());
+            if (getItem(1).getId() > 0 && SessionPrefs.get(getContext()).getUserHeight() != null && !SessionPrefs.get(getContext()).getUserHeight().equals("")) {
                 String IMC = calculateIMC(SessionPrefs.get(getContext()).getUserHeight(), getItem(1).getMeasure());
                 measure.setText(IMC);
                 date.setVisibility(View.VISIBLE);
@@ -106,7 +109,7 @@ public class AdapterTabsGeneral extends ArrayAdapter<Measure>{
     private String calculateIMC(String height, float weight){
         String resultado = "";
 
-        if(height.equals(null) || height.equals("")){
+        if(height != null || height.equals("")){
             return resultado;
         }
 

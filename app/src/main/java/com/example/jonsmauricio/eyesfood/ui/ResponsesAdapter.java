@@ -81,7 +81,7 @@ public class ResponsesAdapter extends ArrayAdapter<Comment> {
         final TextView name = convertView.findViewById(R.id.tvCommentsName);
         final TextView comment = convertView.findViewById(R.id.tvCommentsComment);
         final TextView date = convertView.findViewById(R.id.tvCommentsDate);
-
+        final Button button = convertView.findViewById(R.id.btResponse);
 
         // Comentario actual.
         final Comment currentComment = getItem(position);
@@ -106,6 +106,7 @@ public class ResponsesAdapter extends ArrayAdapter<Comment> {
                              name.setText(user.getName() + " " + user.getSurName());
                              comment.setText(currentComment.getComment());
                              date.setText(currentComment.getDate());
+                             button.setVisibility(View.INVISIBLE);
                          }
 
                          @Override

@@ -39,6 +39,8 @@ import com.squareup.picasso.Picasso;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.xml.datatype.Duration;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -154,6 +156,7 @@ public class ExpertDetailFragment extends DialogFragment {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 crearConsulta();
+                                Toast.makeText(getContext(),"Se solicito una consulta con "+Experto.getName()+" con exito", Toast.LENGTH_LONG);
                             }
 
                         })
@@ -168,10 +171,27 @@ public class ExpertDetailFragment extends DialogFragment {
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
                 valor = v;
                 isRating();
+                showSuccesDialog();
             }
         });
 
         return view;
+    }
+
+    public void showSuccesDialog(){
+        new AlertDialog.Builder(getContext())
+                .setIcon(null)
+                .setTitle("Exito")
+                .setMessage("Gracias por valorar a nuestros expertos")
+                .setPositiveButton(getResources().getString(R.string.ok_dialog), new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dismiss();
+                    }
+
+                })
+                .show();
     }
 
     private void isRating(){
@@ -302,7 +322,9 @@ public class ExpertDetailFragment extends DialogFragment {
     }
 
     private void crearConsulta() {
-        Call<Consult> call = mEyesFoodApi.insertConsult(new Consult(String.valueOf(Experto.getExpertId()), userIdFinal));
+        Log.d("myTag", "Experto:" + Experto.getExpertId());
+        Log.d("myTag", "userIdFinal:" + userIdFinal);
+        Call<Consult> call = mEyesFoodApi.insertConsult(new Consult(Experto.getExpertId(), Integer.parseInt(userIdFinal)));
         call.enqueue(new Callback<Consult>() {
             @Override
             public void onResponse(Call<Consult> call, Response<Consult> response) {
@@ -313,13 +335,14 @@ public class ExpertDetailFragment extends DialogFragment {
                 else {
 //                    Log.d("myTag", "Mostrar Producto leido");
 //                    progressDialog.setMessage("Cargando Producto");
+                    Log.d("myTag", "Respuesta:" + response.body());
                     Toast.makeText(getActivity(), "Su solicitud ha sido creada con exito", Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onFailure(Call<Consult> call, Throwable t) {
-
+                Log.d("myTag", "Error al crear consulta del experto");
             }
         });
     }

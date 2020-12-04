@@ -16,7 +16,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+            android:text = "Nombre"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textStyle="bold"/>
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btDiary"
             android:focusable="false"
